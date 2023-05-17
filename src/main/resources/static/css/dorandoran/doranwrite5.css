@@ -398,7 +398,7 @@ h1.form-header {
 
 /***** Buttons *****/
 .button, .section-subscribe button, .article-subscribe button, .community-follow button, .requests-table-toolbar .organization-subscribe button, .subscriptions-subscribe button, .pagination-next-link, .pagination-prev-link, .pagination-first-link, .pagination-last-link, .edit-profile-button a, .hc__btn {
-    background-color: rgba(0, 204, 204, 1);
+    background-color: #6B95FC;
     border: 1px solid rgba(0, 204, 204, 1);
     border-radius: 2px;
     color: #fff;
@@ -428,13 +428,13 @@ h1.form-header {
 }
 
 .button:hover, .section-subscribe button:hover, .article-subscribe button:hover, .community-follow button:hover, .requests-table-toolbar .organization-subscribe button:hover, .subscriptions-subscribe button:hover, .pagination-next-link:hover, .pagination-prev-link:hover, .pagination-first-link:hover, .pagination-last-link:hover, .edit-profile-button a:hover, .button:active, .section-subscribe button:active, .article-subscribe button:active, .community-follow button:active, .requests-table-toolbar .organization-subscribe button:active, .subscriptions-subscribe button:active, .pagination-next-link:active, .pagination-prev-link:active, .pagination-first-link:active, .pagination-last-link:active, .edit-profile-button a:active, .button:focus, .section-subscribe button:focus, .article-subscribe button:focus, .community-follow button:focus, .requests-table-toolbar .organization-subscribe button:focus, .subscriptions-subscribe button:focus, .pagination-next-link:focus, .pagination-prev-link:focus, .pagination-first-link:focus, .pagination-last-link:focus, .edit-profile-button a:focus, .button.button-primary, .section-subscribe button.button-primary, .section-subscribe button[data-selected="true"], .article-subscribe button.button-primary, .article-subscribe button[data-selected="true"], .community-follow button.button-primary, .requests-table-toolbar .organization-subscribe button.button-primary, .requests-table-toolbar .organization-subscribe button[data-selected="true"], .subscriptions-subscribe button.button-primary, .subscriptions-subscribe button[data-selected="true"], .button-primary.pagination-next-link, .button-primary.pagination-prev-link, .button-primary.pagination-first-link, .button-primary.pagination-last-link, .edit-profile-button a.button-primary {
-    background-color: rgba(0, 204, 204, 1);
+    background-color: #6B95FC;
     color: rgba(255, 255, 255, 1);
     text-decoration: none;
 }
 
 .button.button-primary:hover, .section-subscribe button.button-primary:hover, .section-subscribe button[data-selected="true"]:hover, .article-subscribe button.button-primary:hover, .article-subscribe button[data-selected="true"]:hover, .community-follow button.button-primary:hover, .requests-table-toolbar .organization-subscribe button.button-primary:hover, .requests-table-toolbar .organization-subscribe button[data-selected="true"]:hover, .subscriptions-subscribe button.button-primary:hover, .subscriptions-subscribe button[data-selected="true"]:hover, .button-primary.pagination-next-link:hover, .button-primary.pagination-prev-link:hover, .button-primary.pagination-first-link:hover, .button-primary.pagination-last-link:hover, .edit-profile-button a.button-primary:hover, .button.button-primary:focus, .section-subscribe button.button-primary:focus, .section-subscribe button[data-selected="true"]:focus, .article-subscribe button.button-primary:focus, .article-subscribe button[data-selected="true"]:focus, .community-follow button.button-primary:focus, .requests-table-toolbar .organization-subscribe button.button-primary:focus, .requests-table-toolbar .organization-subscribe button[data-selected="true"]:focus, .subscriptions-subscribe button.button-primary:focus, .subscriptions-subscribe button[data-selected="true"]:focus, .button-primary.pagination-next-link:focus, .button-primary.pagination-prev-link:focus, .button-primary.pagination-first-link:focus, .button-primary.pagination-last-link:focus, .edit-profile-button a.button-primary:focus, .button.button-primary:active, .section-subscribe button.button-primary:active, .section-subscribe button[data-selected="true"]:active, .article-subscribe button.button-primary:active, .article-subscribe button[data-selected="true"]:active, .community-follow button.button-primary:active, .requests-table-toolbar .organization-subscribe button.button-primary:active, .requests-table-toolbar .organization-subscribe button[data-selected="true"]:active, .subscriptions-subscribe button.button-primary:active, .subscriptions-subscribe button[data-selected="true"]:active, .button-primary.pagination-next-link:active, .button-primary.pagination-prev-link:active, .button-primary.pagination-first-link:active, .button-primary.pagination-last-link:active, .edit-profile-button a.button-primary:active {
-    background-color: #066;
+    background-color: #4874E1;
     border-color: #066;
 }
 
@@ -444,7 +444,7 @@ h1.form-header {
 
 .button-large, input[type="submit"] {
     cursor: pointer;
-    background-color: rgba(0, 204, 204, 1);
+    background-color: #6B95FC;
     border: 0;
     border-radius: 4px;
     color: rgba(255, 255, 255, 1);
@@ -463,7 +463,7 @@ h1.form-header {
 }
 
 .button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
-    background-color: #066;
+    background-color: #4874E1;
 }
 
 .button-large[disabled], input[type="submit"][disabled] {
@@ -1562,27 +1562,12 @@ h1.form-header {
     }
 }
 
-.quick-articles section h2:after,
-.search_heading:after,
-.new-request-title:after {
-    content: "\f005";
-    font-family: 'FontAwesome';
-    margin-left: -18px;
-    opacity: 0.1;
-    font-size: 2em;
-    position: absolute;
-    margin-top: -4px;
-}
+
 
 .new-request-title {
     font-weight: 600;
 }
 
-.new-request-title:after {
-    content: "\f0e0";
-    font-size: 45px;
-    margin-left: -10px;
-}
 
 .quick-articles section.recent-articles h2:after {
     content: "\f06e";
@@ -2179,7 +2164,7 @@ h1.form-header {
 }
 
 .sidenav-item.current-article, .sidenav-item:hover {
-    background-color: rgba(0, 204, 204, 1);
+    background-color: #6B95FC;
     color: rgba(255, 255, 255, 1);
     text-decoration: none;
 }
@@ -2710,7 +2695,7 @@ h1.form-header {
 }
 
 .community-follow button:hover {
-    background-color: rgba(0, 204, 204, 1);
+    background-color: #6B95FC;
 }
 
 .community-follow button:hover::after, .community-follow button:focus::after {
@@ -2719,7 +2704,7 @@ h1.form-header {
 }
 
 .community-follow button[data-selected="true"] {
-    background-color: rgba(0, 204, 204, 1);
+    background-color: #6B95FC;
     color: rgba(255, 255, 255, 1);
 }
 
@@ -2729,7 +2714,7 @@ h1.form-header {
 }
 
 .community-follow button[data-selected="true"]:hover {
-    background-color: #066;
+    background-color: #4874E1;
     border-color: #066;
 }
 
@@ -2866,7 +2851,7 @@ h1.form-header {
 }
 
 .status-label-pinned, .status-label-featured, .status-label-official {
-    background-color: rgba(0, 204, 204, 1);
+    background-color: #6B95FC;
 }
 
 .status-label-official {
@@ -4014,7 +3999,7 @@ h1.form-header {
 }
 
 .edit-profile-button a {
-    background-color: rgba(0, 204, 204, 1);
+    background-color: #6B95FC;
     border: 0;
     color: rgba(255, 255, 255, 1);
     line-height: normal;
@@ -4548,7 +4533,7 @@ h1.form-header {
 }
 
 .search-results-sidebar .sidenav-item:hover, .search-results-sidebar .sidenav-item.current {
-    background-color: rgba(0, 204, 204, 1);
+    background-color: #6B95FC;
     color: #fff;
     text-decoration: none;
 }

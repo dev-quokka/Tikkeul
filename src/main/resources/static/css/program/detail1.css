@@ -356,3 +356,7 @@ button:not(:disabled), input:not(:disabled), input:not(:disabled)+label {
 .school-con .tab-con img {
     width: 100%;
 }
+
+.school-summary .school-sum-info .school-btn-apply a:hover{
+    background-color: #4874E1;
+}

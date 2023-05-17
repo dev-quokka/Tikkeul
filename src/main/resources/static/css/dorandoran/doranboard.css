@@ -88,7 +88,7 @@
     display: inline-block;
     width: 300px;
     height: 18px;
-    background: url(https://www.wadiz.kr/resources/static/img/sub/logo_wadiz_cast.png) no-repeat 0 0;
+    background: url(../../../static/image/DoranDoranListBanner.png) no-repeat 0 0;
     background-size: cover
 }
 
@@ -141,6 +141,7 @@
 .wcommunity-content-wrap {
     width: 100%;
     padding: 30px 0 0
+    padding-left: 170px;
 }
 
 .wcommunity-section1 {
@@ -540,7 +541,7 @@
 }
 
 .wcommunity-section1 .sub-category-list li.active button {
-    border-color: #3B5998;
+    border-color: #e4e4e4;
     color: #4a4a4a
 }
 
@@ -2206,6 +2207,7 @@
         width: 960px;
         margin: 0 auto;
         padding: 50px 0;
+        padding-left: 170px;
     }
 
     .wcommunity-content-wrap:after {

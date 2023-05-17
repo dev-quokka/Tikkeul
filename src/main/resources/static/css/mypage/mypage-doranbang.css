@@ -47,6 +47,8 @@ div {
     min-width: 360px;
     max-width: 1300px;
     width: 1300px;
+    padding-bottom: 160px;
+
 }
 
 .css-1opn9x3 {
@@ -74,8 +76,8 @@ div {
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    margin-bottom: 2px;
-    width: 86%;
+    margin-bottom: 1px;
+    width: 72%;
 }
 
 .css-k008qs {
@@ -327,14 +329,17 @@ div {
     width: 48px;
     height: 48px;
 }
+
 .css-yu5nod.Mui-disabled {
     background-color: transparent;
     color: rgba(0, 0, 0, 0.26);
 }
+
 .css-yu5nod.Mui-disabled {
     pointer-events: none;
     cursor: default;
 }
+
 .css-yu5nod {
     display: inline-flex;
     -webkit-box-align: center;
@@ -364,6 +369,7 @@ div {
     width: 48px;
     height: 48px;
 }
+
 .css-spt4lr {
     background-color: rgb(255, 255, 255);
     color: rgba(0, 0, 0, 0.87);
@@ -377,11 +383,13 @@ div {
     border-radius: 3px;
     height: 40px;
 }
+
 .css-70qvj9 {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
 }
+
 .css-s2i14f {
     font-family: NotoSansKR;
     color: rgba(0, 0, 0, 0.87);
@@ -398,6 +406,7 @@ div {
     font-size: 12px;
     line-height: 16px;
 }
+
 .css-17zd8ob {
     font-style: inherit;
     font-variant: inherit;
@@ -425,6 +434,7 @@ div {
     font-weight: 400;
     font-size: 16px;
 }
+
 .css-1yxmbwk {
     display: inline-flex;
     -webkit-box-align: center;
@@ -452,6 +462,7 @@ div {
     color: rgba(0, 0, 0, 0.54);
     transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
+
 .css-w0pj6f {
     overflow: hidden;
     pointer-events: none;
@@ -460,6 +471,7 @@ div {
     inset: 0px;
     border-radius: inherit;
 }
+
 /*헤더*/
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, button, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, input, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, select, small, span, strike, strong, sub, summary, sup, table, tbody, td, textarea, tfoot, th, thead, time, tr, tt, u, ul, var, video {
     margin: 0;
@@ -468,9 +480,11 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     vertical-align: baseline;
     box-sizing: border-box;
 }
+
 html.scroll-top .web-header, html.wadiz-app.scroll-top .web-header, html.wadiz-app .web-header {
     top: 0;
 }
+
 .web-header {
     position: relative;
     position: -webkit-sticky;
@@ -494,7 +508,7 @@ html.scroll-top .web-header, html.wadiz-app.scroll-top .web-header, html.wadiz-a
 
 @media screen and (min-width: 1097px) {
     #wz-header {
-        position:static
+        position: static
     }
 
     #wz-header .web-header-mobile {
@@ -510,13 +524,13 @@ html.scroll-top .web-header, html.wadiz-app.scroll-top .web-header, html.wadiz-a
     z-index: 1201
 }
 
-html.scroll-top .web-header,html.wadiz-app.scroll-top .web-header,html.wadiz-app .web-header {
+html.scroll-top .web-header, html.wadiz-app.scroll-top .web-header, html.wadiz-app .web-header {
     top: 0
 }
 
 @media screen and (min-width: 1097px) {
     .web-header {
-        position:static
+        position: static
     }
 }
 
@@ -576,7 +590,7 @@ html.scroll-top .web-header,html.wadiz-app.scroll-top .web-header,html.wadiz-app
 
 @media screen and (min-width: 1097px) {
     .web-header .header-wrapper {
-        position:relative;
+        position: relative;
         border-bottom: 1px solid #f2f4f6;
         padding: 0;
         height: 56px;
@@ -596,7 +610,7 @@ html.scroll-top .web-header,html.wadiz-app.scroll-top .web-header,html.wadiz-app
 
 @media screen and (min-width: 1097px) {
     .web-header .header-wrapper .header-container {
-        padding:0 80px
+        padding: 0 80px
     }
 }
 
@@ -612,22 +626,22 @@ html.scroll-top .web-header,html.wadiz-app.scroll-top .web-header,html.wadiz-app
 
 @media screen and (min-width: 1097px) {
     .web-header .wadiz-logo {
-        position:static
+        position: static
     }
 }
 
-.web-header .wadiz-logo>a {
+.web-header .wadiz-logo > a {
     display: block;
     padding: 11px 0 13px
 }
 
-.web-header .wadiz-logo>a svg {
+.web-header .wadiz-logo > a svg {
     max-width: none
 }
 
 @media screen and (min-width: 1097px) {
-    .web-header .wadiz-logo>a {
-        padding:14px 0 18px
+    .web-header .wadiz-logo > a {
+        padding: 14px 0 18px
     }
 }
 
@@ -652,7 +666,7 @@ html.scroll-top .web-header,html.wadiz-app.scroll-top .web-header,html.wadiz-app
     justify-content: space-between;
     z-index: 1;
     margin-left: 0;
-    box-shadow: 0 0 10px 2px rgba(0,0,0,.15);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, .15);
     padding: 0;
     width: 100%;
     list-style: none;
@@ -665,7 +679,7 @@ html.scroll-top .web-header,html.wadiz-app.scroll-top .web-header,html.wadiz-app
 
 @media screen and (min-width: 1097px) {
     .web-header .gnb-large {
-        display:inline-block;
+        display: inline-block;
         position: relative;
         position: -webkit-sticky;
         position: static;
@@ -712,7 +726,7 @@ html.scroll-top .web-header,html.wadiz-app.scroll-top .web-header,html.wadiz-app
 
 @media screen and (min-width: 1097px) {
     .web-header .gnb-large .item {
-        padding:0 16px
+        padding: 0 16px
     }
 
     .web-header .gnb-large .item span {
@@ -745,7 +759,7 @@ html.scroll-top .web-header,html.wadiz-app.scroll-top .web-header,html.wadiz-app
 
 @media screen and (min-width: 1097px) {
     .web-header .web-header-simple .header-container .gnb-large {
-        display:block
+        display: block
     }
 }
 
@@ -772,7 +786,7 @@ html.scroll-top .web-header,html.wadiz-app.scroll-top .web-header,html.wadiz-app
 
 @media screen and (min-width: 1097px) {
     .web-header .web-header-utils {
-        display:flex;
+        display: flex;
         position: relative;
         margin-left: auto
     }
@@ -792,3 +806,155 @@ html.scroll-top .web-header,html.wadiz-app.scroll-top .web-header,html.wadiz-app
     border-radius: 4px;
     vertical-align: top
 }
+
+.wcommunity-webzine-list ul {
+    width: 935px;
+}
+
+.wcommunity-webzine-list ul {
+    border-top: 1px solid rgba(0, 0, 0, .06);
+}
+
+li, ol, ul {
+    list-style: none;
+}
+
+a, button {
+    color: inherit;
+}
+
+.wcommunity-webzine-list .wcommunity-story {
+    position: relative;
+    padding: 0;
+    min-height: 160px;
+}
+
+.wcommunity-webzine-list .wcommunity-story {
+    position: relative;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .06);
+}
+
+.wcommunity-story {
+    height: 172px;
+    border: 1px solid #e4e4e4;
+    background: #fff;
+}
+
+.wcommunity-webzine-list .wcommunity-story .story-info {
+    float: left;
+    width: 55%;
+    height: auto;
+    padding: 10px 0 10px 10px;
+}
+.wcommunity-webzine-list .wcommunity-story .img-wrap {
+    float: right;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.wcommunity-webzine-list .wcommunity-story .story-info em.notice-badge.category, .wcommunity-webzine-list .wcommunity-story .story-info em.best-badge.category {
+    display: none;
+}
+
+.wcommunity-webzine-list .wcommunity-story .story-info em.category {
+    display: inline-block;
+    margin-bottom: 8px;
+    margin-right: 5px;
+    padding: 0 6px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 13px;
+    font-weight: 400;
+    background: none !important;
+    color: #90949c !important;
+    border: 1px solid #babdc0;
+}
+.wcommunity-webzine-list .wcommunity-story .story-info p.title {
+    margin-bottom: 5px;
+    font-size: 15px;
+    line-height: 22px;
+    height: auto;
+    font-weight: 600;
+}
+.wcommunity-webzine-list .wcommunity-story .story-info p.summary {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #7c8288;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+.wcommunity-story .story-info p.info em {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    color: #65696B;
+}
+address, cite, dfn, em, var {
+    font-weight: inherit;
+    font-style: normal;
+}
+.wcommunity-story .story-info p.info em {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    color: #65696B;
+}
+.wcommunity-story .story-info p.info em.symp {
+    padding-left: 15px;
+    background: url(https://cdn.wadiz.kr/ft/images/green001/2022/0913/…ng/wadiz/resizecrop/420x320/format/jpg/quality/80) no-repeat 0 center;
+    background-size: 11px 10px;
+}
+
+.wcommunity-story .story-info p.info em {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    color: #65696B;
+}
+.wcommunity-webzine-list .wcommunity-story .img-wrap .story-img {
+    width: 100%;
+    height: 134px;
+    background: no-repeat center center #ddd;
+    background-size: cover;
+}
+.wcommunity-webzine-list .wcommunity-story .img-wrap {
+    width: 182px;
+}
+
+.wcommunity-webzine-list .wcommunity-story .img-wrap {
+    float: right;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.wcommunity-story .story-info p.info em {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    color: #65696B;
+}
+
+

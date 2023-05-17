@@ -3274,13 +3274,7 @@ button.FollowingButton_alarmButton__YiJLi span:first-child .FollowingButton_icon
     height: 100%
 }
 
-.DetailContent_container__oYgFG .DetailContent_sidebar__D3FuR {
-    display: flex;
-    position: sticky;
-    top: 80px;
-    flex-direction: column;
-    height: calc(100vh - 120px)
-}
+
 
 .DetailTab_container__1NVYg {
     position: sticky;
@@ -3394,20 +3388,26 @@ button.FollowingButton_alarmButton__YiJLi span:first-child .FollowingButton_icon
     font-display: swap
 }
 
-.storeTabContentsWrapper {
+Wrapper {
     margin: 0 auto
 }
 
 @media screen and (min-width: 769px) {
-    .storeTabContentsWrapper {
+    Wrapper {
         display:flex;
         margin: 0;
         padding: 0 16px
     }
 }
+.storeTabContentsWrapper {
+    display: flex;
+    margin: 45px auto 40px;
+    padding: 0 80px;
+    max-width: 1000px;
+}
 
 @media screen and (min-width: 1097px) {
-    .storeTabContentsWrapper {
+    Wrapper {
         display:flex;
         margin: 0 auto 40px;
         padding: 0 80px;
@@ -3415,13 +3415,13 @@ button.FollowingButton_alarmButton__YiJLi span:first-child .FollowingButton_icon
     }
 }
 
-.storeTabContents {
+ {
     margin: 0 16px;
     min-height: 460px
 }
 
 @media screen and (min-width: 769px) {
-    .storeTabContents {
+     {
         flex:0 0 56.55%;
         margin: 0;
         max-width: 56.55%;
@@ -3430,7 +3430,7 @@ button.FollowingButton_alarmButton__YiJLi span:first-child .FollowingButton_icon
 }
 
 @media screen and (min-width: 1201px) {
-    .storeTabContents {
+     {
         flex:0 0 66.9%;
         padding-left: 37px;
         max-width: 66.9%
@@ -3445,13 +3445,7 @@ button.FollowingButton_alarmButton__YiJLi span:first-child .FollowingButton_icon
     }
 }
 
-@media screen and (min-width: 1201px) {
-    .storeTabSideBar {
-        flex:0 0 33.1%;
-        padding: 0 0 0 6.1%;
-        max-width: 33.1%
-    }
-}
+
 
 .ProjectSearchTags_container__7YZNA .ProjectSearchTags_hashTags__3v6i6 .ProjectSearchTags_hashTagButton__fCndq {
     height: 26px;
@@ -22349,13 +22343,61 @@ address, cite, dfn, em, var {
     }
 }
 
+.wcommunity-comment {
+    padding: 20px 10px;
+    border-top: 1px solid #e4e4e4;
+}
+.wcommunity-comment .comment-num {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.wcommunity-comment .main-comment {
+    padding-bottom: 20px;
+}
+.wcommunity-comment .comment-box {
+    margin-bottom: 15px;
+    border-bottom: none;
+}
+.wcommunity-comment .comment-num em {
+    color: #3B5998;
+}
 
+address, cite, dfn, em, var {
+    font-weight: inherit;
+    font-style: normal;
+}
+.wcommunity-comment .main-comment textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 18px;
+    border: 1px solid #e4e4e4;
+    background: #fff;
+    box-sizing: border-box !important;
+}
 
+textarea {
+    font-family: Pretendard,Apple SD Gothic Neo,Segoe UI,Malgun Gothic,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,-apple-system,blinkmacsystemfont,sans-serif;
+}
 
+#commentCnt {
+    overflow-y: hidden;
+    height: 79px;
+    width: 840px;
+    resize: none;
+    padding: 10px;
+    margin-top: 18px;
+    border-color: black;
+}
 
-
-
-
+.commentCnt {
+    border: 2px solid rgb(213, 194, 194);
+    outline-color: #FE6B8B;
+    border-color:black;
+}
 
 
 

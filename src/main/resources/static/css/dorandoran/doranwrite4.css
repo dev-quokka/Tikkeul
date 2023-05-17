@@ -1551,27 +1551,13 @@ h1.form-header {
     }
 }
 
-.quick-articles section h2:after,
-.search_heading:after,
-.new-request-title:after {
-    content: "\f005";
-    font-family: 'FontAwesome';
-    margin-left: -18px;
-    opacity: 0.1;
-    font-size: 2em;
-    position: absolute;
-    margin-top: -4px;
-}
+
 
 .new-request-title {
     font-weight: 600;
 }
 
-.new-request-title:after {
-    content: "\f0e0";
-    font-size: 45px;
-    margin-left: -10px;
-}
+
 
 .quick-articles section.recent-articles h2:after {
     content: "\f06e";

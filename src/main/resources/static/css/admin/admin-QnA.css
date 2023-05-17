@@ -9,11 +9,11 @@
     right: 0;
 }
 
-.request-main {
+.QnA-main {
     padding: 160px 20px;
 }
 
-.request-box {
+.QnA-box {
     width: 90%;
     margin: 0 auto;
     height: 80%;
@@ -55,6 +55,7 @@ section div div select {
     padding: 10px
 }
 
+
 .table-content {
     position: absolute;
     width: 100%;
@@ -86,5 +87,3 @@ th {
     text-align: center;
     letter-spacing: 1rem;
 }
-
-

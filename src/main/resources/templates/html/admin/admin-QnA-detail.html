@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>다음열매게시판목록</title>
+    <title>문의게시판목록</title>
     <link rel="stylesheet" type="text/css" href="../../../static/css/admin/admin.css">
-    <link rel="stylesheet" type="text/css" href="../../../static/css/admin/admin-request-detail.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/css/admin/admin-QnA-detail.css">
 </head>
 <body>
 <main>
@@ -42,8 +42,8 @@
                            onclick="location.href='admin-report.html'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="다음열매게시판목록"
-                           onclick="location.href='admin-request.html'">
+                    <input type="button" class="side-menu-button" value="문의게시판목록"
+                           onclick="location.href='admin-QnA.html'">
                 </li>
             </ul>
         </nav>
@@ -51,24 +51,24 @@
 
     <section class="management-main-content">
         <div class="management-top">
-            <div class="page-name">다음열매게시판목록</div>
+            <div class="page-name">문의게시판 상세보기</div>
         </div>
 
-        <div class="request-main">
+        <div class="QnA-main">
 
-            <div class="request-box">
+            <div class="QnA-box">
 
                 <table class="table-contents">
                     <tr>
-                        <td>게시물 번호</td>
+                        <td>문의 번호</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>작성자 이름</td>
+                        <td>이름</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>작성자ID</td>
+                        <td>ID</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -76,17 +76,20 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td>제목</td>
+                        <td>문의내용</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td>내용</td>
-                        <td></td>
+                        <td>답변내용</td>
+                        <td>
+                            <textarea class="summernote" name="editordata"></textarea>
+                        </td>
                     </tr>
                 </table>
                 <div class="button-box">
-                    <input type="button" name="request-list" value="게시글 목록"
-                           onClick="location.href='admin-request.html'"/>
+                    <input type="button" name="report-list" value="문의게시판 목록"
+                           onClick="location.href='admin-QnA.html'"/>
+                    <input type="button" name="report-answer" value="답변 등록"/>
                 </div>
 
 

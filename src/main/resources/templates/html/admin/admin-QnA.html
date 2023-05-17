@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>다음열매게시판목록</title>
+    <title>문의게시판목록</title>
     <link rel="stylesheet" type="text/css" href="../../../static/css/admin/admin.css">
-    <link rel="stylesheet" type="text/css" href="../../../static/css/admin/admin-request.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/css/admin/admin-QnA.css">
+
 </head>
 <body>
-
 <main>
     <div class="sidebar">
         <div class="logo-container">
@@ -43,8 +43,8 @@
                            onclick="location.href='admin-report.html'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="다음열매게시판목록"
-                           onclick="location.href='admin-request.html'">
+                    <input type="button" class="side-menu-button" value="문의게시판목록"
+                           onclick="location.href='admin-QnA.html'">
                 </li>
             </ul>
         </nav>
@@ -52,18 +52,18 @@
 
     <section class="management-main-content">
         <div class="management-top">
-            <div class="page-name">다음열매게시판목록</div>
+            <div class="page-name">문의게시판목록</div>
         </div>
 
-        <div class="request-main">
+        <div class="QnA-main">
 
-            <div class="request-box">
+            <div class="QnA-box">
 
                 <div class="search-container">
                     <select>
-                        <option value="name">제목</option>
                         <option value="content">내용</option>
-                        <option value="id">회원 ID</option>
+                        <option value="name">이름</option>
+                        <option value="id">ID</option>
                     </select> <input type="text" name="search" id="search"/>
                     <input
                             type="image" class="search"
@@ -75,178 +75,178 @@
                 <div class="table-content">
                     <table>
                         <tr>
-                            <th><input type="checkbox" class="all"/></th>
-                            <th>게시글 번호</th>
+                            <th><input type="checkbox"  class="all"/></th>
+                            <th>문의 번호</th>
                             <th>이름</th>
-                            <th>회원 ID</th>
-                            <th>제목</th>
-                            <th>내용</th>
-                            <th>작성 날짜</th>
+                            <th>ID</th>
+                            <th>문의 내용</th>
+                            <th>작성일</th>
+                            <th>진행 상황</th>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
-                        <tr onclick="location.href='admin-request-detail.html'">
+                        <tr onclick="location.href='admin-QnA-detail.html'">
                             <td onclick="event.cancelBubble=true" style="cursor: default">
                                 <input type="checkbox" name="table-row" class="term"/>
                             </td>
                             <td>1</td>
                             <td>오명근</td>
                             <td>omg0223</td>
-                            <td>이거 추가해주세요</td>
                             <td></td>
-                            <td>2023-05-12</td>
+                            <td>2023-05-17</td>
+                            <td>답변대기중</td>
                         </tr>
 
                     </table>
@@ -263,4 +263,5 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="../../../static/js/admin/checkbox.js"></script>
 <script src="../../../static/js/admin/delete-button.js"></script>
+</script>
 </html>

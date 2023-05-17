@@ -42,8 +42,8 @@
                            onclick="location.href='admin-report.html'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="다음열매게시판목록"
-                           onclick="location.href='admin-request.html'">
+                    <input type="button" class="side-menu-button" value="문의게시판목록"
+                           onclick="location.href='admin-QnA.html'">
                 </li>
             </ul>
         </nav>
@@ -52,7 +52,7 @@
 
     <section class="management-main-content">
         <div class="management-top">
-            <div class="page-name">상품관리</div>
+            <div class="page-name">상품 수정</div>
         </div>
 
         <div class="modify-main">
@@ -85,7 +85,21 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>이미지</td>
+                        <td>가격</td>
+                        <td>
+                            <input type="text" name="" value="" class="modify-input">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>썸네일 이미지</td>
+                        <td>
+                            <form method="post" enctype="multipart/form-data">
+                                <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>상세 이미지</td>
                         <td>
                             <form method="post" enctype="multipart/form-data">
                                 <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">

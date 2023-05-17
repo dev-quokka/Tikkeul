@@ -29,12 +29,18 @@ $("#mobileChangeBtn").click(function () {
         $('#mobileNumber').attr("disabled", false);
         $("#mobileNumber").css("background-color", "white");
         $("#mobileCheckBtn").show();
-        $(".input-btn-wrap").show();
+        $("#mobileConfirmArea").show();
         $("#mobileChangeBtn").hide();
 
 
-
         /*호버*/
+        $(document).ready(function () {
+            $("#authCode").hover(function () {
+                $("#authCode").css("border-color", "#6B95FC");
+            }, function () {
+                $("#authCode").css("border-color", "");
+            });
+        });
         $(document).ready(function () {
             $("#mobileNumber").hover(function () {
                 $("#mobileNumber").css("border-color", "#6B95FC");
@@ -42,10 +48,11 @@ $("#mobileChangeBtn").click(function () {
                 $("#mobileNumber").css("border-color", "");
             });
         });
+
+
     } else {
         $('#mobileNumber').attr("disabled", true);
         $("#mobileNumber").css("background-color", "#e7e7e7");
-        $("#emailCheckBtn").show();
     }
 });
 
@@ -97,23 +104,28 @@ $("#userName").on("keyup", function () {
         $("#userName").html("")
         $("#userName").css("borderColor", "rgba(0, 0, 0, 0.08)")
         $("#emailError").hide();
+
+        /*변경 이메일이 true일때 인증버튼 클릭시 인증하기 활성화*/
+        $("#emailCheckBtn").click(function () {
+            $(document).ready(function () {
+                $("#emailAuthCode").hover(function () {
+                    $("#emailAuthCode").css("border-color", "#6B95FC");
+                }, function () {
+                    $("#emailAuthCode").css("border-color", "");
+                });
+            });
+            $("#emailConfirmArea").show();
+
+        });
         return false;
     }
 });
 $(document).ready(function () {
-
-
     $("#emailChangeBtn").click(function () {
         $("#userName").val("");
     });
-
 });
-/*$(document).ready(function () {
-    $("#emailCheckBtn").click(function () {
-        $("#emailConfirmArea").show();
 
-    });
-});*/
 
 /*비번 인증*/
 

@@ -548,6 +548,20 @@
                                 </a>
                             </div>
                         </div>
+                        <div id="emailConfirmArea" class="input-btn-wrap" style="display:none;">
+                            <div class="input">
+                                <input type="text" id="emailAuthCode" class="input-text" placeholder="인증번호">
+                                <input type="hidden" id="emailConfirmId" value="5947884">
+                                <time class="limit_time" style="position:relative;top:-39px;left:85%;text-align:right;">
+                                    <span id="emailMs_timer" style="color:#50e3c2;font-size:13px;"></span>
+                                </time>
+                            </div>
+                            <div id="emailConfirmBtn" class="emailAuthBtn btn" data-status="confirm">
+                                <a href="#" onclick="return false;">
+                                    <span>인증완료</span>
+                                </a>
+                            </div>
+                        </div>
                         <p id="emailCheckNumberError" class="error-text emailMsg" style="display: none;">인증번호를 잘못
                             입력하셨습니다.
                             다시 입력해주세요.</p>
