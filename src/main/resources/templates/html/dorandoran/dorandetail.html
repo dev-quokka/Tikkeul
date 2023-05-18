@@ -1,335 +1,491 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>dorandetail</title>
-        <link rel="stylesheet" href="../../../static/css/dorandoran/doranboard5.css">
-        <link rel="stylesheet" href="../../../static/css/dorandoran/doranboard6.css">
-        <link rel="stylesheet" href="../../../static/css/dorandoran/doranboard7.css">
-        <link rel="stylesheet" href="../../../static/css/dorandoran/doranboard8.css">
-        <link rel="stylesheet" href="../../../static/css/dorandoran/doranboard9.css">
-    </head>
-    <body>
-    <div id="newContainer">
-        <div id="wcommunityWrap">
-            <div class="wcommunity-wrap">
-                <div class="wcommunity-top">
-                    <h2><a href="/web/wcast/main"><em class="logo_wcommunity"></em></a></h2>
-                    <div id="wcastTopPC" class="wcommunity-topmenu">
-                        <ul class="depth1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dorandetail</title>
+    <link rel="stylesheet" href="../../../static/css/dorandoran/doranboard4.css">
+    <link rel="stylesheet" href="../../../static/css/dorandoran/doranboard3.css">
+    <link rel="stylesheet" href="../../../static/css/dorandoran/doranboard2.css">
+    <link rel="stylesheet" href="../../../static/css/dorandoran/doranboard1.css">
+    <link rel="stylesheet" href="../../../static/css/dorandoran/doranboard.css">
+</head>
+<body>
+<div id="newContainer">
+    <div id="wcommunityWrap">
+        <div class="wcommunity-wrap">
+            <div class="wcommunity-top">
+                <h2><a href="/web/wcast/main"><em class="logo_wcommunity"></em></a></h2>
+                <div id="wcastTopPC" class="wcommunity-topmenu">
+                    <ul class="depth1">
+                        <li><button type="button" onclick="location.href='/web/wcast/list/BRD0000011'">투자</button>
+                            <ul class="depth2">
+                                <li>
+                                    <dl>
+                                        <dt>
+                                            <p class="depth1-title">투자</p>
+                                            <p class="comment">와디즈 투자에 대해 알고싶다면?</p>
+                                        </dt>
+                                        <dd>
+                                            <ul>
 
-                            <li><button type="button" onclick="location.href='/web/wcast/list/BRD0000011'">투자</button>
-                                <ul class="depth2">
-                                    <li>
-                                        <dl>
-                                            <dt>
-                                                <p class="depth1-title">투자</p>
-                                                <p class="comment">와디즈 투자에 대해 알고싶다면?</p>
-                                            </dt>
-                                            <dd>
-                                                <ul>
+                                                <li><button type="button" onclick="searchByHeadWord('BRD0000011','19');">메이커 팁</button></li>
 
-                                                    <li><button type="button" onclick="searchByHeadWord('BRD0000011','19');">메이커 팁</button></li>
+                                                <li><button type="button" onclick="searchByHeadWord('BRD0000011','23');">투자자 팁</button></li>
 
-                                                    <li><button type="button" onclick="searchByHeadWord('BRD0000011','23');">투자자 팁</button></li>
+                                                <li><button type="button" onclick="searchByHeadWord('BRD0000011','36');">커버스토리</button></li>
 
-                                                    <li><button type="button" onclick="searchByHeadWord('BRD0000011','36');">커버스토리</button></li>
-
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li><button type="button" onclick="location.href='/web/wcast/list/BRD0000013'">펀딩</button>
-                                <ul class="depth2">
-                                    <li>
-                                        <dl>
-                                            <dt>
-                                                <p class="depth1-title">펀딩</p>
-                                                <p class="comment">와디즈 펀딩에 대해 알고 싶다면?</p>
-                                            </dt>
-                                            <dd>
-                                                <ul>
-
-                                                    <li><button type="button" onclick="searchByHeadWord('BRD0000013','29');">메이커 팁</button></li>
-
-                                                    <li><button type="button" onclick="searchByHeadWord('BRD0000013','37');">성공스토리</button></li>
-
-                                                    <li><button type="button" onclick="searchByHeadWord('BRD0000013','30');">서포터 팁</button></li>
-
-                                                    <li><button type="button" onclick="searchByHeadWord('BRD0000013','35');">커버스토리</button></li>
-
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li><button type="button" onclick="location.href='/web/wcast/list/BRD0000014'">와디즈 넥스트</button>
-                                <ul class="depth2">
-                                    <li>
-                                        <dl>
-                                            <dt>
-                                                <p class="depth1-title">와디즈 넥스트</p>
-                                                <p class="comment">와디즈 + 함께하는 사람들의 이야기를 담은 격월간 매거진</p>
-                                            </dt>
-                                            <dd>
-                                                <ul>
-
-                                                    <li><button type="button" onclick="searchByHeadWord('BRD0000014','39');">콘텐츠</button></li>
-
-                                                    <li><button type="button" onclick="searchByHeadWord('BRD0000014','40');">다운받기</button></li>
-
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li><button type="button" onclick="location.href='/web/wcast/list/BRD0000012'">와디즈 뉴스</button>
-                                <ul class="depth2">
-                                    <li>
-                                        <dl>
-                                            <dt>
-                                                <p class="depth1-title">와디즈 뉴스</p>
-                                                <p class="comment">생생한 와디즈 내부 이야기 </p>
-                                            </dt>
-                                            <dd>
-                                                <ul>
-
-                                                    <li><button type="button" onclick="searchByHeadWord('BRD0000012','41');">신뢰센터</button></li>
-
-                                                    <li><button type="button" onclick="searchByHeadWord('BRD0000012','26');">새소식</button></li>
-
-                                                    <li><button type="button" onclick="searchByHeadWord('BRD0000012','21');">와디즈인 이야기</button></li>
-
-                                                </ul>
-                                            </dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div><!— //wcommunity-other-story —>
-
-            </div><!— //wcommunity-detail-bottom —>
-                </div><!-- //wcommunity-top -->
-                <script type="text/javascript">
-                    $(document).ready(function(){
-                        $('.new-header .gnb > li:eq(3)').addClass('menu-on');
-                    });
-                    /* 말머리 클릭시 */
-                    function searchByHeadWord(boardId, headWordId) {
-                        $('#searchSelect1').val('');
-                        $('#searchText1').val('');
-                        $('#searchSelect5').val(boardId);
-                        $('#searchSelect4').val(headWordId);
-                        $('#cPage').val(1);
-                        $('#formSearch').attr('action', '/web/wcast/list/' + boardId + '/' + headWordId);
-                        $('#formSearch').submit();
-                    }
-
-                    /* 내가 쓴 글 검색 */
-                    function searchByUserNameInViewN(userId) {
-                        $('#searchSelect1').val('ui');
-                        $('#searchText1').val(userId);
-                        $('#searchText6').val('N');
-                        $('#formSearch').attr('action', '/web/wcast/search');
-                        $('#formSearch').submit();
-                    }
-                </script>
-
-                <div class="wcommunity-content-wrap">
-                    <div class="wcommunity-section1">
-                        <div class="wcommunity-detail-info">
-                            <div class="story-info">
-                                <em class="category">성공스토리</em>
-                                <p class="title">[Interview] 위기를 기회로 바꾼 아이디어, 싱어송라이터 조준호</p>
-                                <p class="info"><em class="editor">한지혜 (jeehye.han@wadiz.kr)</em><em class="date">21.12.01</em><em id="topSympCount" class="symp"></em></p>
-
-                            </div>
-                        </div>
-                        <div class="wcommunity-detail-content">
-                            <div class="inner-contents">
-                                <p><br></p><p>글입력 </p>
-                            </div>
-                            <div class="attach-list">
-                                <ul>
-
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="wcommunity-detail-content">
-                            <div class="inner-contents">
-                                <p><br></p><p>글입력 </p>
-                            </div>
-                            <div class="attach-list">
-                                <ul>
-
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="wcommunity-detail-content">
-                            <div class="inner-contents">
-                                <p><br></p><p>글입력 </p>
-                            </div>
-                            <div class="attach-list">
-                                <ul>
-
-                                </ul>
-                            </div>
-                        </div><div class="wcommunity-detail-content">
-                        <div class="inner-contents">
-                            <p><br></p><p>글입력 </p>
-                        </div>
-                        <div class="attach-list">
-                            <ul>
-
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
                             </ul>
-                        </div>
-                    </div><div class="wcommunity-detail-content">
-                        <div class="inner-contents">
-                            <p><br></p><p>글입력 </p>
-                        </div>
-                        <div class="attach-list">
-                            <ul>
+                        </li>
 
+                        <li><button type="button" onclick="location.href='/web/wcast/list/BRD0000013'">펀딩</button>
+                            <ul class="depth2">
+                                <li>
+                                    <dl>
+                                        <dt>
+                                            <p class="depth1-title">펀딩</p>
+                                            <p class="comment">와디즈 펀딩에 대해 알고 싶다면?</p>
+                                        </dt>
+                                        <dd>
+                                            <ul>
+
+                                                <li><button type="button" onclick="searchByHeadWord('BRD0000013','29');">메이커 팁</button></li>
+
+                                                <li><button type="button" onclick="searchByHeadWord('BRD0000013','37');">성공스토리</button></li>
+
+                                                <li><button type="button" onclick="searchByHeadWord('BRD0000013','30');">서포터 팁</button></li>
+
+                                                <li><button type="button" onclick="searchByHeadWord('BRD0000013','35');">커버스토리</button></li>
+
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
                             </ul>
-                        </div>
-                    </div><div class="wcommunity-detail-content">
-                        <div class="inner-contents">
-                            <p><br></p><p>글입력 </p>
-                        </div>
-                        <div class="attach-list">
-                            <ul>
+                        </li>
 
+                        <li><button type="button" onclick="location.href='/web/wcast/list/BRD0000014'">와디즈 넥스트</button>
+                            <ul class="depth2">
+                                <li>
+                                    <dl>
+                                        <dt>
+                                            <p class="depth1-title">와디즈 넥스트</p>
+                                            <p class="comment">와디즈 + 함께하는 사람들의 이야기를 담은 격월간 매거진</p>
+                                        </dt>
+                                        <dd>
+                                            <ul>
+
+                                                <li><button type="button" onclick="searchByHeadWord('BRD0000014','39');">콘텐츠</button></li>
+
+                                                <li><button type="button" onclick="searchByHeadWord('BRD0000014','40');">다운받기</button></li>
+
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
                             </ul>
-                        </div>
-                    </div><div class="wcommunity-detail-content">
-                        <div class="inner-contents">
-                            <p><br></p><p>글입력 </p>
-                        </div>
-                        <div class="attach-list">
-                            <ul>
+                        </li>
 
+                        <li><button type="button" onclick="location.href='/web/wcast/list/BRD0000012'">와디즈 뉴스</button>
+                            <ul class="depth2">
+                                <li>
+                                    <dl>
+                                        <dt>
+                                            <p class="depth1-title">와디즈 뉴스</p>
+                                            <p class="comment">생생한 와디즈 내부 이야기 </p>
+                                        </dt>
+                                        <dd>
+                                            <ul>
+
+                                                <li><button type="button" onclick="searchByHeadWord('BRD0000012','41');">신뢰센터</button></li>
+
+                                                <li><button type="button" onclick="searchByHeadWord('BRD0000012','26');">새소식</button></li>
+
+                                                <li><button type="button" onclick="searchByHeadWord('BRD0000012','21');">와디즈인 이야기</button></li>
+
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
                             </ul>
-                        </div>
-                    </div>
-                        <div class="wcommunity-detail-content">
-                            <div class="inner-contents">
-                                <p><br></p><p>글입력 </p>
-                            </div>
-                            <div class="attach-list">
-                                <ul>
+                        </li>
 
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="wcommunity-detail-content">
-                            <div class="inner-contents">
-                                <p><br></p><p>글입력 </p>
-                            </div>
-                            <div class="attach-list">
-                                <ul>
-
-                                </ul>
-                            </div>
-                        </div>
-
-
-
-
-
-                    </div><!-- //wcommunity-section1 -->
-                    <div class="wcommunity-section2">
-                        <div class="inner-wrap">
-
-                            <div class="wcommunity-detail-editor">
-                                <a href="#this" onclick="javascript:searchByUserName('jeehye.han@wadiz.kr')">
-                                    <h4><em>작성자</em> 한지혜</h4>
-                                    <div class="editor-info">
-                                        <em class="photo" style="background-image:url(https://cdn.wadiz.kr/wwwwadiz/green001/2022/1201/20221201140951383_4411344.jpg/wadiz/resize/120x120/format/jpg/quality/80)"></em>
-                                        <p class="summary">이야기의 힘으로 도전의 경계를 허무는 와디즈 콘텐츠 마케터 한지혜입니다.</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="wcommunity-best-list detail">
-                                <h4>한지혜님의 다른 글</h4>
-                                <ol>
-
-                                    <li><em>1</em><p class="title"><a href="/web/wcast/detail/7942">[Interview] 위기를 기회로 바꾼 아이디어, 싱어송라이터 조준호</a></p></li>
-
-                                    <li><em>2</em><p class="title"><a href="/web/wcast/detail/7909">[Interview] 가구 브랜드 소년과 나무가 건네는 일상 속 낭만 </a></p></li>
-
-                                    <li><em>3</em><p class="title"><a href="/web/wcast/detail/7898">[그린메이커 LIVE TALK] 초록빛 지구를 만드는 브랜드 이야기</a></p></li>
-
-                                </ol>
-                            </div>
-
-
-                        </div>
-                    </div><!-- //wcommunity-section2 -->
-                </div><!-- //wcommunity-content-wrap -->
-                <div class="wcommunity-detail-bottom">
-                    <div class="wcommunity-comment-wrap">
-                        <div class="wcommunity-share-area">
-                            <div class="btn-share">
-                                <button class="kakao" onclick="window.wadiz.share.kakao()"></button>
-                                <button class="facebook" onclick="window.wadiz.share.facebook();"></button>
-                                <button class="twitter" onclick="window.wadiz.share.twitter();"></button>
-                            </div>
-                        </div>
-
-                        <div class="wcommunity-comment">
-                            <div class="wz-message-box" style="margin-top:0">
-                            </div>
-                            <p class="comment-num"><em>0</em>개의 댓글이 달려있습니다.</p>
-                            <div class="main-comment">
-                                <textarea placeholder="댓글을 입력하세요." id="commentCnt" name="contents" style="overflow-y: hidden; height: 79px; resize: none;"></textarea>
-                                <div class="btn-wrap">
-                                    <button id="reply-button" type="button" class="btn-pd-blue" onclick="ajaxRegistComment()">댓글달기</button>
-                                </div>
-                            </div>
-
-
-                            <div class="comment-box">
-
-                                <ul id="commentList">
-
-
-
-
-
-
-
-
-
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="btn-wrap">
-                            <button type="button" id="moreComments" class="btn-pd-transp" style="display: none;">댓글 더 보기</button>
-                            <button type="button" id="hideComments" class="btn-pd-transp" style="display:none;">댓글 닫기</button>
-                        </div>
-
-                </div><!-- //wcommunity-detail-bottom -->
+                    </ul>
+                </div>
             </div>
-        </div>
 
-    <form id="formSearch" name="formSearch" action="/web/wcast/search" method="post">
-        <input id="searchText1" name="searchText1" type="hidden" value="">
-        <input id="searchText6" name="searchText6" type="hidden">
-        <input id="searchSelect1" name="searchSelect1" type="hidden" value="">
-        <input id="searchSelect2" name="searchSelect2" type="hidden" value="">
-        <input id="searchSelect4" name="searchSelect4" type="hidden" value="37">
-        <input id="searchSelect5" name="searchSelect5" type="hidden" value="BRD0000013">
-    </form>
+
+            <div class="wcommunity-content-wrap" style="padding-left: 0px;">
+
+                <div class="wcommunity-section1">
+                    <div class="wcommunity-detail-info" style="margin-bottom: 20px">
+                        <div class="story-info" style="margin-bottom: 30px;">
+                            <em class="category">답변대기</em>
+                            <p class="title">[Interview] 위기를 기회로 바꾼 아이디어, 싱어송라이터 조준호</p>
+                            <p class="info"><em class="editor">한지혜 (jeehye.han@wadiz.kr)</em><em class="date">21.12.01</em>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="wcommunity-detail-content">
+                        <div class="inner-contents">
+                            왜 나만 개 없어.  왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어. 왜 나만 개 없어.
+                        </div>
+                        <div class="attach-list">
+                            <ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- //wcommunity-section1 -->
+
+                <div class="wcommunity-section2">
+                    <div class="inner-wrap">
+
+                        <div class="wcommunity-detail-editor">
+                            <a href="#this" onclick="javascript:searchByUserName('jeehye.han@wadiz.kr')">
+                                <h4><em>작성자</em> 한지혜</h4>
+                                <div class="editor-info">
+                                    <em class="photo" style="background-image:url(https://cdn.wadiz.kr/wwwwadiz/green001/2022/1201/20221201140951383_4411344.jpg/wadiz/resize/120x120/format/jpg/quality/80)"></em>
+                                    <p class="summary">이야기의 힘으로 도전의 경계를 허무는 와디즈 콘텐츠 마케터 한지혜입니다.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="wcommunity-best-list detail">
+                            <h4>한지혜님의 다른 글</h4>
+                            <ol>
+
+                                <li><em>1</em><p class="title"><a href="/web/wcast/detail/7942">[Interview] 위기를 기회로 바꾼 아이디어, 싱어송라이터 조준호</a></p></li>
+
+                                <li><em>2</em><p class="title"><a href="/web/wcast/detail/7909">[Interview] 가구 브랜드 소년과 나무가 건네는 일상 속 낭만 </a></p></li>
+
+                                <li><em>3</em><p class="title"><a href="/web/wcast/detail/7898">[그린메이커 LIVE TALK] 초록빛 지구를 만드는 브랜드 이야기</a></p></li>
+
+                            </ol>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div><!-- //wcommunity-content-wrap -->
+            <div class="wcommunity-detail-bottom">
+                <div class="wcommunity-comment-wrap">
+
+
+                    <div class="wcommunity-comment">
+                        <div class="wz-message-box" style="margin-top:0">
+                        </div>
+                        <p><em class="comment-num" style="font-size: 15px"></em> 개의 댓글이 달려있습니다.</p>
+                        <div class="main-comment">
+                            <textarea placeholder="댓글을 입력하세요." id="commentCnt" name="contents" style="overflow-y: hidden; margin-top: 20px; resize: none;"></textarea>
+                            <div class="btn-wrap">
+                                <button id="reply-button" type="button" class="btn-pd-blue" onclick="ajaxRegistComment()">댓글달기</button>
+                            </div>
+                        </div>
+
+
+                        <div class="comment-box">
+
+                            <ul id="commentList">
+
+
+
+
+                                <li class="top" style="display: list-item;">
+                                    <div class="comment-wrap">
+                                        <div class="comment-info">
+                                            <em style="background-image:url(https://cdn.wadiz.kr/wwwwadiz/green001/sns_profile_pics/20211219162751277_2039537155.jpg/wadiz/resize/92x92/format/jpg/quality/80)"></em><span class="name">김동찬</span>
+
+                                            <button class="comment-util"></button>
+                                            <ul class="comment-util-list" style="display: none;">
+                                                <li><a href="#this" onclick="javascript:modifyComment(7830)">수정</a></li>
+                                                <li><a href="#this" onclick="javascript:ajaxRemoveComment(7830)">삭제</a></li>
+                                            </ul>
+
+                                        </div>
+                                        <p id="orignCnt_7830" class="comment-content">우왕</p>
+                                        <div class="comment-bottom">
+                                            <div id="modify-off-7830">
+
+                                                <span class="date">2023.05.18 00:48</span>
+                                            </div>
+                                            <div id="modify-on-7830" style="display:none;">
+                                                <button type="button" onclick="removeModifyComment(7830)">취소</button>
+                                                <button type="button" onclick="ajaxModifyComment(7830);">수정완료</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="reply-7830" class="comment-wrap reply edit">
+                                        <div class="comment-info">
+                                            <em style="background-image:url(https://www.wadiz.kr/wwwwadiz/green001/sns_profile_pics/20211219162751277_2039537155.jpg)"></em><span class="name">김동찬</span>
+                                        </div>
+                                        <textarea id="replyCnt_7830" style="overflow-y: hidden; resize: none;"></textarea>
+                                        <div class="comment-bottom">
+                                            <button type="button" onclick="$('#reply-7830').hide()">취소</button>
+                                            <button type="button" onclick="ajaxResgistReply(7830)">작성완료</button>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <li class="top" style="display: list-item;">
+                                    <div class="comment-wrap">
+                                        <div class="comment-info">
+                                            <em style="background-image:url(/resources/static/img/common/img_blank.png)"></em><span class="name">익명의 서포터 993</span>
+
+                                        </div>
+                                        <p id="orignCnt_7790" class="comment-content">잘 활용하겠습니다.</p>
+                                        <div class="comment-bottom">
+                                            <div id="modify-off-7790">
+
+                                                <span class="date">2023.04.24 00:12</span>
+                                            </div>
+                                            <div id="modify-on-7790" style="display:none;">
+                                                <button type="button" onclick="removeModifyComment(7790)">취소</button>
+                                                <button type="button" onclick="ajaxModifyComment(7790);">수정완료</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="reply-7790" class="comment-wrap reply edit">
+                                        <div class="comment-info">
+                                            <em style="background-image:url(https://www.wadiz.kr/wwwwadiz/green001/sns_profile_pics/20211219162751277_2039537155.jpg)"></em><span class="name">김동찬</span>
+                                        </div>
+                                        <textarea id="replyCnt_7790" style="overflow-y: hidden; resize: none;"></textarea>
+                                        <div class="comment-bottom">
+                                            <button type="button" onclick="$('#reply-7790').hide()">취소</button>
+                                            <button type="button" onclick="ajaxResgistReply(7790)">작성완료</button>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <li class="top" style="display: list-item;">
+                                    <div class="comment-wrap">
+                                        <div class="comment-info">
+                                            <em style="background-image:url(https://cdn.wadiz.kr/wwwwadiz/green001/2021/0603/20210603100945200_3759951.jpg/wadiz/resize/92x92/format/jpg/quality/80)"></em><span class="name">온다다시</span>
+
+                                        </div>
+                                        <p id="orignCnt_7625" class="comment-content">안녕하세요. 바로 사용해 보겠습니다!<br><br>청담동 헤어살롱을 집에서 관리하면서<br>컬까지 예쁘게 만들어 줄 트리트먼트<br><br>https://www.wadiz.kr/web/campaign/detail/128416<br><br>퀵이벤트와 100%이상 달성 감사 이벤트도 있습니다!<br>새소식 확인해 주시고 펀딩까지 함께하세요!<br>감사합니다!!</p>
+                                        <div class="comment-bottom">
+                                            <div id="modify-off-7625">
+
+                                                <span class="date">2021.12.06 09:07</span>
+                                            </div>
+                                            <div id="modify-on-7625" style="display:none;">
+                                                <button type="button" onclick="removeModifyComment(7625)">취소</button>
+                                                <button type="button" onclick="ajaxModifyComment(7625);">수정완료</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="reply-7625" class="comment-wrap reply edit">
+                                        <div class="comment-info">
+                                            <em style="background-image:url(https://www.wadiz.kr/wwwwadiz/green001/sns_profile_pics/20211219162751277_2039537155.jpg)"></em><span class="name">김동찬</span>
+                                        </div>
+                                        <textarea id="replyCnt_7625" style="overflow-y: hidden; resize: none;"></textarea>
+                                        <div class="comment-bottom">
+                                            <button type="button" onclick="$('#reply-7625').hide()">취소</button>
+                                            <button type="button" onclick="ajaxResgistReply(7625)">작성완료</button>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+
+
+
+
+
+
+
+                                <li class="top" style="display: none;">
+                                    <div class="comment-wrap">
+                                        <div class="comment-info">
+                                            <em style="background-image:url(https://cdn.wadiz.kr/wwwwadiz/green001/2020/0228/20200228135809626_1840664.jpg/wadiz/resize/92x92/format/jpg/quality/80)"></em><span class="name">주식회사 와이제이랩</span>
+
+                                        </div>
+                                        <p id="orignCnt_7174" class="comment-content">좋은 글 너무 감사드립니다.<br><br>앰플을 평정하다<br>효능왕 앰플세트<br>우주효능 뉴스템<br><br>지금 바로 무료샘플체험 해보세요 :D<br><br>https://www.wadiz.kr/web/wcomingsoon/rwd/99099<br><br>"우주효능이 있다면 이런 느낌일까요?" 줄기세포배양액+순수비타민C=270,000ppm함유된 뉴스템의 화려한 복귀작, 방.플.앰! 브랜드선호도 1위 브랜드 "뉴스템"이 만든 앰플의 효능을 느껴보세요<br><br>뉴스템 방.플.앰 많은 응원 부탁드릴께요~</p>
+                                        <div class="comment-bottom">
+                                            <div id="modify-off-7174">
+
+                                                <span class="date">2021.07.15 15:22</span>
+                                            </div>
+                                            <div id="modify-on-7174" style="display:none;">
+                                                <button type="button" onclick="removeModifyComment(7174)">취소</button>
+                                                <button type="button" onclick="ajaxModifyComment(7174);">수정완료</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="reply-7174" class="comment-wrap reply edit">
+                                        <div class="comment-info">
+                                            <em style="background-image:url(https://www.wadiz.kr/wwwwadiz/green001/sns_profile_pics/20211219162751277_2039537155.jpg)"></em><span class="name">김동찬</span>
+                                        </div>
+                                        <textarea id="replyCnt_7174" style="overflow-y: hidden; resize: none;"></textarea>
+                                        <div class="comment-bottom">
+                                            <button type="button" onclick="$('#reply-7174').hide()">취소</button>
+                                            <button type="button" onclick="ajaxResgistReply(7174)">작성완료</button>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <li class="top" style="display: none;">
+                                    <div class="comment-wrap">
+                                        <div class="comment-info">
+                                            <em style="background-image:url(https://cdn.wadiz.kr/wwwwadiz/green002/2018/1126/20181126235623199_871531.jpg/wadiz/resize/92x92/format/jpg/quality/80)"></em><span class="name">김민지 </span>
+
+                                        </div>
+                                        <p id="orignCnt_6981" class="comment-content">와 ㅠㅠ 단계별로 필요한 내용을 쏙쏙 찾아볼 수 있으니 너무 편해요... 잘 활용하겠습니다! </p>
+                                        <div class="comment-bottom">
+                                            <div id="modify-off-6981">
+
+                                                <span class="date">2020.10.22 21:12</span>
+                                            </div>
+                                            <div id="modify-on-6981" style="display:none;">
+                                                <button type="button" onclick="removeModifyComment(6981)">취소</button>
+                                                <button type="button" onclick="ajaxModifyComment(6981);">수정완료</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="reply-6981" class="comment-wrap reply edit">
+                                        <div class="comment-info">
+                                            <em style="background-image:url(https://www.wadiz.kr/wwwwadiz/green001/sns_profile_pics/20211219162751277_2039537155.jpg)"></em><span class="name">김동찬</span>
+                                        </div>
+                                        <textarea id="replyCnt_6981" style="overflow-y: hidden; resize: none;"></textarea>
+                                        <div class="comment-bottom">
+                                            <button type="button" onclick="$('#reply-6981').hide()">취소</button>
+                                            <button type="button" onclick="ajaxResgistReply(6981)">작성완료</button>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+
+
+
+
+
+
+
+                                <li class="top" style="display: none;">
+                                    <div class="comment-wrap">
+                                        <div class="comment-info">
+                                            <em style="background-image:url(https://cdn.wadiz.kr/wwwwadiz/green001/2020/0105/20200105222604253_3262.png/wadiz/resize/92x92/format/jpg/quality/80)"></em><span class="name">황철우</span>
+
+                                        </div>
+                                        <p id="orignCnt_6958" class="comment-content">펀딩 백과사전 이군요~<br>좋은 정보 감사합니다 </p>
+                                        <div class="comment-bottom">
+                                            <div id="modify-off-6958">
+
+                                                <span class="date">2020.09.27 01:05</span>
+                                            </div>
+                                            <div id="modify-on-6958" style="display:none;">
+                                                <button type="button" onclick="removeModifyComment(6958)">취소</button>
+                                                <button type="button" onclick="ajaxModifyComment(6958);">수정완료</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="reply-6958" class="comment-wrap reply edit">
+                                        <div class="comment-info">
+                                            <em style="background-image:url(https://www.wadiz.kr/wwwwadiz/green001/sns_profile_pics/20211219162751277_2039537155.jpg)"></em><span class="name">김동찬</span>
+                                        </div>
+                                        <textarea id="replyCnt_6958" style="overflow-y: hidden; resize: none;"></textarea>
+                                        <div class="comment-bottom">
+                                            <button type="button" onclick="$('#reply-6958').hide()">취소</button>
+                                            <button type="button" onclick="ajaxResgistReply(6958)">작성완료</button>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="btn-wrap">
+                        <button type="button" id="moreComments" class="btn-pd-transp" style="display: inline-block;">댓글 더 보기</button>
+                        <button type="button" id="hideComments" class="btn-pd-transp" style="display: none;">댓글 닫기</button>
+                    </div>
+
+                </div>
+
+
+
+            </div><!-- //wcommunity-detail-bottom -->
+        </div>
+    </div>
+
 </div>
-    </body>
-    </html>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+
+
+    console.log($(".top").length);
+        $(".comment-num").text($(".top").length);
+
+        $(".btn-pd-transp").click(function () {
+
+        })
+
+</script>
+
+</html>
