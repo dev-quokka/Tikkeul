@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class AnswerVO {
-    private Long answerId;
+    private Long id;
     private String content;
     private Long inquiryBoardId;
 }

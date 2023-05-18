@@ -8,8 +8,9 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class FileVO {
-    private Long fileId;
-    private int size;
+    private Long id;
+    private Long size;
     private String originName;
     private String uuid;
+    private String path;
 }

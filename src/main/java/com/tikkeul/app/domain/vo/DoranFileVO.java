@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class DoranFileVO {
-    private Long fileId;
+    private Long id;
     private Long doranBoardId;
 }

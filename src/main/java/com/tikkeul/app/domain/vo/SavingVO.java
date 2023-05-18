@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class SavingVO {
-    private Long savingId;
+    private Long id;
     private String date;
     private int money;
     private String status;

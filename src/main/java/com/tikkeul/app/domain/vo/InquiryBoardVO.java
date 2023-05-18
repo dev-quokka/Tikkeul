@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 @Data
 @NoArgsConstructor
 public class InquiryBoardVO {
-    private Long inquiryBoardId;
+    private Long id;
     private String type;
     private String title;
     private String content;

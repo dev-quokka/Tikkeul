@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class DoranCommentVO {
-    private Long doranCommentId;
+    private Long id;
     private String content;
     private String registerDate;
     private String updateDate;

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class ReviewVO {
-    private Long reviewId;
+    private Long id;
     private String content;
     private int score;
     private String registerDate;

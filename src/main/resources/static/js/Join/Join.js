@@ -47,10 +47,14 @@ fullAgreement.click(function () {
     if ($(this).is(':checked')) {
         chkList.prop('checked', true);
         btn_modal_agree.attr('disabled', false);
+        chkboxCheck = true;
+        flagCheck();
 
     } else {
         chkList.prop('checked', false);
         btn_modal_agree.attr('disabled', true);
+        chkboxCheck = false;
+        flagCheck();
     }
 });
 
@@ -72,8 +76,12 @@ $('.chk').change(function () {
 essentialChk.change(function () {
     if ($('.essential_chk:checked').length >= essentialChk.length) {
         btn_modal_agree.attr('disabled', false);
+        chkboxCheck = true;
+        flagCheck();
     } else {
         btn_modal_agree.attr('disabled', true);
+        chkboxCheck = false;
+        flagCheck();
     }
 });
 
@@ -275,6 +283,8 @@ function flagCheck() {
         $(".submitButton").css("pointer-events", "auto");
         $(".submitButton").attr('disabled', false);
     } else {
+        $(".submitButton").css("opacity", ".45");
+        $(".submitButton").css("pointer-events", "none");
         $(".submitButton").attr('disabled', true);
     }
 }

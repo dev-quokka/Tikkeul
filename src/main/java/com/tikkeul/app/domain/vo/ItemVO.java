@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class ItemVO {
-    private Long itemId;
+    private Long id;
     private String name;
     private int price;
     private int currentStock;

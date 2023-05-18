@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class ItemFileVO {
-    private Long fileId;
+    private Long id;
     private Long itemId;
 }

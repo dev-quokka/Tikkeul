@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class LikeVO {
-    private Long likeId;
+    private Long id;
     private Long itemId;
     private Long userId;
 

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class UserVO {
-    private Long userId;
+    private Long id;
     private String identification;
     private String name;
     private String password;

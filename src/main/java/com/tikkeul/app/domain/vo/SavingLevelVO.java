@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class SavingLevelVO {
-    private Long levelId;
+    private Long id;
     private String name;
     private int goalMoney;
     private int dailyMoney;

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class DoranBoardVO {
-    private Long doranBoardId;
+    private Long id;
     private String title;
     private String content;
     private int viewCount;
