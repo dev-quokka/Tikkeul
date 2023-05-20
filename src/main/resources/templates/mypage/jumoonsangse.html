@@ -7,8 +7,36 @@
 
     <title>주문 상세보기</title>
     <link rel="stylesheet" href="/css/mypage/jumoon.css">
+    <link rel="stylesheet" href="/css/mypage/cancelmodal.css">
 </head>
 <body class="vsc-initialized" style="overflow: auto">
+
+<div class="ReactModalPortal" style="display: none;">
+    <div class="ReactModal__Overlay ReactModal__Overlay--after-open ConfirmModal_overlay__9xcDs waffle__modal__overlay" style="background-color: rgba(0, 0, 0, 0.2)">
+        <div class="ReactModal__Content ReactModal__Content--after-open ConfirmModal_confirmModal__1x2Tw ConfirmModal_sizeLg__KHkYl" tabindex="-1" role="dialog" aria-modal="true">
+            <div class="ConfirmModal_header__gkXhb">
+                <div title="주문 취소하시겠어요?" class="ConfirmModal_title__ubaBW">
+                    주문 취소하시겠어요?
+                </div>
+            </div>
+            <div class="ConfirmModal_content__3KM88 ConfirmModal_hasTitle__3rvSc">
+                <div class="ConfirmModal_message__Mi2Ur">주문하신 상품을 받아 볼 수 없게 됩니다.</div>
+            </div>
+            <div class="ConfirmModal_footer__gfGBl">
+                <div class="ConfirmModal_buttonGroup__3YCl5">
+                    <button class="mclose Button_button__2FuOU Button_text__2-UCU Button_md__46Ai- ConfirmModal_negativeButton__3VxAF" type="button">
+                        <span><span class="Button_children__ilFun">닫기</span></span></button>
+                    <button class="Button_button__2FuOU Button_primary__2mZni Button_text__2-UCU Button_md__46Ai- ConfirmModal_positiveButton__Fafi9" type="button">
+                        <span><span class="Button_children__ilFun">주문 취소</span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div id="page-container">
     <main id="main-app">
         <div class="web-header">
@@ -49,7 +77,7 @@
 
                         <div class="OrderDetailPage_buttonArea__3FU0C">
                             <div class="OrderDetailPageButton_buttonContainer__2Lla4">
-                                <button class="Button_button__2FuOU Button_tertiaryGrey__3jJV7 Button_contained__2SIAT Button_lg__1Dftp OrderDetailPageButton_button__3IIXz"
+                                <button class="jumooncancel Button_button__2FuOU Button_tertiaryGrey__3jJV7 Button_contained__2SIAT Button_lg__1Dftp OrderDetailPageButton_button__3IIXz"
                                         type="button">
                                     <span><span class="Button_children__ilFun">주문 취소</span></span>
                                 </button>
@@ -305,4 +333,24 @@
 <input type="hidden" id="gaUserId" value="4536674"/>
 
 </body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+
+ //취소모달
+
+ $(".jumooncancel").on("click", function()
+ {
+     $("div.ReactModalPortal").css("display", "block");
+     $("div.ReactModalPortal").css("animation", "popUp 0.5s");
+
+ });
+
+ $(".mclose").on("click", function()
+ {
+     $("div.ReactModal__Overlay").css("animation", "popDown 0.5s");
+     $("div.ReactModalPortal").fadeOut(500);
+ });
+
+
+</script>
 </html>

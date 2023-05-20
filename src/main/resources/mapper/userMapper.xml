@@ -11,7 +11,30 @@
 
     </select>
 
-<!--회원가입-->
+    <!--회원가입-->
     <insert id="insert"></insert>
+
+    <!--마이페이지, 동찬-->
+    <select id="selectMypage" resultType="UserVO">
+
+    SELECT ID,NAME,SAVINGLEVEL_ID,(
+        SELECT COUNT(*)
+        FROM ORDERS
+        WHERE USER_ID  = #{identification}
+    ) ORDER_COUNT,
+    (
+        SELECT COUNT(*)
+        FROM LIKES
+        WHERE USER_ID  = #{identification}
+    ) LIKE_COUNT
+    FROM USERS
+    WHERE ID=#{identification};
+
+    </select>
+
+
+
+
+
 
 </mapper>

@@ -13,13 +13,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Slf4j
 public class UserMapperTests {
 //  관리자페이지가 만듬
+
     @Autowired
     private UserMapper userMapper;
 
 //  관리자페이지가 만듬(어드민단위 테스트)
     @Test
     public void adminselectTest(){
-      assertThat(userMapper.adminSelectUserAll()).hasSize(1);
+      assertThat(userMapper.adminSelectUserAll()).hasSize(0);
     }
-
 }

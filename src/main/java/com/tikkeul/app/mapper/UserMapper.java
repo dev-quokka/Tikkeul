@@ -24,4 +24,11 @@ public interface UserMapper {
     @Select("SELECT ID FROM TBL_MEMBER WHERE MEMBER_ID = #{memberId} AND MEMBER_PASSWORD = #{memberPassword}")
     public Optional<Long> selectByMemberIdAndMemberPassword(@Param("memberId") String memberId, @Param("memberPassword") String memberPassword);
 
+    //ㅁㅏ이페이지
+    public Optional<UserVO> selectMypage();
+
+    //기본정보 수정
+
+
+
 }
