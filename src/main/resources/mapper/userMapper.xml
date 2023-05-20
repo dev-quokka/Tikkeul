@@ -3,16 +3,26 @@
 <mapper namespace="com.tikkeul.app.mapper.UserMapper">
 
     <select id="adminSelectUserAll" resultType="userVO">
-        SELECT ID, NAME , IDENTIFICATION, ADDRESS, PHONENUMBER
+        SELECT ID, NAME, IDENTIFICATION, ADDRESS, PHONENUMBER
         FROM USERS
     </select>
 
-    <select id="selectByUserId" resultType="UserVO">
+        <select id="selectByUserId" resultType="userVO">
+        SELECT ID, IDENTIFICATION, PASSWORD, NAME, PHONENUMBER, ADDRESS, STATUS, ROLL, CREATEDDATE,PROFILEIMAGENAME, PROFILEIMAGESIZE, PROFILEIMAGEUUID, SAVINGLEVEL_ID
+        FROM USERS
 
     </select>
 
     <!--회원가입-->
-    <insert id="insert"></insert>
+    <insert id="insert">
+
+
+        INSERT INTO USERS
+        (ID, IDENTIFICATION, PASSWORD, NAME, PHONENUMBER, ADDRESS, ROLL, PROFILEIMAGENAME, PROFILEIMAGESIZE, PROFILEIMAGEUUID, PROFILEIMAGEPATH, SAVINGLEVEL_ID)
+        VALUES(SEQ_USER.NEXTVAL, #{identification},#{password},#{name},#{phoneNumber},#{address}, #{roll},#{profileImageName,jdbcType=VARCHAR}, #{profileImageSize,jdbcType=NUMERIC},#{profileImageUuid,jdbcType=VARCHAR},#{profileImagePath,jdbcType=VARCHAR},#{levelId});
+
+
+    </insert>
 
     <!--마이페이지, 동찬-->
     <select id="selectMypage" resultType="UserVO">
@@ -31,10 +41,5 @@
     WHERE ID=#{identification};
 
     </select>
-
-
-
-
-
 
 </mapper>

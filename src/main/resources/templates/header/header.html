@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +10,10 @@
 <body>
 <div id="page-container">
     <main id="main-app">
-        <div class="web-header">
+        <div class="web-header" >
 
             <div class="web-header-large">
-                <header class="header-wrapper">
+                <header class="header-wrapper"th:fragment="header" >
                     <div class="header-container">
                         <h1 class="wadiz-logo"><a href="../Join/mainpage.html"><span class="label">와디즈</span>
                             <img src="/image/Logo.png" height="50px;" width="100px;">
