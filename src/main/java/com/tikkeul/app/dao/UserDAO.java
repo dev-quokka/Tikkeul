@@ -41,4 +41,7 @@ public class UserDAO {
         userMapper.updateNaver(userVO);
     }
 
+    public void updatepassword(String identification, String password) {
+        userMapper.updatepassword(identification, password);
+    }
 }

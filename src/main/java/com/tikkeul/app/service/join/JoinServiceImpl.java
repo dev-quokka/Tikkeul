@@ -35,11 +35,12 @@ public class JoinServiceImpl implements JoinService{
     @Override
     public void updateKakaoUser(Optional<UserVO> kakaoUser) {userDAO.updatekakao(kakaoUser);
     }
+//  네이버 회원 업데이트
+    @Override
+    public void updateNaverUser(UserVO userVO) { userDAO.updateNaver(userVO);}
 
     @Override
-    public void updateNaverUser(UserVO userVO) {
-        userDAO.updateNaver(userVO);
-    }
+    public void updatePassword(String identification, String password) { userDAO.updatepassword(identification,password);}
 
 
 }
