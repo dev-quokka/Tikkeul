@@ -8,6 +8,7 @@ import com.tikkeul.app.domain.type.FileType;
 import com.tikkeul.app.domain.vo.SavingLevelFileVO;
 import com.tikkeul.app.domain.vo.SavingLevelVO;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Qualifier("program") @Primary
+@Slf4j
 public class ProgramServiceImpl implements ProgramService{
     private final SavingLevelDAO savingLevelDAO;
     private final SavingLevelFileDAO savingLevelFileDAO;
@@ -32,10 +34,11 @@ public class ProgramServiceImpl implements ProgramService{
             savingLevelDTO.getFiles().get(i).setSavinglevelId(savingLevelDTO.getId());
             savingLevelDTO.getFiles().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
             fileDAO.save(savingLevelDTO.getFiles().get(i));
+            log.info(savingLevelDTO.getFiles().get(i).toString());
         }
         savingLevelDTO.getFiles().forEach(savingLevelFileDTO ->
         { SavingLevelFileVO savingLevelFileVO = new SavingLevelFileVO();
-            savingLevelFileVO.setId(savingLevelDTO.getId());
+            savingLevelFileVO.setId(savingLevelFileDTO.getId());
             savingLevelFileVO.setSavinglevelId(savingLevelFileDTO.getSavinglevelId());
             savingLevelFileDAO.save(savingLevelFileVO);
         });

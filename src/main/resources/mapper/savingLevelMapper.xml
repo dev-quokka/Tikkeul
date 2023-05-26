@@ -6,7 +6,7 @@
             SELECT SEQ_SAVINGLEVEL.NEXTVAL FROM DUAL
         </selectKey>
         INSERT INTO SAVINGLEVEL (ID, NAME, GOAL_MONEY, DAILY_MONEY)
-        VALUES(SEQ_SAVINGLEVEL.NEXTVAL, #{name}, #{goalMoney}, #{dailyMoney})
+        VALUES(#{id}, #{name}, #{goalMoney}, #{dailyMoney})
     </insert>
 
     <select id="admminSelectSavingLevelAll" resultType="savingLevelVO">

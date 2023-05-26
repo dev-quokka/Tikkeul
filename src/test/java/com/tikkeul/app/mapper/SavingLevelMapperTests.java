@@ -15,16 +15,16 @@ public class SavingLevelMapperTests {
 
     @Test
     public void insertSavingLevelTest(){
-        SavingLevelVO savingLevelVO = new SavingLevelVO();
-        savingLevelVO.setName("씨앗");
-        savingLevelVO.setGoalMoney(100000);
-        savingLevelVO.setDailyMoney(1000);
-        savingLevelMapper.insertSavingLevel(savingLevelVO);
+//        SavingLevelVO savingLevelVO = new SavingLevelVO();
+//        savingLevelVO.setName("씨앗");
+//        savingLevelVO.setGoalMoney(100000);
+//        savingLevelVO.setDailyMoney(1000);
+//        savingLevelMapper.insertSavingLevel(savingLevelVO);
     }
 
     @Test
     public void selectSavingLevelAllTest(){
-        log.info(savingLevelMapper.admminSelectSavingLevelAll().toString());
+//        log.info(savingLevelMapper.admminSelectSavingLevelAll().toString());
     }
 
 

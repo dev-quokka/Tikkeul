@@ -28,13 +28,12 @@
 
 .wcommunity-wrap {
     color: #4a4a4a;
-    padding-bottom: 160px;
+    padding-bottom: 35px;
 }
 
 .wcommunity-wrap h3 {
     margin-bottom: 20px;
     font-size: 22px;
-    font-weight:
 }
 
 .wcommunity-wrap h3 em {
@@ -641,9 +640,9 @@
 }
 
 .wcommunity-detail-info .story-info p.title {
-    margin-bottom: 5px;
-    font-size: 16px;
-    line-height: 22px;
+    margin-bottom: 4px;
+    font-size: 24px;
+    line-height: 36px;
 }
 
 .wcommunity-detail-info .story-info p.info {
@@ -2124,6 +2123,7 @@
 }
 
     .wcommunity-wrap {
+        cursor: pointer;
     }
 
     .wcommunity-top .wcommunity-topmenu {
@@ -2214,11 +2214,7 @@
         display: block
     }
 
-    .wcommunity-section1 {
-        float: left;
-        padding: 0;
-        width: 670px;
-    }
+
 
     .wcommunity-wpicks-list {
         width: 652px;
@@ -2623,10 +2619,7 @@
     }
 
     /** 상세페이지 **/
-    .wcommunity-detail-info {
-        width: 650px;
-        padding: 0;
-    }
+
 
     .wcommunity-detail-info .story-info {
         position: relative;
@@ -2695,9 +2688,6 @@
         margin: 0 auto
     }
 
-    .wcommunity-comment-wrap {
-        width: 650px;
-    }
 
     .wcommunity-other-story {
         width: 650px;
@@ -2990,4 +2980,80 @@
         padding: 10px;
         box-sizing: border-box !important;
     }
+}
+.wcommunity-webzine-list li{
+    cursor: pointer;
+}
+section#reply-write-wrap {
+    width: 100%;
+    padding: 64px 0px;
+}
+section#reply-write-wrap div.profile {
+    margin-bottom: 15px;
+}
+.writer {
+    margin-left: 5px;
+    font-weight: 400;
+    color: rgb(126, 128, 130);
+}
+section#reply-write-wrap {
+    width: 100%;
+    padding: 64px 0px;
+}
+section#reply-write-wrap div.profile {
+    margin-bottom: 15px;
+}
+.profile {
+    display: flex;
+    align-items: center;
+}
+.profile > div {
+    align-items: center;
+    display: flex;
+}
+.writer {
+    margin-left: 5px;
+    font-weight: 400;
+    color: rgb(126, 128, 130);
+}
+h6 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.4px;
+}
+section#reply-write-wrap textarea, section.reply-update-wrap textarea {
+    width: 100%;
+    padding-bottom: 15px;
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    color: #202124;
+    margin: 0;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    border: none;
+    border-bottom: 3px solid rgb(235 124 120);
+}
+section#reply-write-wrap button, section.reply-update-wrap button {
+    cursor: pointer;
+    margin-top: 24px;
+    border-radius: 4px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 11px 24px 13px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+    color: rgb(24, 26, 28);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }

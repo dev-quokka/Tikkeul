@@ -33,30 +33,30 @@ public class DoranDoranTests {
         doranBoardMapper.insert(doranBoardVO);
     }
 
-//    @Test
-//    public void selectAllTest(){
-//        Pagination pagination = new Pagination();
-//        pagination.setPage(1); //화면에서 전달받은 페이지
-//        assertThat(doranBoardMapper.selectAll()).hasSize(2);
-//        doranBoardMapper.selectAll(pagination, new Search()).stream().map(DoranBoardDTO::toString).forEach(log::info);
-//    }
-
-//    @Test
-//    public void selectTest() {
-//        doranBoardMapper.select(24L).map(DoranBoardDTO::getName).ifPresent(log::info);
-//    }
-
     @Test
-    public void updateTest(){
-        doranBoardMapper.select(24L).ifPresent(DoranBoardDTO -> {
-            DoranBoardDTO.setContent("수정된 내용");
-            doranBoardMapper.update(DoranBoardDTO);
-        });
+    public void selectAllTest(){
+        Pagination pagination = new Pagination();
+        pagination.setPage(1); //화면에서 전달받은 페이지
+//        assertThat(doranBoardMapper.selectAll()).hasSize(2);
+        doranBoardMapper.selectAll(pagination, new Search()).stream().map(DoranBoardDTO::toString).forEach(log::info);
     }
 
     @Test
+    public void selectTest() {
+        doranBoardMapper.select(144L).map(DoranBoardDTO::getTitle).ifPresent(log::info);
+    }
+
+/*    @Test
+    public void updateTest(){
+        doranBoardMapper.select(61L).ifPresent(DoranBoardDTO -> {
+            DoranBoardDTO.setContent("수정된 내용");
+            doranBoardMapper.update(DoranBoardDTO);
+        });
+    }*/
+
+    @Test
     public void deleteTest(){
-        doranBoardMapper.delete(24L);
+        doranBoardMapper.delete(121L);
 //        assertThat(doranBoardMapper.selectAll()).hasSize(1);
     }
 
