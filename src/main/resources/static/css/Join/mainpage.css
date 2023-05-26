@@ -629,11 +629,10 @@ button[class*=Button_button] {
 }
 
 .SchoolLectureBarButton_lectureBarButton__2Xsxj {
-    margin-top: 0;
     padding-right: 8px;
     padding-left: 16px;
     height: 100%;
-    margin-left: 100px;
+    margin: 0 51px;
 }
 
 .SchoolLectureBarButton_lectureBarButton__2Xsxj .SchoolLectureBarButton_lectureBarLi__2shyU {
@@ -1141,4 +1140,7 @@ button[class*=Button_button] {
 
 .toastui-calendar-daygrid-cell {
     cursor: pointer;
+}
+.SchoolLectureBarButton_lectureBarButton__2Xsxj .SchoolLectureBarButton_lectureBarLi__2shyU .SchoolLectureBarButton_lectureTypeReward__2ZJCcT>em {
+    background: #ef2e5b;
 }
