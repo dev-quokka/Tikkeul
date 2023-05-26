@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tikkeul.app.mapper.FileMapper">
     <!--김보령 작업공간-->
-   <select id="selectAll" resultType="fileVO">-->
-       SELECT f.ID, FILE_SIZE, ORIGIN_NAME, FILE_PATH, UUID, FILE_TYPE
-       FROM FILES f JOIN ITEMFILE it
-       ON f.ID = it.ID JOIN ITEM i
-       ON i.ID = it.ITEM_ID
+   <select id="selectAll" resultType="fileDTO">
+       SELECT f.ID, FILE_SIZE, ORIGIN_NAME, FILE_PATH, UUID, FILE_TYPE, ITEM_ID
+       FROM ITEM i JOIN ITEMFILE it
+       ON i.ID = it.ITEM_ID JOIN FILES f
+       ON it.ID = f.ID
        WHERE i.ID = #{id}
-   </select>-->
+   </select>
 
 </mapper>

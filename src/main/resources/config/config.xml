@@ -21,5 +21,7 @@
         <typeAlias type="com.tikkeul.app.domain.dto.InquiryBoardDTO" alias="inquiryBoardDTO"/>
         <typeAlias type="com.tikkeul.app.domain.dto.ItemDTO" alias="itemDTO"/>
         <typeAlias type="com.tikkeul.app.domain.dto.OrderDTO" alias="orderDTO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.FileDTO" alias="fileDTO"/>
+
     </typeAliases>
 </configuration>
