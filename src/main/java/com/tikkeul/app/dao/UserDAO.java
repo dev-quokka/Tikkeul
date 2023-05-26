@@ -38,4 +38,8 @@ public class UserDAO {
         return userMapper.selectByUserIdAndUserPassword(identification,password);
     };
 
+    public void updateNaver(UserVO userVO) {
+        userMapper.updateNaver(userVO);
+    }
+
 }

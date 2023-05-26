@@ -12,23 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 @Slf4j
 public class ItemMapperTests {
-//    상품페이지
-    @Autowired
-    private ItemMapper itemMapper;
+    //    상품페이지
 
-    @Test
-    public void selectAllTest(){
-//        assertThat(itemMapper.selectAll()).hasSize(4);
-//        log.info(itemMapper.selectAll().toString());
-    }
-
-    @Test
-    public void selectTest(){
-        itemMapper.select(1L).ifPresent(i->log.info(i.toString()));
-    }
-
-    @Test
-    public void selectReviewTest(){
-        itemMapper.selectReview(1L).map(OrderDTO::getContent).ifPresent(log::info);
-    }
 }
+

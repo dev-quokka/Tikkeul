@@ -17,6 +17,8 @@ public interface JoinService {
     //   카카오 회원가입
 
 
-    //        카카오회원 업데이트
+//        카카오회원 업데이트
     public void updateKakaoUser(Optional<UserVO> kakaoUser);
+//         네이버유저 업데이트
+    public void updateNaverUser(UserVO userVO);
 }

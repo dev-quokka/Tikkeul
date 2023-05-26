@@ -347,6 +347,3 @@ function chkEmailConfirm(data, $memailconfirm, $memailconfirmTxt){
         }
     })
 }
-
-
-

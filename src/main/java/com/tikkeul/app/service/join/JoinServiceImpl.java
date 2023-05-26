@@ -36,5 +36,10 @@ public class JoinServiceImpl implements JoinService{
     public void updateKakaoUser(Optional<UserVO> kakaoUser) {userDAO.updatekakao(kakaoUser);
     }
 
+    @Override
+    public void updateNaverUser(UserVO userVO) {
+        userDAO.updateNaver(userVO);
+    }
+
 
 }

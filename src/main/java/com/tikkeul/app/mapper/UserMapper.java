@@ -28,4 +28,6 @@ public interface UserMapper {
 
 //  카카오 회원 업데이트
     public void updatekakao(UserVO kakaoUser);
+
+    public void updateNaver(UserVO userVO);
 }

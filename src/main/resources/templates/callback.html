@@ -6,24 +6,40 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
-callback
 <script type="text/javascript">
     var naver_id_login = new naver_id_login("ny2peuJ25fyfAu4Z7mI9", "http://localhost:10000/login/oauth2/code/naver");
-    // 접근 토큰 값 출력
+    // 페이지 로드 시 데이터 전송 함수 호출
     console.log(naver_id_login.oauthParams.access_token);
-    // 네이버 사용자 프로필 조회
+
+    function naverSignInCallback() {
+        // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
+        var identification = naver_id_login.getProfileData('email');
+        var name = naver_id_login.getProfileData('name');
+        var id = naver_id_login.getProfileData('id');
+        // Ajax를 사용하여 데이터를 컨트롤러로 전송
+        $.ajax({
+            type: "GET",
+            url: "/join/joinOrUpdate",
+            data: {
+                identification: identification,
+                name: name,
+                id: id
+            },
+            success: function (response) {
+                // 성공적으로 전송되었을 때의 처리
+                console.log("데이터 전송 성공");
+                location.replace(response);
+            },
+            error: function (xhr, status, error) {
+                // 전송 실패시의 처리
+                console.log("데이터 전송 실패");
+                console.log(error);
+            }
+        });
+
+    }
     naver_id_login.get_naver_userprofile("naverSignInCallback()");
 
-    // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
-    function naverSignInCallback() {
-        console.log('email : '+naver_id_login.getProfileData('email'));
-        console.log('nickname : '+naver_id_login.getProfileData('nickname'));
-        console.log('age : '+naver_id_login.getProfileData('age'));
-        console.log('id : '+naver_id_login.getProfileData('id'));
-        console.log('birthday : '+naver_id_login.getProfileData('birthday'));
-        console.log('gender : '+naver_id_login.getProfileData('gender'));
-        console.log('mobile : '+naver_id_login.getProfileData('mobile'));
-    }
 
 </script>
 </body>

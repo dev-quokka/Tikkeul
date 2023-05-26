@@ -422,3 +422,6 @@ input::placeholder {
 .SNSButtonList_kakaoButton__2lTDs:hover {
     border-color: #868e96;
 }
+#naver_id_login{
+    display:none;
+}

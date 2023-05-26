@@ -55,7 +55,7 @@
             <div class="page-name">프로그램 등록</div>
         </div>
         <div class="registration-main">
-            <form th:action="@{/admin/program/write}" method="post" th:object="${savingLevelVO}">
+            <form th:action="@{/admin/program/write}" method="post" th:object="${savingLevelDTO}" name="writeForm">
                 <div class="registration-box">
 
                     <table class="table-contents">
@@ -80,19 +80,35 @@
                         <tr>
                             <td>썸네일 이미지</td>
                             <td>
-                                <input type="file" class="registration-detail">
+                                <label for="upload1" class="attach">
+                                    <img src="" class="thumbnail">
+                                    <div class="x">
+                                        <img src="/image/x.png">
+                                    </div>
+                                    <h6 class="plus">+</h6>
+                                    <h6>대표 이미지</h6>
+                                </label>
                             </td>
                         </tr>
                             <td>상세 이미지</td>
                             <td>
-                                <input type="file" class="registration-detail">
+                                <label for="upload2" class="attach">
+                                    <img src="" class="thumbnail">
+                                    <div class="x">
+                                        <img src="/image/x.png">
+                                    </div>
+                                    <h6 class="plus">+</h6>
+                                    <h6>이미지 추가</h6>
+                                </label>
                             </td>
                         </tr>
                     </table>
+                    <input type="file" id="upload1" class="upload" style="display: none;">
+                    <input type="file" id="upload2" class="upload" style="display: none;">
                     <div class="button-box">
                         <input type="button" name="report-list" value="프로그램목록"
                                onClick="location.href='admin-program.html'"/>
-                        <input type="submit" value="등록완료"/>
+                        <input type="button" onclick="check()" class="ok-button" value="등록완료"/>
                     </div>
                 </div>
             </form>

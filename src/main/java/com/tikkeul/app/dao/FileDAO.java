@@ -1,8 +1,7 @@
 package com.tikkeul.app.dao;
 
 import com.tikkeul.app.domain.dto.FileDTO;
-import com.tikkeul.app.domain.vo.FileVO;
-import com.tikkeul.app.domain.vo.ItemFileVO;
+import com.tikkeul.app.domain.dto.SavingLevelFileDTO;
 import com.tikkeul.app.mapper.FileMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -18,5 +17,11 @@ public class FileDAO {
     public List<FileDTO> findAll(Long itemId){
         return fileMapper.selectAll(itemId);
     }
+
+
+    public void save(SavingLevelFileDTO savingLevelFileDTO){
+        fileMapper.insert(savingLevelFileDTO);
+    }
+
 
 }

@@ -10,4 +10,12 @@
        WHERE i.ID = #{id}
    </select>
 
+    <insert id="insert">
+        <selectKey keyProperty="id" order="BEFORE" resultType="Long">
+            SELECT SEQ_FILE.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO FILE
+        (ID, FILE_SIZE, ORIGIN_NAME, UUID, FILE_TYPE, FILE_PATH)
+        VALUES(#{id}, #{size}, #{originName}, #{uuid}, #{fileType}, #{path})
+    </insert>
 </mapper>

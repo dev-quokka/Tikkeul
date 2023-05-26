@@ -76,10 +76,4 @@
 
 
 
-
-    <!-- 관리자가 상품 등록   -->
-    <insert id="insertItem">
-        INSERT INTO ITEM(ID, NAME, PRICE, CURRENT_STOCK, ORIGIN_STOCK, STATUS, BRAND, CATEGORY)
-    </insert>
-
 </mapper>

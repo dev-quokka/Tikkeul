@@ -22,5 +22,10 @@ public class SavingLevelMapperTests {
         savingLevelMapper.insertSavingLevel(savingLevelVO);
     }
 
+    @Test
+    public void selectSavingLevelAllTest(){
+        log.info(savingLevelMapper.admminSelectSavingLevelAll().toString());
+    }
+
 
 }
