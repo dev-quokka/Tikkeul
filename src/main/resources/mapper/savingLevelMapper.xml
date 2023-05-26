@@ -2,8 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tikkeul.app.mapper.SavingLevelMapper">
     <insert id="insertSavingLevel">
+        <selectKey keyProperty="id" order="BEFORE" resultType="Long">
+            SELECT SEQ_SAVINGLEVEL.NEXTVAL FROM DUAL
+        </selectKey>
         INSERT INTO SAVINGLEVEL (ID, NAME, GOAL_MONEY, DAILY_MONEY)
         VALUES(SEQ_SAVINGLEVEL.NEXTVAL, #{name}, #{goalMoney}, #{dailyMoney})
     </insert>
+
+    <select id="admminSelectSavingLevelAll" resultType="savingLevelVO">
+        SELECT ID, NAME, GOAL_MONEY, DAILY_MONEY
+        FROM SAVINGLEVEL
+    </select>
 
 </mapper>

@@ -16,6 +16,9 @@
         <typeAlias type="com.tikkeul.app.domain.vo.OrderVO" alias="orderVO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.ReviewVO" alias="reviewVO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.SavingLevelVO" alias="savingLevelVO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.SavingLevelDTO" alias="savingLevelDTO"/>
+        <typeAlias type="com.tikkeul.app.domain.vo.SavingLevelFileVO" alias="savingLevelFileVO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.SavingLevelFileDTO" alias="savingLevelFileDTO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.SavingVO" alias="savingVO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.UserVO" alias="userVO"/>
         <typeAlias type="com.tikkeul.app.domain.dto.InquiryBoardDTO" alias="inquiryBoardDTO"/>
