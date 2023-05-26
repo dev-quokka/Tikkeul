@@ -4,6 +4,7 @@ import com.tikkeul.app.domain.vo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,8 +20,6 @@ public interface UserMapper {
 //        회원가입
     public void insert(UserVO userVO);
 
-//        카카오 회원가입
-    public void insertkakao(UserVO userVO);
 
 //        로그인
     @Select("SELECT ID FROM USERS WHERE IDENTIFICATION = #{identification} AND PASSWORD = #{password}")
@@ -30,4 +29,7 @@ public interface UserMapper {
     public void updatekakao(UserVO kakaoUser);
 
     public void updateNaver(UserVO userVO);
+
+    @Update("UPDATE USERS SET PASSWORD = #{password} WHERE IDENTIFICATION = #{identification}")
+    public void updatepassword(@Param("identification") String id,@Param("password") String password);
 }

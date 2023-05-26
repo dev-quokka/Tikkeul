@@ -4,7 +4,6 @@ import com.tikkeul.app.domain.vo.UserVO;
 import com.tikkeul.app.mapper.UserMapper;
 import com.tikkeul.app.service.email.RegisterMail;
 import com.tikkeul.app.service.join.JoinService;
-import com.tikkeul.app.service.login.LoginService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -12,12 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.util.Optional;
 
 @Controller
@@ -94,17 +88,18 @@ public class JoinController {
     }
 //   아이디 찾기
     @GetMapping("findid")
-    public void goTofindid(HttpSession session){;}
+    public void goTofindid(){;}
 
-    @GetMapping("changePW")
-    public void goToChangePassword(){
-        ;
-    }
-    @GetMapping("findPW")
+
+    @GetMapping("findpw")
     public void goToFindPassword(){
         ;
     }
 
+    @GetMapping("changePW")
+    public void goToChangePassword(){
+        log.info("드러");
+    }
 
     @GetMapping("joinOrUpdate")
     @ResponseBody
@@ -133,7 +128,16 @@ public class JoinController {
         log.info("회원가입됨");
         return "/join/mainpage";
     }
-
-
-
+    @PostMapping("checkemailisSocial")
+    @ResponseBody
+    public boolean checkidisok(@RequestParam("email") String email) throws Exception {
+        log.info(String.valueOf((joinService.checkId(email).get().getRegisteredType()).equals("NORMAL")));
+        return joinService.checkId(email).get().getRegisteredType().equals("NORMAL");
+    }
+    @PostMapping("changepw")
+    @ResponseBody
+    public String changePassWord(@RequestParam("email") String identification, @RequestParam("password") String password){
+        joinService.updatePassword(identification,password);
+        return "/join/login";
+    }
 }
