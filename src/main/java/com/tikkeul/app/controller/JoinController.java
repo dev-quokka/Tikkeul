@@ -86,25 +86,34 @@ public class JoinController {
         System.out.println("인증코드 : " + code);
         return code;
     }
-//   아이디 찾기
+//   아이디 찾기 페이지
     @GetMapping("findid")
     public void goTofindid(){;}
 
-
+//  비밀번호 찾기 페이지
     @GetMapping("findpw")
     public void goToFindPassword(){
         ;
     }
 
-    @GetMapping("changePW")
-    public void goToChangePassword(){
-        log.info("드러");
+//  비밀번호 변경
+@PostMapping("changepw")
+@ResponseBody
+public String changePassWord(@RequestParam("email") String identification, @RequestParam("password") String password){
+    joinService.updatePassword(identification,password);
+    return "/join/login";
+}
+    @PostMapping("gofindpw")
+    @ResponseBody
+    public String findPassWord(@RequestParam("email") String identification, @RequestParam("password") String password){
+        return joinService.findPassword(identification,password);
     }
 
+
+//  네이버인지 아닌지 판단해서 계정을 업데이트 후 로그인시키거나 회원가입시킴
     @GetMapping("joinOrUpdate")
     @ResponseBody
     public String joinNaver(@RequestParam(value="identification", required=false) String identification,@RequestParam(value="name", required=false)String name,@RequestParam(value="id", required=false) String id, HttpSession session) {
-        log.info("들엉옴");
         UserVO userVO = new UserVO();
         userVO.setIdentification(identification);
         userVO.setPassword(id);
@@ -128,16 +137,16 @@ public class JoinController {
         log.info("회원가입됨");
         return "/join/mainpage";
     }
+
+
     @PostMapping("checkemailisSocial")
     @ResponseBody
-    public boolean checkidisok(@RequestParam("email") String email) throws Exception {
-        log.info(String.valueOf((joinService.checkId(email).get().getRegisteredType()).equals("NORMAL")));
-        return joinService.checkId(email).get().getRegisteredType().equals("NORMAL");
-    }
-    @PostMapping("changepw")
-    @ResponseBody
-    public String changePassWord(@RequestParam("email") String identification, @RequestParam("password") String password){
-        joinService.updatePassword(identification,password);
-        return "/join/login";
+    public String checkidisok(@RequestParam("email") String email) throws Exception {
+        if(joinService.checkId(email).isEmpty()) {
+            return "false";
+        }else if(joinService.checkId(email).isPresent()) {
+            return joinService.checkId(email).get().getRegisteredType();
+        }
+        return null;
     }
 }

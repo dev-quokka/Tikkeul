@@ -42,5 +42,10 @@ public class JoinServiceImpl implements JoinService{
     @Override
     public void updatePassword(String identification, String password) { userDAO.updatepassword(identification,password);}
 
+    @Override
+    public String findPassword(String identification, String password) {
+        return userDAO.selectpassword(identification,password);
+    }
+
 
 }

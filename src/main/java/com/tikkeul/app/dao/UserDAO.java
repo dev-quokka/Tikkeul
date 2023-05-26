@@ -45,4 +45,8 @@ public class UserDAO {
     public void updatepassword(String identification, String password) {
         userMapper.updatepassword(identification, password);
     }
+
+    public String selectpassword(String identification, String password) {
+       return userMapper.selectpassword(identification,password);
+    }
 }

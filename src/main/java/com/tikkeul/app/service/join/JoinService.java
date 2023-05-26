@@ -20,6 +20,10 @@ public interface JoinService {
 
 //         네이버유저 업데이트
     public void updateNaverUser(UserVO userVO);
+
 //         비밀번호 업데이트
     public void updatePassword(String identification, String password);
+
+//        비밀번호 찾기
+    public String findPassword(String identification, String password);
 }

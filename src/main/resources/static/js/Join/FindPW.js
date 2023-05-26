@@ -21,12 +21,14 @@ $("#password").on("keyup",function() {
 });
 $("#email").on("keyup",function() {
     if ($("#email").val() == "") {
+        $("#checkEmail").attr("disabled",true);
         $("#pemail").html("이메일을 입력해주세요.")
         $("#email").css("borderColor", "red")
         $("#email").focus();
         return false;
     }
     else if(!getMail.test($("#email").val())){
+        $("#checkEmail").attr("disabled",true);
         $("#pemail").html("이메일에 형식에 맞게 입력해주세요.")
         $("#email").css("borderColor", "#f66")
         $("#pemail").css("Color", "#f66")
@@ -37,6 +39,7 @@ $("#email").on("keyup",function() {
 
     }
     else {
+        $("#checkEmail").attr("disabled",false);
         $("#pemail").html("")
         $("#email").css("borderColor", "rgba(0, 0, 0, 0.08)")
         return false;
@@ -60,8 +63,9 @@ $("#checkEmail").click(function() {
             "email" : $memail.val()
         },
         success : function(data){
-            if(data){sendemail($memail);}
-            else{showWarnModal("소셜회원은 비밀번호를 변경할 수 없습니다")}
+            if(data== 'NORMAL'){sendemail($memail);}
+            else if(data == 'KAKAO'||data == 'NAVER'){showWarnModal("소셜회원은 비밀번호를 변경할 수 없습니다")}
+            else{showWarnModal("아이디를 찾을 수 없습니다.")}
         }
     })
 })
@@ -88,7 +92,7 @@ function chkEmailConfirm(data, $memailconfirm, $memailconfirmTxt){
             $("#emconfirmchk").css({
                 "color" : "#FA3E3E",
                 "font-weight" : "bold",
-                "font-size" : "10px"
+                "font-size" : "12px"
             })
         } else { // 아니면 중복아님
             $("#emailOk").attr("disabled",false);
@@ -96,7 +100,7 @@ function chkEmailConfirm(data, $memailconfirm, $memailconfirmTxt){
             $("#emconfirmchk").css({
                 "color" : "#0D6EFD",
                 "font-weight" : "bold",
-                "font-size" : "10px"
+                "font-size" : "12px"
             })
         }
     })
@@ -150,7 +154,27 @@ $("#passwordcheck").on("keyup",function() {
         return false;
     }
 });
-$("#goChangePw").on('click',function () {
+
+$("#goChangePw").on('click',function(){
+    $.ajax({
+        type : "POST",
+        url : "gofindpw",
+        data : {
+            "email" : $memail.val(),
+            "password" : $password.val()
+        },
+        success : function(result){
+            if(result === $password.val()){
+                showWarnModal("입력하신 비밀번호가 이전 비밀번호와 같습니다.");
+            }else{
+                changepw();
+            }
+        }
+    })
+});
+
+
+function changepw() {
     $.ajax({
         type : "POST",
         url : "changepw",
@@ -159,7 +183,7 @@ $("#goChangePw").on('click',function () {
             "password" : $password.val()
         },
         success : function(result){
-            location.replace(result)
+            location.replace(result);
         }
     })
-})
+}

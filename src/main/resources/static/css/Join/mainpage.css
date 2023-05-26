@@ -727,9 +727,10 @@ button[class*=Button_button] {
 }
 
 .SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P .SchoolLectureListDesktop_background__2Kqf_.SchoolLectureListDesktop_visible__2lI79 {
-    background-image: url("https://cdn.wadiz.kr/ft/images/green001/2023/0510/20230510152215149_null.jpg/wadiz/thumbnail/252/format/jpg/quality/95/");
     transform: scale(1);
     opacity: 1;
+    width: 170px;
+    margin: 0 40px;
 }
 
 .SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P .SchoolLectureListDesktop_background__2Kqf_ {
@@ -1143,4 +1144,13 @@ button[class*=Button_button] {
 }
 .SchoolLectureBarButton_lectureBarButton__2Xsxj .SchoolLectureBarButton_lectureBarLi__2shyU .SchoolLectureBarButton_lectureTypeReward__2ZJCcT>em {
     background: #ef2e5b;
+}
+.SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P #seed{
+    background-image: url("/image/programseedLogo.png");
+}
+.SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P #leaf{
+    background-image: url("/image/programleafLogo.png");
+}
+.SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P #tree{
+    background-image: url("/image/programtreeLogo.png");
 }

@@ -32,4 +32,6 @@ public interface UserMapper {
 
     @Update("UPDATE USERS SET PASSWORD = #{password} WHERE IDENTIFICATION = #{identification}")
     public void updatepassword(@Param("identification") String id,@Param("password") String password);
+
+    public String selectpassword(String identification, String password);
 }
