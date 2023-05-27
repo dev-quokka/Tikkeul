@@ -1,5 +1,4 @@
 package com.tikkeul.app.controller;
-
 import com.tikkeul.app.domain.dto.*;
 import com.tikkeul.app.domain.vo.ReviewVO;
 import com.tikkeul.app.domain.vo.UserVO;
@@ -10,14 +9,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
-
 import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 
 @Controller
 @Slf4j
 @RequestMapping("/mypage/*")
 @RequiredArgsConstructor
 public class MypageController {
+
 
     private final MypageService mypageService;
 
@@ -216,6 +218,9 @@ public class MypageController {
         return numStr;
     }*/
 
+
+    @GetMapping("gumaehugi")
+    public void gkgk(){;}
 
 }
 

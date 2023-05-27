@@ -1,49 +1,82 @@
-showList();
+$(document).ready(function() {
+    const $tr = $(".table-content table");
+    let text ="";
+    users.forEach(user => {
+        text +=
+            `
+                        <tr class="tr" location.href="">
+                            <td>
+                            <input type="checkbox" name="check" class="userCheckbox" value="${user.id}"/>
+                            </td>
+                            <td>${user.id}</td>
+                            <td>${user.name}</td>
+                            <td>${user.identification}</td>
+                            <td>${user.address}</td>
+                            <td>${user.phoneNumber}</td>
+                            <td>${user.status}</td>
+                        </tr>
 
-function showList(){
-    console.log(boards);
-    boards = JSON.parse(boards);
-    //files = JSON.parse(files);
-    const $ul = $("#content-wrap ul");
-    let text = "";
-
-    boards.forEach(board => {
-        text += `
-			<li>
-		        <div>
-		            <a href="javascript:location.href='${contextPath}/detailOk.board?boardId=${board.boardId}'">
-		                <section class="content-container">
-		                    <div class="profile">
-		                        <div><img src="${contextPath}/static/images/profile.png" width="15px"></div>
-		                        <h6 class="writer">${board.memberName}</h6>
-		                    </div>
-		                    <h4 class="title">${board.boardTitle}</h4>
-		                    <h6 clss="board-info">
-		                        <span class="read-count">조회 ${board.boardReadCount}</span>
-		                        <span>·</span>
-		                        <span class="date">`+ elapsedTime(board.boardRegisterDate) +`</span>
-		                    </h6>
-		                </section>
-			`;
-        /*if(files[board.boardId]){
-            text += `<img src="${contextPath}/upload/${files[board.boardId].fileSystemName}" class="preview">`;
-        }*/
-        text += `
-		            </a>
-		        </div>
-		    </li>
-			`;
+        `
     });
+    $tr.append(text);
+})
 
-    if(boards.length == 0){
-        text += `
-			<li>
-		        <div>
-					현재 게시글이 없습니다. 게시글 작성을 해보세요!
-				</div>
-			</li>
-		`
-    }
+function getSelectedLectureIds() {
+    const userIds = [];
+    $(".userCheckbox:checked").each(function() {
+        userIds.push($(this).val());
+    });
+    return userIds;
+}
 
-    $ul.append(text);
+
+function deleteLectures(userIds) {
+    console.log(userIds);
+    $.ajax({
+        url: "/admin/user/modify",
+        type: "POST",
+        // method: "DELETE",
+        // dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(userIds),
+        success: function() {
+            showWarnModal("휴먼계정으로 전환 성공 하였습니다.");
+            setTimeout(() => {
+                location.reload();
+            }, 1000);
+        },
+        error: function() {
+            showWarnModal("휴먼계정으로 전환 실패 하였습니다.");
+        }
+    });
+}
+
+function getUserIds() {
+    const userIds = [];
+    $(".userCheckbox:checked").each(function() {
+        userIds.push($(this).val());
+    });
+    return userIds;
+}
+
+
+function ChangeUser(userIds) {
+    console.log(userIds);
+    $.ajax({
+        url: "/admin/user/modifyNormal",
+        type: "POST",
+        // method: "DELETE",
+        // dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(userIds),
+        success: function() {
+            showWarnModal("일반계정으로 전환 성공 하였습니다.");
+            setTimeout(() => {
+                location.reload();
+            }, 1000);
+        },
+        error: function() {
+            showWarnModal("일반계정으로 전환 실패 하였습니다.");
+        }
+    });
 }

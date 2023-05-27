@@ -9,12 +9,14 @@ import org.springframework.stereotype.Controller;
 @NoArgsConstructor
 public class InquiryBoardVO {
     private Long id;
-    private String type;
-    private String title;
-    private String content;
-    private String registerDate;
-    private String updateDate;
+    private String inquireType;
+    private String inquireTitle;
+    private String inquireContent;
+    private String inquireDate;
+    private String inquireUpdate;
+    private String status;
     private Long userId;
+
 
 }
 

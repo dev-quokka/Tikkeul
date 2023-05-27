@@ -13,5 +13,4 @@ public class ReviewVO {
     private int score;
     private String registerDate;
     private Long orderId;
-
 }

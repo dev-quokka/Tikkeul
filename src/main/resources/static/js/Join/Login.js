@@ -42,4 +42,20 @@ $("#password").on("keyup",function() {
         $("#password").css("borderColor", "rgba(0, 0, 0, 0.08)")
         return false;
     }
-});
+})
+
+
+let $id = $("#email");
+let $password = $("#password");
+
+function send(){
+    if(!$id.val()){
+        showWarnModal("아이디를 입력해주세요!");
+        return;
+    }
+    if(!$password.val()){
+        showWarnModal("비밀번호를 입력해주세요!");
+        return;
+    }
+    document.login.submit();
+}

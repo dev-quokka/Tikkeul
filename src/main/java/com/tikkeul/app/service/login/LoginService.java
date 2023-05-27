@@ -1,12 +1,13 @@
 package com.tikkeul.app.service.login;
 
-import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Service;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.Optional;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URLEncoder;
 
-@Service
 public interface LoginService {
-    //    로그인
-    public Optional<Long> selectByUserIdAndUserPassword(@Param("id") String id, @Param("password") String password);
+
 }

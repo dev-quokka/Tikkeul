@@ -447,8 +447,7 @@ html.scroll-top .MainWrapper_content__GZkTa {
 }
 
 .MakerAcademy_container__2dhnm>a .MakerAcademy_box__K7zyT .MakerAcademy_images__3NLjp {
-    background-image: url("../../../static/image/MainYMShop.png");
-    background: no-repeat center/100% url("../../../static/image/MainYMShop.png");
+    background: no-repeat center/100% url("/image/MainYMShop.png");
 }
 
 .MakerAcademy_container__2dhnm .MakerAcademy_button__3_Auc {
@@ -528,8 +527,8 @@ button[class*=Button_button] {
 }
 
 .OpenfundingEquity_container__1uU-g>a .OpenfundingEquity_images__2eVc- {
-    background-image: url("../../../static/image/MainDoranDoran.png");
-    background: no-repeat center/100% url("../../../static/image/MainDoranDoran.png");
+    background-image: url("/image/MainDoranDoran.png");
+    background: no-repeat center/100% url("/image/MainDoranDoran.png");
 }
 
 .OpenfundingEquity_container__1uU-g .OpenfundingEquity_button__1HA2B {

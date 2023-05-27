@@ -103,3 +103,7 @@ td:first-child {
     height: 370px;
     border: none;
 }
+
+input {
+    cursor: pointer;
+}

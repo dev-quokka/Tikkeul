@@ -7,9 +7,10 @@
         FROM USERS
     </select>
 
-        <select id="selectByUserId" resultType="userVO">
-        SELECT ID, IDENTIFICATION, PASSWORD, NAME, PHONENUMBER, ADDRESS, STATUS, ROLL, CREATEDDATE,PROFILEIMAGENAME, PROFILEIMAGESIZE, PROFILEIMAGEUUID, SAVINGLEVEL_ID
+    <select id="selectById" resultType="userVO">
+        SELECT ID,IDENTIFICATION, PASSWORD, NAME, PHONENUMBER, ADDRESS, STATUS,ROLL, CREATEDDATE, PROFILEIMAGENAME, PROFILEIMAGESIZE, PROFILEIMAGEUUID, SAVINGLEVEL_ID, REGISTERED_TYPE
         FROM USERS
+        WHERE IDENTIFICATION = #{identification}
 
     </select>
 
@@ -180,5 +181,21 @@
     VALUES(SEQ_USER.NEXTVAL, #{content}, 0, SYSDATE , #{id})
     </insert>
 
+    <insert id="insert">
+        INSERT INTO USERS (ID, IDENTIFICATION, PASSWORD, NAME, REGISTERED_TYPE, SAVINGLEVEL_ID)
+        VALUES (SEQ_USER.NEXTVAL, #{identification}, #{password}, #{name}, #{registeredType}, #{levelId})
+    </insert>
+
+<!--소셜 회원 업데이트-->
+    <update id="updatekakao">
+        UPDATE  USERS
+        SET IDENTIFICATION=#{identification}, PASSWORD = #{password}, NAME = #{name}
+        WHERE IDENTIFICATION = #{identification}
+    </update>
+    <update id="updateNaver">
+        UPDATE  USERS
+        SET IDENTIFICATION=#{identification}, PASSWORD = #{password}, NAME = #{name}
+        WHERE IDENTIFICATION = #{identification}
+    </update>
 
 </mapper>

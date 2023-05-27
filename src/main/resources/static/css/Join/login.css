@@ -57,7 +57,7 @@ body, button, input, select, textarea {
     display: block;
     position: relative;
     top: 0;
-    z-index: 9998;
+    z-index: 100;
     background-color: #fff;
     width: 100%;
 }
@@ -421,4 +421,7 @@ input::placeholder {
 
 .SNSButtonList_kakaoButton__2lTDs:hover {
     border-color: #868e96;
+}
+#naver_id_login{
+    display:none;
 }

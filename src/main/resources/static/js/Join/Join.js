@@ -139,7 +139,7 @@ let nameCheck = false;
 let pwdCheck = false;
 let rePwdCheck = false;
 let chkboxCheck = false;
-
+let emconfirmchk = false;
 
 
 // 유효성 검사
@@ -159,7 +159,7 @@ $("#email").on("keyup", function () {
     } else if (!getMail.test($("#email").val())) {
         $("#pemail").html("이메일에 형식에 맞게 입력해주세요.")
         $("#email").css("borderColor", "#f66")
-        $("#pemail").css("Color", "#f66")
+        $("#pemail").css("color", "#f66")
         $("#checkEmail").css("opacity", ".45")
         $('#checkEmail').css("pointer-events", "none")
         emailCheck = false;
@@ -171,12 +171,27 @@ $("#email").on("keyup", function () {
         $("#email").css("borderColor", "rgba(0, 0, 0, 0.08)")
         $('#checkEmail').css("opacity", "1")
         $('#checkEmail').css("pointer-events", "auto")
+            $.ajax({
+                url: `/join/check-id/${$(this).val()}`,
+                success:function (result) {
+                    if (result) {
+                        $joinHelp.text("사용중인 아이디입니다.");
+                        $joinHelp.css('color', 'red')
+                        $("#checkEmail").css("opacity", ".45")
+                        $('#checkEmail').css("pointer-events", "none")
+                    } else {
+                        $joinHelp.text("멋진 아이디네요!");
+                        $joinHelp.css('color', '#0D6EFD')
+                        $('#checkEmail').css("opacity", "1")
+                        $('#checkEmail').css("pointer-events", "auto")
+
+                    }
+                }
+            });
         emailCheck = true;
-        console.log(emailCheck);
         flagCheck();
         return false;
     }
-    flagCheck();
 });
 $("#name").on("keyup", function () {
     if ($("#name").val() == "") {
@@ -201,7 +216,7 @@ $("#name").on("keyup", function () {
 
 $("#password").on("keyup", function () {
     if ($("#password").val() == "") {
-        $("#ppassword").html("비밀번호를 입력해주세요.")
+        $("#password").html("비밀번호를 입력해주세요.")
         $("#password").css("borderColor", "#f66")
         $("#password").focus();
         pwdCheck = false;
@@ -273,8 +288,7 @@ $(".checkEmail").on("keyup", function () {
 
 // flag check
 function flagCheck() {
-    console.log("실행중");
-    if (emailCheck && nameCheck && pwdCheck && rePwdCheck && chkboxCheck) {
+    if (emailCheck &&  nameCheck && pwdCheck && rePwdCheck && chkboxCheck &&emconfirmchk) {
         console.log(emailCheck);
         console.log(nameCheck);
         console.log(pwdCheck);
@@ -287,4 +301,49 @@ function flagCheck() {
         $(".submitButton").css("pointer-events", "none");
         $(".submitButton").attr('disabled', true);
     }
+}
+
+
+
+let $memail = $("#email");
+let $memailconfirmTxt = $("#memailconfirmTxt");
+let $memailconfirm = $("#memailconfirm");
+let $joinHelp = $("#pemail");
+
+$("#checkEmail").click(function() {
+    $.ajax({
+        type : "POST",
+        url : "mailConfirm",
+        data:{
+            "email" : $memail.val()
+        },
+        success : function(data){
+            showWarnModal("해당 이메일로 인증번호 발송이 완료되었습니다. \n 확인부탁드립니다.")
+            console.log("data : "+data);
+            chkEmailConfirm(data, $memailconfirm, $memailconfirmTxt);
+        }
+    })
+})
+
+// 이메일 인증번호 체크 함수
+function chkEmailConfirm(data, $memailconfirm, $memailconfirmTxt){
+    $memailconfirm.on("keyup", function(){
+        if (data != $memailconfirm.val()) { //
+            emconfirmchk = false;
+            $memailconfirmTxt.html("<span id='emconfirmchk'>인증번호가 잘못되었습니다</span>")
+            $("#emconfirmchk").css({
+                "color" : "#FA3E3E",
+                "font-size" : "13px"
+
+            })
+        } else { // 아니면 중복아님
+            emconfirmchk = true;
+            $memailconfirmTxt.html("<span id='emconfirmchk'>인증번호 확인 완료</span>")
+            $("#emconfirmchk").css({
+                "color" : "#0D6EFD",
+                "font-size" : "13px"
+            })
+
+        }
+    })
 }

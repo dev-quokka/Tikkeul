@@ -19,9 +19,10 @@ public class UserVO {
     private String createDate;
     private String registeredType;
     private String profileImageName;
-    private String profileImageSize;
+    private Long profileImageSize;
     private String profileImageUuid;
     private String profileImagePath;
+    private String registeredType;
     private Long levelId;
 
 }

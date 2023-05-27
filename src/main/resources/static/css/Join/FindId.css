@@ -467,20 +467,6 @@ button:not(:disabled), input:not(:disabled), input:not(:disabled)+label {
     margin-right: 8px;
 }
 
-.FooterContainer_container__3LibG .FooterContainer_leftSection__2BtHF .FooterContainer_buttonBlock__FQR2E .FooterContainer_directBtn__2ICcT {
-    line-height: 28px;
-    letter-spacing: -.3px;
-    font-size: 16px;
-    font-weight: 500;
-    margin: 4px 0;
-    width: 100%;
-    display: inline-block;
-    cursor: pointer;
-    padding: 0;
-    text-align: left;
-    color: #495057;
-}
-
 .FooterContainer_container__3LibG .FooterContainer_leftSection__2BtHF .FooterContainer_buttonBlock__FQR2E .FooterContainer_directBtn__2ICcT i {
     margin-left: 8px;
 }
@@ -559,4 +545,12 @@ button:not(:disabled), input:not(:disabled), input:not(:disabled)+label {
 .button.primary:hover {
     border-color: #4874e1;
     background-color: #4874e1;
+}
+ .text.headline2 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    color: #000000d6;
+    line-height: 36px;
+    font-size: 28px;
+    font-weight: 700;
 }
