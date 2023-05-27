@@ -12,16 +12,15 @@ import java.util.Optional;
 
 @Mapper
 public interface UserMapper {
-<<<<<<< HEAD
 
 
 //  관리자페이지에서 회원 리스트 조회
 
     //  관리자페이지에서 회원 리스트 조회
 
-=======
+
 //  관리자페이지에서 회원 리스트 조회
->>>>>>> master
+
     public List<UserVO> adminSelectUserAll();
 
     //    아이디 중복검사
@@ -33,7 +32,6 @@ public interface UserMapper {
 //        카카오 회원가입
     public void insertkakao(UserVO userVO);
 
-<<<<<<< HEAD
     //ㅁㅏ이페이지 동찬
     public Optional<MypageDTO> select(Long id);
 
@@ -92,7 +90,7 @@ public interface UserMapper {
     public List<GumaehugiDTO> selecthugisangse(Long id);
 
 
-=======
+
 //        로그인
     @Select("SELECT ID FROM USERS WHERE IDENTIFICATION = #{identification} AND PASSWORD = #{password}")
     public  Optional<Long> selectByUserIdAndUserPassword(@Param("identification") String id,@Param("password") String password);
@@ -101,5 +99,5 @@ public interface UserMapper {
     public void updatekakao(UserVO kakaoUser);
 
     public void updateNaver(UserVO userVO);
->>>>>>> master
+
 }

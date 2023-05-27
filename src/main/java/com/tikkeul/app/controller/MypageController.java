@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class MypageController {
 
-
     private final MypageService mypageService;
 
     @GetMapping("mypage")
@@ -217,10 +216,6 @@ public class MypageController {
 
         return numStr;
     }*/
-
-
-    @GetMapping("gumaehugi")
-    public void gkgk(){;}
 
 }
 

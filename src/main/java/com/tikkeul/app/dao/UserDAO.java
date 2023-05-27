@@ -21,11 +21,9 @@ public class UserDAO {
 
 //    홍윤기의 작업공간
     //    아이디 중복검사
-    public Optional<UserVO> selectByUserId(String identification){
-        return userMapper.selectByUserId(identification);
-    }
-
-
+    //public Optional<UserVO> selectByUserId(String identification){
+     //   return userMapper.selectByUserId(identification);
+    //}
 
 
 //  아이디 중복검사

@@ -22,7 +22,6 @@ public class UserVO {
     private Long profileImageSize;
     private String profileImageUuid;
     private String profileImagePath;
-    private String registeredType;
     private Long levelId;
 
 }
