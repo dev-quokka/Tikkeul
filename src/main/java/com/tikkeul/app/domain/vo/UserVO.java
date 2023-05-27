@@ -17,6 +17,7 @@ public class UserVO {
     private String status;
     private String roll;
     private String createDate;
+    private String registeredType;
     private String profileImageName;
     private String profileImageSize;
     private String profileImageUuid;

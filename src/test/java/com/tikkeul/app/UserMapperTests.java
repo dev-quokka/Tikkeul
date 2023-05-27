@@ -1,8 +1,11 @@
 package com.tikkeul.app;
 
+import com.tikkeul.app.domain.dto.MypageDTO;
 import com.tikkeul.app.domain.vo.UserVO;
 import com.tikkeul.app.mapper.UserMapper;
+import com.tikkeul.app.service.mypage.MypageService;
 import lombok.extern.slf4j.Slf4j;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,6 +19,9 @@ public class UserMapperTests {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private MypageService mypageService;
 
 //  관리자페이지가 만듬(어드민단위 테스트)
     @Test
@@ -39,8 +45,18 @@ public class UserMapperTests {
         userVO.setProfileImageSize("a");
         userVO.setProfileImageUuid("a");
         userVO.setProfileImagePath("a");
-        userVO.setLevelId(1L);
+        userVO.setLevelId(2L);
         userMapper.insert(userVO);
+
+    }
+
+    @Test
+    public void mypageTest() {
+        Assertions.assertThat(mypageService.getMypage(0L)).toString();
+    }
+
+    @Test
+    public void jjimTest(){
 
     }
 }
