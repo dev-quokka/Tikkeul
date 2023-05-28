@@ -22,7 +22,6 @@ import java.util.Optional;
 @Slf4j
 public class AdminDAO {
 
-    @Autowired
     private final AdminMapper adminMapper;
 
     /*회원*/

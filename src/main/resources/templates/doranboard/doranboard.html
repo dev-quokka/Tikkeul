@@ -47,30 +47,30 @@
         <div class="wcommunity-section1">
 
             <div class="top-category-menu">
-                <h3><em>도란도란 리스트</em></h3>
-                <!--                    <select name="order" class="select-list">-->
-                <!--<option value="1" selected="">최신순</option>
-                <option value="2">조회순</option>
-                <option value="3">추천순</option>-->
-                <!--                    </select>-->
+                <h3><em>도란도란 게시판</em></h3>
                 <div class="sub-category-list">
                     <ul>
                         <li>
-                            <button type="button" onclick="location.href='/doranboard/doranboard">씨앗</button>
+                            <button type="button" onclick="location.href='/doranboard/doranboard?ItemName=씨앗'">씨앗
+                            </button>
                         </li>
 
                         <li>
-                            <button type="button" onclick="searchByHeadWord('BRD0000012', '41')">새싹</button>
+                            <button type="button" onclick="location.href='/doranboard/doranboard?ItemName=새싹'">새싹
+                            </button>
                         </li>
 
                         <li>
-                            <button type="button" onclick="searchByHeadWord('BRD0000012', '26')">열매</button>
+                            <button type="button" onclick="location.href='/doranboard/doranboard?ItemName=열매'">열매
+                            </button>
                         </li>
 
                         <li class="active">
-                            <button type="button" onclick="searchByHeadWord('BRD0000012', '21')">자유이야기</button>
+                            <button type="button" onclick="location.href='/doranboard/doranboard'">자유이야기</button>
                         </li>
-
+                        <li style="margin-left: 282px";>
+                            <button type="button" onclick="location.href='/doranboard/doranwrite'">글 작성</button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -101,22 +101,24 @@
                 <!-- 검색 결과없을 시 -->
                 <p id="notExistResult">검색결과가 없습니다.</p>
             </div>
-            <form th:action="@{/doranboard/doranboard}" name="search-form">
-                <div class="wcommunity-bottom-util">
+
+            <div class="wcommunity-bottom-util">
+                <form th:action="@{/doranboard/doranboard}">
                     <div class="search-story">
                         <select id="searchSelectInBoard" class="select-list" name="type">
                             <option value="tc" th:selected="${search.type eq 'tc'}">제목+내용</option>
-                            <option value="t"  th:selected="${search.type eq 't'}">제목</option>
+                            <option value="t" th:selected="${search.type eq 't'}">제목</option>
                             <option value="c" th:selected="${search.type eq 'c'}">내용</option>
                             <option value="w" th:selected="${search.type eq 'w'}">작성자</option>
                         </select>
                         <div class="wcommunity-search-area">
-                            <input type="text" id="searchTextInBoard" name="keyword" th:value="${search.keyword}" placeholder="도란도란 리스트 검색">
-                            <button type="submit" class="btn-search" onclick="">검색</button>
+                            <input type="text" id="searchTextInBoard" name="keyword" th:value="${search.keyword}"
+                                   placeholder="도란도란 검색">
+                            <button type="submit" class="search">검색</button>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </div>

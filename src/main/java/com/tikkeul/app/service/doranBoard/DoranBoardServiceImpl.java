@@ -39,17 +39,20 @@ public class DoranBoardServiceImpl implements DoranBoardService {
 
     /*게시글 수정*/
     @Override
-    public void modify(DoranBoardDTO doranBoardDTO) {
-        doranBoardDAO.setPostDTO(doranBoardDTO);
+    public void modify(DoranBoardVO doranBoardVO) {
+        doranBoardDAO.setPostDTO(doranBoardVO);
     }
+
     /*게시글 삭제*/
     @Override
     public void remove(Long id) {
         doranBoardDAO.delete(id);
     }
 
+    /*게시글 */
     @Override
     public int getTotal(Search search) {
         return doranBoardDAO.findCountOfPost(search);
     }
+    
 }
