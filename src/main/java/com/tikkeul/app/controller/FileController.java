@@ -47,7 +47,7 @@ public class FileController {
     @GetMapping("display")
     @ResponseBody
     public byte[] display(String fileName) throws IOException{
-        return FileCopyUtils.copyToByteArray(new File("C:/upload/", fileName));
+        return FileCopyUtils.copyToByteArray(new File("/Users/hi/Desktop/images/", fileName));
     }
 
 }

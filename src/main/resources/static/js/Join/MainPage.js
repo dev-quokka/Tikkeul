@@ -8,7 +8,7 @@ function loadSavingLevels() {
     $(".SchoolLectureListDesktop_mainSchoolLecture__3f2nw").html("");
   savinglevels.forEach(savinglevel=>{
                         text += `<span class="SchoolLectureListDesktop_background__2Kqf_ SchoolLectureListDesktop_visible__2lI79">
-                       <img src="/files/display?fileName=${savinglevel.filePath}/t_${savinglevel.fileUuid}_${savinglevel.fileOriginName}" class="preview" style="width: 170px">
+                       <img src="/files/display?fileName=${savinglevel.filePath}/t_${savinglevel.uuid}_${savinglevel.originName}" class="preview" style="width: 170px">
                        </span>
                             <div class="SchoolLectureListDesktop_schoolLecture__2EK3P">
                         <span class="SchoolLectureListDesktop_background__2Kqf_ SchoolLectureListDesktop_visible__2lI79">
