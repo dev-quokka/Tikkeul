@@ -20,7 +20,6 @@ public interface ItemMapper {
 
     //    후기 가져오기
     public Optional<OrderDTO> selectScoreAndCountOfReview(Long id);
-    public Optional<OrderDTO> selectReview(Long id);
 
 //  메인페이지
     public List<ItemDTO> selectAllItem();

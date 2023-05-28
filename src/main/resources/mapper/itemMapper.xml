@@ -61,15 +61,9 @@
 
 
     <!--제품후기, 별점-->
-<<<<<<< HEAD
     <select id="selectScoreAndCountOfReview" resultType="orderDTO">
     SELECT ITEM_ID, AVG(SCORE) AVG_SCORE, COUNT(ITEM_ID) COUNT_OF_REVIEWS
     FROM
-=======
-    <select id="selectReview" resultType="orderDTO">
-    SELECT ITEM_ID, AVG(SCORE) AVB_SCORE, COUNT(ITEM_ID) COUNT_OF_REVIES
-    FROM`
->>>>>>> master
     (
         SELECT R.ID REVIEW_ID, CONTENT, SCORE, R.REGISTER_DATE REVIEW_DATE, ORDER_ID, I.ID ITEM_ID, I.NAME ITEM_NAME, U.NAME USER_NAME
         FROM ORDERS O JOIN USERS U
@@ -81,7 +75,6 @@
     HAVING ITEM_ID = ${id}
     </select>
 
-<<<<<<< HEAD
 
 <!--    <select id="selectAllOtherItemsOFSameLevelItem" resultType="">
     SELECT ITEM_ID, AVG(SCORE) AVG_SCORE, COUNT(ITEM_ID) COUNT_OF_REVIEWS
@@ -129,7 +122,6 @@
 
 
 
-=======
 <!-- 메인페이지에 모든 아이템용-->
     <select id="selectAllItem" resultType="itemDTO">
         SELECT I.ID, I.NAME, PRICE, CURRENT_STOCK, ORIGIN_STOCK, I.STATUS, BRAND, CATEGORY, REGISTERDATE, UPDATEDATE, I.SAVINGLEVEL_ID, SL.NAME SAVINGLEVELNAME
@@ -141,7 +133,6 @@
         FROM ITEM I JOIN SAVINGLEVEL SL ON I.SAVINGLEVEL_ID = SL.ID
         WHERE I.SAVINGLEVEL_ID = #{savingLevelId}
     </select>
->>>>>>> master
 
 
 

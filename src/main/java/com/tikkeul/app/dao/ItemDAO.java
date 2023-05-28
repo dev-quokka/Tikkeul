@@ -31,9 +31,12 @@ public class ItemDAO {
         return itemMapper.selectScoreAndCountOfReview(id);
     }
 
+//    홍윤기 작업공간
+//    메인페이지 전체 목록 불러오기
     public List<ItemDTO> findAllItem() { return itemMapper.selectAllItem();
     }
 
+//    메인페이지 해당목록 불러오기
     public List<ItemDTO> findAllOptionItem(Long savingLevelId) { return itemMapper.selectAllOptionItem(savingLevelId);
     }
 }

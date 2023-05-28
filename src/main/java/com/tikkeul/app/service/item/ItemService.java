@@ -18,9 +18,6 @@ public interface ItemService {
 //    후기 수, 별점 가져오기
     public Optional<OrderDTO> readScoreAndCountOfReview(Long id);
 
-//    제품 후기 수, 별점
-    public Optional<OrderDTO> readReviw(Long id);
-
 
 //  메인페이지 제품 목록 가져오기 : list.html
     public List<ItemDTO> getitemList();

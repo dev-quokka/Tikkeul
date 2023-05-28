@@ -2,6 +2,7 @@ package com.tikkeul.app.mapper;
 
 import com.tikkeul.app.domain.dto.ItemFileDTO;
 import com.tikkeul.app.domain.dto.SavingLevelFileDTO;
+import com.tikkeul.app.domain.vo.FileVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
