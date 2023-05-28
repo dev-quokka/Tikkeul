@@ -2,6 +2,8 @@ package com.tikkeul.app.dao;
 
 import com.tikkeul.app.domain.dto.ItemFileDTO;
 import com.tikkeul.app.domain.dto.SavingLevelFileDTO;
+import com.tikkeul.app.domain.dto.ItemFileDTO;
+import com.tikkeul.app.domain.dto.SavingLevelFileDTO;
 import com.tikkeul.app.domain.vo.ItemFileVO;
 import com.tikkeul.app.mapper.FileMapper;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +19,9 @@ public class FileDAO {
     private final FileMapper fileMapper;
 
 //    열매샵 파일조회
-
+    public List<ItemFileDTO> findAll(Long itemId){
+        return fileMapper.selectAll(itemId);
+    }
 
 
     public void save(SavingLevelFileDTO savingLevelFileDTO){

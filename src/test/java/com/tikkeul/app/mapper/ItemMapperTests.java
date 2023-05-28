@@ -1,6 +1,8 @@
 package com.tikkeul.app.mapper;
 
 import com.tikkeul.app.domain.dto.OrderDTO;
+import com.tikkeul.app.domain.type.CategoryType;
+import com.tikkeul.app.service.item.ItemService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,8 @@ public class ItemMapperTests {
     }
     @Test
     public void itemtests(){
-        itemMapper.selectAll();
+        CategoryType categoryType = new CategoryType();
+        itemMapper.selectAll(categoryType);
     }
 }
 

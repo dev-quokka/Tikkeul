@@ -22,69 +22,11 @@ public class AdminMapperTests {
 
 //    }
 
-//    @Test
-//    public void adminDeleteUserTest() {
-////        adminMapper.adminDeleteUser(12L);
-//    }
+    @Test
+    public void adminDeleteUserTest(){
+//        adminMapper.adminDeleteUser(12L);
+    }
 //
-//    @Test
-//    public void adminSelectAllinquiry() {
-////        Pagination pagination = new Pagination();
-//////        assertThat(adminMapper.adminSelectInquiryAll()).hasSize(2);
-////        pagination.setPage(1);
-////        adminMapper.adminSelectInquiryAll(pagination, new Search()).stream().map(InquiryBoardDTO::toString).forEach(log::info);
-//    }
-//
-//    @Test
-//    public void selectCountOfInquiryTest() {
-////        assertThat(adminMapper.selectCountOfInquiry(new Search())).isEqualTo(63);
-//    }
-//
-//    @Test
-//    public void adminSelectInquiryTest() {
-////        adminMapper.adminSelectInquiry(5L).map(InquiryBoardDTO::getName).ifPresent(log::info);
-//    }
-//
-//
-//    @Test
-//    public void adminInsertAnswerTest() {
-//        AnswerVO answerVO = new AnswerVO();
-//        answerVO.setAnswerContent("테스트0");
-//        answerVO.setInquireId(5L);
-//        adminMapper.adminInsertAnswer(answerVO);
-//    }
-//
-//    @Test
-//    public void adminSelectDoranBoardAllTest() {
-////        log.info(adminMapper.adminSelectDoranBoardAll().toString());
-//    }
-//
-//
-//    @Test
-//    public void adminSelectDoranBoardTest() {
-////        adminMapper.adminSelectDoranBoard(2L).map(DoranBoardDTO::getContent).ifPresent(log::info);
-//    }
-//
-//
-//    @Test
-//    public void adminSelectItemAllTest() {
-////        log.info(adminMapper.adminSelectItemAll().toString());
-//    }
-//
-//    @Test
-//    public void adminDeleteInquiryTest() {
-//        adminMapper.adminDeleteInquiry(8L);
-//    }
-//
-//    @Test
-//    public void adminDeleteDoranBoardTest() {
-//        adminMapper.adminDeleteDoranBoard(1L);
-//    }
-
-
-
-//    public List<InquiryBoardDTO> adminMainSelectInquiry();
-
     @Test
     public void adminMainSelectItem(){
         log.info(adminMapper.adminMainSelectItem().toString());
