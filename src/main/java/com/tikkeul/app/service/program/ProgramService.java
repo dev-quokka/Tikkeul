@@ -28,9 +28,9 @@ public interface ProgramService {
     default SavingLevelFileDTO toDTO(FileVO fileVO){
         SavingLevelFileDTO savingLevelFileDTO = new SavingLevelFileDTO();
         savingLevelFileDTO.setId(fileVO.getId());
-        savingLevelFileDTO.setFileOriginName(fileVO.getFileOriginName());
+        savingLevelFileDTO.setOriginName(fileVO.getOriginName());
         savingLevelFileDTO.setFilePath(fileVO.getFilePath());
-        savingLevelFileDTO.setFileUuid(fileVO.getFileUuid());
+        savingLevelFileDTO.setUuid(fileVO.getUuid());
         savingLevelFileDTO.setFileSize(fileVO.getFileSize());
         return savingLevelFileDTO;
     }

@@ -76,7 +76,7 @@
     </select>
 
 
-<!--    <select id="selectAllOtherItemsOFSameLevelItem" resultType="">
+    <select id="selectAllOtherItemsOFSameLevelItem" resultType="orderDTO">
     SELECT ITEM_ID, AVG(SCORE) AVG_SCORE, COUNT(ITEM_ID) COUNT_OF_REVIEWS
     FROM
     (
@@ -88,7 +88,7 @@
     )
     GROUP BY ITEM_ID
     HAVING ITEM_ID = ${id}
-    </select>-->
+    </select>
 
 
 

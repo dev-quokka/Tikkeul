@@ -14,8 +14,8 @@ public class SavingLevelFileDTO {
     private int dailyMoney;
     private String content;
     private Long fileSize;
-    private String fileOriginName;
-    private String fileUuid;
+    private String originName;
+    private String uuid;
     private String filePath;
     private String fileType;
 }

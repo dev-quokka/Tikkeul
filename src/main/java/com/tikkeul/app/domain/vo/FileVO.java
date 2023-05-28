@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 public class FileVO {
     private Long id;
     private Long fileSize;
-    private String fileOriginName;
-    private String fileUuid;
+    private String originName;
+    private String uuid;
     private String filePath;
     private String fileType;
 
