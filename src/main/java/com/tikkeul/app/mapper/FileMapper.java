@@ -11,7 +11,7 @@ import java.util.List;
 public interface FileMapper {
 //    김보령 작업공간
 //    파일 조회
-    public List<ItemFileDTO> selectAll(Long itemId);
+    public List<FileVO> selectAll(Long itemId);
 
 
 
