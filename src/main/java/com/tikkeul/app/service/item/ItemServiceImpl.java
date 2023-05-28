@@ -61,17 +61,17 @@ public class ItemServiceImpl implements ItemService {
             itemFileVO.setItemId(itemFileDTO.getItemId());
             itemFileDAO.saveItem(itemFileVO);
         });
+
+
+
+    }
+    @Override
+    public List<ItemDTO> getitemList() {
+        return itemDAO.findAllItem();
     }
 
     @Override
     public List<ItemDTO> getOptionItemList(Long savingLevelId) {
-
-        return null;
-    }
-
-    @Override
-    public List<ItemDTO> getitemList() {
-
-        return null;
+        return itemDAO.findAllOptionItem(savingLevelId);
     }
 }

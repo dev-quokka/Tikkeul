@@ -1,7 +1,6 @@
 package com.tikkeul.app.controller;
 
 import com.tikkeul.app.domain.dto.ItemDTO;
-import com.tikkeul.app.domain.type.CategoryType;
 import com.tikkeul.app.service.item.ItemService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,16 +19,18 @@ public class ItemController {
 //    김보령 작업공간
 //    열매샵 제품 목록 가져오기 : list.html
     @GetMapping("list")
-    public void list(CategoryType categoryType, Model model){
-        itemService.getList(categoryType).stream().map(ItemDTO::toString).forEach(log::info);
-        model.addAttribute("items", itemService.getList(categoryType));
+    public void list(Model model){
+        itemService.getList().stream().map(ItemDTO::toString).forEach(log::info);
+        model.addAttribute("items", itemService.getList());
     }
+
 
 //    열매샵 제품 상세 보기 : readDetail.html
     @GetMapping("readDetail")
     public void readDetail(Long id, Model model){
+        log.info("itemController readDetail()");
         model.addAttribute("item", itemService.readDetail(id).get());
-        model.addAttribute("calcReview", itemService.readScoreAndCountOfReview(id).get());
+        model.addAttribute("review", itemService.readReviw(id).get());
     }
 
 

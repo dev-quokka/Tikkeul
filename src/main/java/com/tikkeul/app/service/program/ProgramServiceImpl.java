@@ -56,7 +56,7 @@ public class ProgramServiceImpl implements ProgramService {
     @Transactional(rollbackFor = Exception.class)
     public SavingLevelDTO getSavingLevel(Long id) {
         final Optional<SavingLevelDTO> foundSavingLevel = savingLevelDAO.findSavingLevel(id);
-        if (foundSavingLevel.isPresent()) {
+        if(foundSavingLevel.isPresent()){
             foundSavingLevel.get().setFiles(fileDAO.savingLevelFindAll(id));
             log.info(foundSavingLevel.get().toString());
         }
@@ -68,14 +68,13 @@ public class ProgramServiceImpl implements ProgramService {
     public void modify(SavingLevelDTO savingLevelDTO) {
         savingLevelDAO.setSavingLevelDTO(savingLevelDTO);
 
-        for (int i = 0; i < savingLevelDTO.getFiles().size(); i++) {
+        for(int i=0; i<savingLevelDTO.getFiles().size(); i++){
             savingLevelDTO.getFiles().get(i).setSavinglevelId(savingLevelDTO.getId());
             savingLevelDTO.getFiles().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
             fileDAO.save(savingLevelDTO.getFiles().get(i));
         }
         savingLevelDTO.getFiles().forEach(savingLevelFileDTO ->
-        {
-            SavingLevelFileVO savingLevelFileVO = new SavingLevelFileVO();
+        { SavingLevelFileVO savingLevelFileVO = new SavingLevelFileVO();
             savingLevelFileVO.setId(savingLevelFileDTO.getId());
             savingLevelFileVO.setSavinglevelId(savingLevelFileDTO.getSavinglevelId());
             savingLevelFileDAO.save(savingLevelFileVO);
@@ -87,11 +86,11 @@ public class ProgramServiceImpl implements ProgramService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void removeSavingLevel(Long id) {
-        SavingLevelDTO savingLevelDTO = savingLevelDAO.findSavingLevel(id).get();
-        fileDAO.savingLevelFindAll(id).forEach(savingLevelFileDTO ->
-                fileDAO.savingLevelDelete(savingLevelFileDTO.getId()));
-        savingLevelDAO.deleteSavingLevel(id);
-        savingLevelFileDAO.delete(id);
+            SavingLevelDTO savingLevelDTO = savingLevelDAO.findSavingLevel(id).get();
+            fileDAO.savingLevelFindAll(id).forEach(savingLevelFileDTO ->
+                    fileDAO.savingLevelDelete(savingLevelFileDTO.getId()));
+                savingLevelDAO.deleteSavingLevel(id);
+                savingLevelFileDAO.delete(id);
 
 //            fileDAO.savingLevelDelete(id);
     }
