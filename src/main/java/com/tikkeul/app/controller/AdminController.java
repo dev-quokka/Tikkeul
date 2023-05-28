@@ -157,7 +157,7 @@ public class AdminController {
         for (String programId : programIds) programService.removeSavingLevel(Long.valueOf(programId));
     }
 
-    /*메인 페이지*/
+    /* 메인 페이지 */
     @GetMapping("main")
     public void goToMain(Model model){
         model.addAttribute("mainusers",adminService.adminMainGetUser());
