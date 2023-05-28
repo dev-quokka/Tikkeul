@@ -1,7 +1,11 @@
 package com.tikkeul.app.service.item;
 
 import com.tikkeul.app.domain.dto.ItemDTO;
+import com.tikkeul.app.domain.dto.ItemFileDTO;
 import com.tikkeul.app.domain.dto.OrderDTO;
+import com.tikkeul.app.domain.dto.SavingLevelFileDTO;
+import com.tikkeul.app.domain.vo.FileVO;
+import com.tikkeul.app.domain.vo.ItemVO;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,9 +21,16 @@ public interface ItemService {
 //    제품 후기 수, 별점
     public Optional<OrderDTO> readReviw(Long id);
 
+    public void writeItem(ItemDTO itemDTO);
 
-//  메인페이지 제품 목록 가져오기 : list.html
-    public List<ItemDTO> getitemList();
+    default ItemFileDTO toDTO(FileVO fileVO){
+        ItemFileDTO itemFileDTO = new ItemFileDTO();
+        itemFileDTO.setItemId(fileVO.getId());
+        itemFileDTO.setOriginName(fileVO.getOriginName());
+        itemFileDTO.setFilePath(fileVO.getFilePath());
+        itemFileDTO.setUuid(fileVO.getUuid());
+        itemFileDTO.setFileSize(fileVO.getFileSize());
+        return itemFileDTO;
+    }
 
-    public List<ItemDTO> getOptionItemList(Long savingLevelId);
 }

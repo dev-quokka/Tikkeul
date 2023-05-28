@@ -2,6 +2,7 @@ package com.tikkeul.app.dao;
 
 import com.tikkeul.app.domain.dto.ItemDTO;
 import com.tikkeul.app.domain.dto.OrderDTO;
+import com.tikkeul.app.domain.vo.ItemVO;
 import com.tikkeul.app.mapper.ItemMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -30,9 +31,8 @@ public class ItemDAO {
         return itemMapper.selectReview(id);
     }
 
-    public List<ItemDTO> findAllItem() { return itemMapper.selectAllItem();
-    }
-
-    public List<ItemDTO> findAllOptionItem(Long savingLevelId) { return itemMapper.selectAllOptionItem(savingLevelId);
+//    제품 등록 ( 관리자 )
+    public void saveItem(ItemDTO itemDTO){
+        itemMapper.insertItem(itemDTO);
     }
 }

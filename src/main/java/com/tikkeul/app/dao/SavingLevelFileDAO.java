@@ -14,4 +14,8 @@ public class SavingLevelFileDAO {
         savingLevelFileMapper.insert(savingLevelFileVO);
     }
 
+    public void delete(Long savinglevelId){
+        savingLevelFileMapper.delete(savinglevelId);
+    }
+
 }

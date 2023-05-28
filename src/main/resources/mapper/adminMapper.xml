@@ -164,7 +164,7 @@
 
 
     <!--  관리자 문의 내역 상세 조회-->
-    <select id="adminSelectInquiry" resultType="inquiryBoardDTO">
+   <select id="adminSelectInquiry" resultType="inquiryBoardDTO">
         SELECT I.ID, U.NAME, U.IDENTIFICATION, I.INQUIRE_DATE, I.INQUIRE_CONTENT
         FROM USERS U JOIN INQUIRE_BOARD I
         ON I.USER_ID = U.ID AND I.ID = #{id}
@@ -238,7 +238,7 @@
     </delete>
 
     <!-- 관리자 제품 목록   -->
-    <select id="adminSelectItemAll" resultType="itemVO">
+    <select id="adminSelectItemAll" resultType="itemDTO">
         SELECT I.ID, ORIGIN_STOCK, SAVINGLEVEL_ID, NAME, PRICE
         FROM
         (
@@ -275,5 +275,29 @@
                 </foreach>
             </trim>
         </if>
+    </select>
+
+    <!--관리자 메인 페이지-->
+    <select id="adminMainSelectUser" resultType="userVO">
+        SELECT NAME, IDENTIFICATION, CREATEDDATE
+        FROM USERS
+        ORDER BY CREATEDDATE DESC
+    </select>
+
+    <select id="adminMainSelectSavingLevel" resultType="savingLevelVO">
+        SELECT ID, NAME, GOAL_MONEY, DAILY_MONEY
+        FROM SAVINGLEVEL
+    </select>
+
+    <select id="adminMainSelectItem" resultType="itemDTO">
+        SELECT I.ID, I.ORIGIN_STOCK, S.NAME as savingLevelName, I.NAME
+        FROM SAVINGLEVEL S JOIN ITEM I
+        ON I.SAVINGLEVEL_ID = S.ID
+    </select>
+
+    <select id="adminMainSelectInquiry" resultType="inquiryBoardDTO">
+        SELECT U.IDENTIFICATION, I.INQUIRE_CONTENT, I.INQUIRE_DATE, I.STATUS
+        FROM USERS U JOIN INQUIRE_BOARD I
+        ON I.USER_ID = U.ID
     </select>
 </mapper>

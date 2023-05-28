@@ -1,5 +1,6 @@
 package com.tikkeul.app.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import net.coobird.thumbnailator.Thumbnailator;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -17,6 +18,7 @@ import java.util.UUID;
 
 @Controller
 @RequestMapping("/files/*")
+@Slf4j
 public class FileController {
 
     //    파일 업로드
@@ -37,6 +39,7 @@ public class FileController {
                 out.close();
             }
         }
+        log.info(uploadFiles.toString());
         return uuids;
     }
 
