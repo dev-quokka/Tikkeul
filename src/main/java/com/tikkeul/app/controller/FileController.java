@@ -23,7 +23,7 @@ public class FileController {
     @PostMapping("upload")
     @ResponseBody
     public List<String> upload(@RequestParam("uploadFile") List<MultipartFile> uploadFiles) throws IOException {
-        String path = "C:/upload/" + getPath();
+        String path = "/Users/hi/Desktop/image" + getPath();
         List<String> uuids = new ArrayList<>();
         File file = new File(path);
         if(!file.exists()){file.mkdirs();}
@@ -49,7 +49,7 @@ public class FileController {
     @GetMapping("display")
     @ResponseBody
     public byte[] display(String fileName) throws IOException{
-        return FileCopyUtils.copyToByteArray(new File("C:/upload/", fileName));
+        return FileCopyUtils.copyToByteArray(new File("/Users/hi/Desktop/image", fileName));
     }
 
 }
