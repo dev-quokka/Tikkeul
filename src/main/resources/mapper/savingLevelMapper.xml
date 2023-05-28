@@ -30,7 +30,7 @@
         SET NAME = #{name} , GOAL_MONEY = #{goalMoney} , DAILY_MONEY = #{dailyMoney}
         WHERE ID = #{id}
     </update>
-    
+
     <delete id="adminDeleteSavingLevel">
         DELETE FROM SAVINGLEVEL
         WHERE ID = #{id}
