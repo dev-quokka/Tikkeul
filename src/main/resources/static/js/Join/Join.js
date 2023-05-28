@@ -171,6 +171,7 @@ $("#email").on("keyup", function () {
         $("#email").css("borderColor", "rgba(0, 0, 0, 0.08)")
         $('#checkEmail').css("opacity", "1")
         $('#checkEmail').css("pointer-events", "auto")
+            // 아이디 중복검사
             $.ajax({
                 url: `/join/check-id/${$(this).val()}`,
                 success:function (result) {
@@ -193,6 +194,7 @@ $("#email").on("keyup", function () {
         return false;
     }
 });
+
 $("#name").on("keyup", function () {
     if ($("#name").val() == "") {
         $("#pname").html("이름을 입력해주세요.")
@@ -310,6 +312,7 @@ let $memailconfirmTxt = $("#memailconfirmTxt");
 let $memailconfirm = $("#memailconfirm");
 let $joinHelp = $("#pemail");
 
+// 이메일 인증번호 발송 함수
 $("#checkEmail").click(function() {
     $.ajax({
         type : "POST",
