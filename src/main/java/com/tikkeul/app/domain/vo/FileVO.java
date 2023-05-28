@@ -14,4 +14,5 @@ public class FileVO {
     private String uuid;
     private String path;
     private String fileType;
+
 }
