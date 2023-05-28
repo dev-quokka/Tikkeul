@@ -6,6 +6,7 @@
         <typeAlias type="com.tikkeul.app.domain.vo.DoranBoardVO" alias="doranBoardVO"/>
         <typeAlias type="com.tikkeul.app.domain.dto.DoranBoardDTO" alias="doranBoardDTO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.DoranCommentVO" alias="doranCommentVO"/>
+        <typeAlias type="com.tikkeul.app.domain.dto.DoranCommentDTO" alias="doranCommentDTO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.DoranFileVO" alias="doranFileVO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.FileVO" alias="fileVO"/>
         <typeAlias type="com.tikkeul.app.domain.vo.InquiryBoardVO" alias="inquiryBoardVO"/>
