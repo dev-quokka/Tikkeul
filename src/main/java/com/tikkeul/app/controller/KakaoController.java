@@ -36,6 +36,12 @@ public class KakaoController {
 
 
         if(user.isPresent()){
+            if(user.get().getRoll().equals("ADMIN")){
+                return new RedirectView("/admin/main");
+            }
+            if(user.get().getStatus().equals("EXIT")){
+                return new RedirectView("/join/login");
+            }
             if(user.get().getRegisteredType().equals("NORMAL")){
                 redirectAttributes.addFlashAttribute("login","already-exist-NORMAL");
                 return new RedirectView("/join/login");
@@ -49,16 +55,15 @@ public class KakaoController {
                 session.setAttribute("token", token);
                 session.setAttribute("id",user.get().getId());
                 return new RedirectView("/join/mainpage");
-
             }
         }
         joinService.join(kakaoUser.get());
 
 
-        Optional<Long> foundId = joinService.login(kakaoUser.get().getIdentification(),kakaoUser.get().getPassword());
+        Optional<UserVO> foundId = joinService.login(kakaoUser.get().getIdentification(),kakaoUser.get().getPassword());
 
         log.info(foundId.toString());
-        session.setAttribute("id",foundId.get());
+        session.setAttribute("id",foundId.get().getId());
         session.setAttribute("token", token);
 
         return new RedirectView("/join/mainpage");

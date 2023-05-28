@@ -22,8 +22,8 @@ public interface UserMapper {
 
 
 //        로그인
-    @Select("SELECT ID FROM USERS WHERE IDENTIFICATION = #{identification} AND PASSWORD = #{password}")
-    public  Optional<Long> selectByUserIdAndUserPassword(@Param("identification") String id,@Param("password") String password);
+    @Select("SELECT ID, STATUS, ROLL FROM USERS WHERE IDENTIFICATION = #{identification} AND PASSWORD = #{password}")
+    public  Optional<UserVO> selectByUserIdAndUserPassword(@Param("identification") String id,@Param("password") String password);
 
 //  카카오 회원 업데이트
     public void updatekakao(UserVO kakaoUser);

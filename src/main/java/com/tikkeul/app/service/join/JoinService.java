@@ -13,7 +13,7 @@ public interface JoinService {
     public void join(UserVO userVO);
 
     //    로그인
-    public Optional<Long> login(String identification, String password);
+    public Optional<UserVO> login(String identification, String password);
 
 //        카카오회원 업데이트
     public void updateKakaoUser(Optional<UserVO> kakaoUser);

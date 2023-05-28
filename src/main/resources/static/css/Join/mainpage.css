@@ -765,9 +765,7 @@ button[class*=Button_button] {
     font-size: 12px;
 }
 
-.SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P .SchoolLectureListDesktop_lectureCon__BhKMl .SchoolLectureListDesktop_lectureType__8_hUF .SchoolLectureListDesktop_reward__A5Tp2 {
-    background: #2e51ef;
-}
+
 
 .SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P .SchoolLectureListDesktop_lectureCon__BhKMl .SchoolLectureListDesktop_lectureType__8_hUF i {
     display: inline-block;
@@ -784,6 +782,7 @@ button[class*=Button_button] {
     white-space: nowrap;
     font-size: 16px;
     font-weight: 500;
+    padding-top: 26px;
 }
 
 .SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P .SchoolLectureListDesktop_lectureCon__BhKMl .SchoolLectureListDesktop_lectureSub__3soFP {
@@ -806,7 +805,6 @@ button[class*=Button_button] {
 }
 
 .SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P .SchoolLectureListDesktop_lectureCon__BhKMl .SchoolLectureListDesktop_lectureNum__oypsR em {
-    padding-right: 10px;
     color: #c04646;
     font-weight: 500;
 }
@@ -1153,4 +1151,13 @@ button[class*=Button_button] {
 }
 .SchoolLectureListDesktop_mainSchoolLecture__3f2nw .SchoolLectureListDesktop_schoolLecture__2EK3P #tree{
     background-image: url("/image/programtreeLogo.png");
+}
+.SchoolLectureListDesktop_reward__A5Tp1{
+    background-color: #2e51ef;
+ }
+.SchoolLectureListDesktop_reward__A5Tp2 {
+    background: #9f8673;
+}
+.SchoolLectureListDesktop_reward__A5Tp3 {
+    background: #705f53;
 }

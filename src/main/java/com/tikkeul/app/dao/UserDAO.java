@@ -34,7 +34,7 @@ public class UserDAO {
     }
 
     //    로그인
-    public Optional<Long> findByUserIdAndUserPassword( String identification, String password){
+    public Optional<UserVO> findByUserIdAndUserPassword( String identification, String password){
         return userMapper.selectByUserIdAndUserPassword(identification,password);
     };
 
