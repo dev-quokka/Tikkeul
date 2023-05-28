@@ -28,9 +28,11 @@ public class SavingLevelMapperTests {
     public void selectSavingLevelAllTest(){
 //        log.info(savingLevelMapper.admminSelectSavingLevelAll().toString());
     }
+
     @Test
-    public void savingLevelAll(){
-        log.info(savingLevelMapper.savingLevelFileAll().toString());
+    public void selectSavingLevelTest(){
+        log.info(savingLevelMapper.adminSelectSavingLevel(5L).toString());
     }
+
 
 }

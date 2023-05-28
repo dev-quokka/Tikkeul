@@ -43,8 +43,8 @@
         <![CDATA[
            WHERE R>=#{count} AND R<#{count}+12
         ]]>
-
     </select>
+
 
     <!--열매샵 제품 상세 보기 : readDetail.html-->
     <select id="select" resultType="itemDTO">
@@ -63,6 +63,8 @@
     <!--제품후기, 별점-->
     <select id="selectScoreAndCountOfReview" resultType="orderDTO">
     SELECT ITEM_ID, AVG(SCORE) AVG_SCORE, COUNT(ITEM_ID) COUNT_OF_REVIEWS
+    <select id="selectReview" resultType="orderDTO">
+    SELECT ITEM_ID, AVG(SCORE) AVB_SCORE, COUNT(ITEM_ID) COUNT_OF_REVIES
     FROM
     (
         SELECT R.ID REVIEW_ID, CONTENT, SCORE, R.REGISTER_DATE REVIEW_DATE, ORDER_ID, I.ID ITEM_ID, I.NAME ITEM_NAME, U.NAME USER_NAME
@@ -75,7 +77,7 @@
     HAVING ITEM_ID = ${id}
     </select>
 
-
+    <!--같은레벨 제품 불러오기 : 제품 상세페이지-->
     <select id="selectAllOtherItemsOFSameLevelItem" resultType="orderDTO">
     SELECT ITEM_ID, AVG(SCORE) AVG_SCORE, COUNT(ITEM_ID) COUNT_OF_REVIEWS
     FROM
@@ -89,6 +91,27 @@
     GROUP BY ITEM_ID
     HAVING ITEM_ID = ${id}
     </select>
+<!--김보령 작업공간-->
+
+
+
+    <insert id="insertItem">
+        <selectKey keyProperty="id" order="BEFORE" resultType="Long">
+            SELECT SEQ_SAVINGLEVEL.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO ITEM (
+            ID, "NAME", PRICE,
+            ORIGIN_STOCK, BRAND, CATEGORY, SAVINGLEVEL_ID
+        )
+        VALUES(
+            #{id}, #{name}, #{price}, #{originStock},
+            #{brand}, #{category},
+            (
+                SELECT ID FROM SAVINGLEVEL
+                WHERE NAME = #{name}
+            )
+        )
+    </insert>
 
 
 

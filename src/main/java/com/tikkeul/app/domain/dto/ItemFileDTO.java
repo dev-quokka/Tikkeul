@@ -13,6 +13,4 @@ public class ItemFileDTO {
     private String uuid;
     private String filePath;
     private String fileType;
-
-
 }

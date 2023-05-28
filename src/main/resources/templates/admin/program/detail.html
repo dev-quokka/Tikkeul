@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleag.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원목록</title>
+    <title>프로그램목록</title>
     <link rel="stylesheet" type="text/css" href="/css/admin/admin.css">
-    <link rel="stylesheet" type="text/css" href="/css/admin/admin-member-modify.css">
+    <link rel="stylesheet" type="text/css" href="/css/admin/admin-program-detail.css">
 </head>
 <body>
 <main>
@@ -49,66 +49,67 @@
         </nav>
     </div>
 
+
     <section class="management-main-content">
         <div class="management-top">
-            <div class="page-name">회원수정</div>
+            <div class="page-name">프로그램 상세보기</div>
         </div>
-        <div class="modify-main">
-            <div class="modify-box">
+
+        <div class="detail-main">
+
+            <div class="detail-box">
+
                 <table class="table-contents">
                     <tr>
-                        <td>회원 번호</td>
-                        <td></td>
+                        <td>레벨</td>
+                        <td th:text="${savingLevels.name}"></td>
                     </tr>
                     <tr>
-                        <td>이름</td>
+                        <td>목표 금액</td>
+                        <td th:text="${savingLevels.goalMoney}"></td>
+                    </tr>
+                    <tr>
+                        <td>일일 저축 금액</td>
+                        <td th:text="${savingLevels.dailyMoney}"></td>
+                    </tr>
+                    <tr class="program-detail">
+                        <td>썸네일 이미지</td>
                         <td>
-                            <input type="text" name="" value="" class="modify-input">
+                            <img
+                                    width="150px"
+                                    height="150px"
+                                    sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw"\
+                                    class="thumbnailimage"
+                            >
                         </td>
                     </tr>
                     <tr>
-                        <td>ID</td>
+                        <td>내용 이미지</td>
                         <td>
-                            <input type="text" name="" value="" class="modify-input">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>주소</td>
-                        <td>
-                            <input type="text" name="" value="" class="modify-input">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>나이</td>
-                        <td>
-                            <input type="text" name="" value="" class="modify-input">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>성별</td>
-                        <td>
-                            <input type="text" name="" value="" class="modify-input">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>전화번호</td>
-                        <td>
-                            <input type="text" name="" value="" class="modify-input">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>이메일</td>
-                        <td>
-                            <input type="text" name="" value="" class="modify-input">
+                            <img
+                                    width="150px"
+                                    height="150px"
+                                    sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw"
+                                    class="thumbnailimage"
+                            >
                         </td>
                     </tr>
                 </table>
                 <div class="button-box">
-                    <input type="button" name="report-list" value="회원목록" onClick="location.href='admin-member.html'"/>
-                    <input type="button" name="report-answer" value="수정완료"/>
+                    <input type="button" name="report-list" value="프로그램목록"
+                           onClick="location.href='/admin/program/list'"/>
+                    <input type="button" name="report-answer" value="수정"
+                           th:onclick="|location.href='@{/admin/program/modify(id=${savingLevels.id})}'|"/>
                 </div>
             </div>
+        </div>
     </section>
 </main>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script th:inline="javascript">
+    let savingLevels = [[${savingLevels}]];
+    let files = [[${savingLevels.files}]]
+</script>
+<script src="/js/admin/detailprogram.js"></script>
 </body>
 </html>

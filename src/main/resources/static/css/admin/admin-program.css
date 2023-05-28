@@ -1,5 +1,13 @@
 @charset "utf-8";
 
+tr {
+    cursor: pointer;
+}
+
+input {
+    cursor: pointer;
+}
+
 .search-container {
     display: flex;
     width: 52%;

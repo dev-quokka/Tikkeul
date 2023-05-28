@@ -3,6 +3,7 @@ package com.tikkeul.app.mapper;
 import com.tikkeul.app.domain.dto.ItemDTO;
 import com.tikkeul.app.domain.dto.OrderDTO;
 import com.tikkeul.app.domain.type.CategoryType;
+import com.tikkeul.app.domain.vo.ItemVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -23,7 +24,10 @@ public interface ItemMapper {
 
 //  메인페이지
     public List<ItemDTO> selectAllItem();
+    public Optional<OrderDTO> selectReview(Long id);
 
-    public List<ItemDTO> selectAllOptionItem(Long savingLevelId);
+    public void insertItem(ItemDTO itemDTO);
+
+    List<ItemDTO> selectAllOptionItem(Long savingLevelId);
 }
 

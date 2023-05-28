@@ -1,23 +1,21 @@
-
-
-function getSelectedLectureIds() {
-    const inquiryIds = [];
-    $(".inquiryCheckbox:checked").each(function() {
-        inquiryIds.push($(this).val());
+function getSelectedProgramIds() {
+    const programIds = [];
+    $(".programCheckbox:checked").each(function() {
+        programIds.push($(this).val());
     });
-    return inquiryIds;
+    return programIds;
 }
 
 
-function deleteLectures(inquiryIds) {
-    console.log(inquiryIds);
+function deletePrograms(programIds) {
+    console.log(programIds);
     $.ajax({
-        url: "/admin/inquiry/delete",
+        url: "/admin/program/delete",
         type: "POST",
         // method: "DELETE",
         // dataType: "json",
         contentType: "application/json",
-        data: JSON.stringify(inquiryIds),
+        data: JSON.stringify(programIds),
         success: function() {
             showWarnModal("삭제에 성공 하였습니다.");
             setTimeout(() => {
@@ -29,5 +27,3 @@ function deleteLectures(inquiryIds) {
         }
     });
 }
-
-

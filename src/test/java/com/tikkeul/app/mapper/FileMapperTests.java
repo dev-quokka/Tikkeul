@@ -1,14 +1,16 @@
 package com.tikkeul.app.mapper;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.tikkeul.app.domain.dto.ItemFileDTO;
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> master
 import com.tikkeul.app.dao.ItemFileDAO;
 import com.tikkeul.app.domain.dto.FileDTO;
-=======
->>>>>>> fddfb61c09fc5038359693b4d7c7e19fe97db257
 import com.tikkeul.app.domain.type.FileType;
+import com.tikkeul.app.domain.dto.SavingLevelFileDTO;
 import com.tikkeul.app.domain.vo.FileVO;
 import com.tikkeul.app.domain.vo.ItemFileVO;
 >>>>>>> master
@@ -16,8 +18,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.UUID;
 
 @SpringBootTest
 @Slf4j
@@ -27,7 +27,8 @@ public class FileMapperTests {
 
     @Test
     public void selectAllTest(){
-        fileMapper.selectAll(1L).stream().map(FileVO::toString).forEach(log::info);
+//        fileMapper.selectAll(1L).stream().map(FileVO::toString).forEach(log::info);
+        
     }
 //    @Test
 //    public void insertTest(){
@@ -53,4 +54,10 @@ public class FileMapperTests {
 //        fileVO2.setFilePath("2023/05/28");
 //        fileMapper.insertfile(fileVO2);
 //    }
+
+    @Test
+    public void savingLevelSelectlAllTest(){
+        fileMapper.savingLevelSelectlAll(21L).stream().map(SavingLevelFileDTO::toString).forEach(log::info);
+    }
+    
 }

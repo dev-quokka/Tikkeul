@@ -19,6 +19,7 @@ import java.util.UUID;
 @Slf4j
 @Controller
 @RequestMapping("/files/*")
+@Slf4j
 public class FileController {
     //    파일 업로드
     @PostMapping("upload")
@@ -38,6 +39,7 @@ public class FileController {
                 out.close();
             }
         }
+        log.info(uploadFiles.toString());
         return uuids;
     }
 
