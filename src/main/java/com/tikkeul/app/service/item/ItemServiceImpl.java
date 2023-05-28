@@ -30,4 +30,15 @@ public class ItemServiceImpl implements ItemService {
     public Optional<OrderDTO> readReviw(Long id) {
         return itemDAO.findReview(id);
     }
+
+    @Override
+    public List<ItemDTO> getitemList() {
+        return itemDAO.findAllItem();
+    }
+
+    @Override
+    public List<ItemDTO> getOptionItemList(Long savingLevelId) {
+        return itemDAO.findAllOptionItem(savingLevelId);
+    }
+
 }

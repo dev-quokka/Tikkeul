@@ -12,39 +12,8 @@ public interface FileMapper {
 //    파일 조회
     public List<FileVO> selectAll(Long itemId);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void insert(SavingLevelFileDTO fileVO);
+    public void insertfile(FileVO fileVO);
+
 
 }
