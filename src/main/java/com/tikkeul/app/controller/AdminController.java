@@ -2,16 +2,13 @@ package com.tikkeul.app.controller;
 
 import com.tikkeul.app.domain.dto.*;
 import com.tikkeul.app.domain.vo.AnswerVO;
-import com.tikkeul.app.domain.vo.ItemVO;
 import com.tikkeul.app.domain.vo.SavingLevelVO;
 import com.tikkeul.app.domain.vo.UserVO;
 import com.tikkeul.app.service.admin.AdminService;
-import com.tikkeul.app.service.item.ItemService;
 import com.tikkeul.app.service.program.ProgramService;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -31,7 +28,6 @@ import java.util.Optional;
 public class AdminController {
     private final AdminService adminService;
     private final ProgramService programService;
-    private final ItemService itemService;
 
 //    회원
     @GetMapping("user/list")
@@ -115,15 +111,6 @@ public class AdminController {
         model.addAttribute("items",adminService.adminGetListItemAll(pagination,search));
     }
 
-    @GetMapping("item/write")
-    public void goToItemWriteForm(ItemDTO itemDTO){;}
-
-    @PostMapping("item/write")
-    public RedirectView writeItem(ItemDTO itemDTO){
-        itemService.writeItem(itemDTO);
-        return new RedirectView("/admin/item/list");
-    }
-
     /* 프로그램*/
     @GetMapping("program/write")
     public void goToSavingLevelWriteForm(SavingLevelDTO savingLevelDTO){;}
@@ -139,30 +126,4 @@ public class AdminController {
         model.addAttribute("programs",programService.getSavingLevelAll());
     }
 
-    @GetMapping(value = {"program/detail","program/modify"})
-    public void detail(Long id, Model model){
-        SavingLevelDTO savingLevelDTO = programService.getSavingLevel(id);
-        model.addAttribute("savingLevels", savingLevelDTO);
-    }
-
-    @PostMapping("program/modify")
-    public RedirectView modify(SavingLevelDTO savingLevelDTO, RedirectAttributes redirectAttributes){
-        programService.modify(savingLevelDTO);
-        redirectAttributes.addAttribute("id", savingLevelDTO.getId());
-        return new RedirectView("/admin/program/detail");
-    }
-
-    @PostMapping("program/delete")
-    public void removeProgram(@RequestBody List<String> programIds){
-        for (String programId : programIds) programService.removeSavingLevel(Long.valueOf(programId));
-    }
-
-    /*메인 페이지*/
-    @GetMapping("main")
-    public void goToMain(Model model){
-        model.addAttribute("mainusers",adminService.adminMainGetUser());
-        model.addAttribute("mainsavinglevels",adminService.adminMainGetSavingLevel());
-        model.addAttribute("mainitems",adminService.adminMainGetItem());
-        model.addAttribute("maininquirys",adminService.adminMainGetInquiry());
-    }
 }
