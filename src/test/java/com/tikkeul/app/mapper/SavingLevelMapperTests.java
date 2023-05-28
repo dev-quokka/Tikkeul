@@ -1,7 +1,5 @@
 package com.tikkeul.app.mapper;
 
-import com.tikkeul.app.dao.SavingLevelDAO;
-import com.tikkeul.app.domain.dto.SavingLevelDTO;
 import com.tikkeul.app.domain.vo.SavingLevelVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;

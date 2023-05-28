@@ -6,7 +6,6 @@ import com.tikkeul.app.dao.ItemFileDAO;
 import com.tikkeul.app.domain.dto.ItemDTO;
 import com.tikkeul.app.domain.dto.ItemFileDTO;
 import com.tikkeul.app.domain.dto.OrderDTO;
-import com.tikkeul.app.domain.type.CategoryType;
 import com.tikkeul.app.domain.type.FileType;
 import com.tikkeul.app.domain.vo.ItemFileVO;
 import com.tikkeul.app.domain.vo.ItemVO;
@@ -30,20 +29,19 @@ public class ItemServiceImpl implements ItemService {
 //    김보령 작업공간
 //    열매샵 제품 목록 가져오기 : list.html
     @Override
-    public List<ItemDTO> getList(CategoryType categoryType) {
-        return itemDAO.findAll(categoryType);
+    public List<ItemDTO> getList() {
+        return itemDAO.findAll();
     }
-
 //    열매샵 제품 상세 보기 : readDetail.html
     @Override
     public Optional<ItemDTO> readDetail(Long id) {
-        return itemDAO.readDetail(id);
+        return itemDAO.findById(id);
     }
 
-//    후기 수 별점
+//    제품 후기 후, 별점
     @Override
-    public Optional<OrderDTO> readScoreAndCountOfReview(Long id) {
-        return itemDAO.readScoreAndCountOfReview(id);
+    public Optional<OrderDTO> readReviw(Long id) {
+        return itemDAO.findReview(id);
     }
 
     @Override
