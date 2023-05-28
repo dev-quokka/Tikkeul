@@ -31,4 +31,9 @@ public class ItemDAO {
         return itemMapper.selectScoreAndCountOfReview(id);
     }
 
+    public List<ItemDTO> findAllItem() { return itemMapper.selectAllItem();
+    }
+
+    public List<ItemDTO> findAllOptionItem(Long savingLevelId) { return itemMapper.selectAllOptionItem(savingLevelId);
+    }
 }

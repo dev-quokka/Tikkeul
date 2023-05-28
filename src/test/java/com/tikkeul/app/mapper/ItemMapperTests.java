@@ -14,13 +14,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 @Slf4j
 public class ItemMapperTests {
-    @Autowired
-    private ItemService itemService;
-
     //    상품페이지
+    @Autowired
+     private ItemMapper itemMapper;
+
     @Test
-    public void selectAllTest(CategoryType categoryType){
-        log.info(itemService.getList(categoryType).get());
+    public void itemtest(){
+        itemMapper.selectAllItem();
+    }
+    @Test
+    public void itemtests(){
+        CategoryType categoryType = new CategoryType();
+        itemMapper.selectAll(categoryType);
     }
 }
 

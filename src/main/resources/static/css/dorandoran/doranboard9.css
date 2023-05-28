@@ -129,3 +129,142 @@ body {
 }
 
 /*# sourceMappingURL=wui.css?c542abcf.map */
+.content{
+    font-size: 16px;
+}
+.active{
+    text-align: right;
+}
+.change{
+    margin-right: 10px;
+}
+section.content-container {
+    flex-grow: 1 !important;
+}
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile > div {
+    align-items: center;
+    display: flex;
+}
+section#reply-write-wrap div.profile {
+    margin-bottom: 15px;
+}
+div.write-profile {
+    justify-content: flex-end;
+}
+.writer {
+    margin-left: 5px;
+    font-weight: 400;
+    color: rgb(126, 128, 130);
+}
+.title {
+    font-weight: 400;
+    margin: 8px 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#detail-title h2{
+    font-size: 32px;
+}
+section#detail-title {
+    margin-top: 64px;
+}
+#replies-wrap h4.title {
+    font-size: 14px;
+}
+section.reply-update-wrap {
+    display: none;
+    width: 50%;
+    padding: 64px 0px;
+}
+
+section.reply-update-wrap {
+    padding: 10px 0;
+}
+
+section.reply-update-wrap .button-wrap{
+    display: flex;
+}
+
+section#reply-write-wrap button, section.reply-update-wrap button {
+    cursor: pointer;
+    margin-top: 24px;
+    border-radius: 4px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 11px 24px 13px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+    color: rgb(24, 26, 28);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+section#reply-write-wrap textarea , section.reply-update-wrap textarea{
+    width: 100%;
+    padding-bottom: 15px;
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    color: #202124;
+    margin: 0;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    border: none;
+    border-bottom: 3px solid rgb(235 124 120);
+}
+.button-wrap button:hover {
+    background-color: #F3F5F7;
+}
+section.reply-update-wrap .button-wrap{
+    display: flex;
+}
+.date {
+    font-weight: 200;
+}
+a.update, a.delete {
+    color: rgb(235 124 120);
+}
+section.reply-update-wrap {
+    display: none;
+    width: 50%;
+    padding: 64px 0px;
+}
+section.reply-update-wrap {
+    padding: 10px 0;
+}
+section.reply-update-wrap .button-wrap{
+    display: flex;
+}
+section#reply-write-wrap textarea , section.reply-update-wrap textarea{
+    width: 100%;
+    padding-bottom: 15px;
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    color: #202124;
+    margin: 0;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    border: none;
+    border-bottom: 3px solid rgb(235 124 120);
+}
+span.update, span.delete {
+    color: rgb(235 124 120);
+    cursor: pointer;
+}

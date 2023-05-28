@@ -28,14 +28,14 @@ public class DoranBoardDAO {
         doranBoardMapper.insert(doranBoardVO);
     }
 
-    //    게시글 조회
+    //    게시글 상세보기
     public Optional<DoranBoardDTO> findById(Long id) {
         return doranBoardMapper.select(id);
     }
 
     //    게시글 수정
-    public void setPostDTO(DoranBoardDTO doranBoardDTO) {
-        doranBoardMapper.update(doranBoardDTO);
+    public void setPostDTO(DoranBoardVO doranBoardVO) {
+        doranBoardMapper.update(doranBoardVO);
     }
 
     //    게시글 삭제

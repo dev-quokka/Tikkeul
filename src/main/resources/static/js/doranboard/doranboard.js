@@ -5,7 +5,7 @@ $(document).ready(function(){
     boards.forEach(board => {
         text += `
                    <li>
-                        <a href="">
+                        <a onclick="location.href='/doranboard/dorandetail?id=${board.id}'">
                             <div class="wcommunity-story">
                                 <div class="story-info">
                                     <p class="title">${board.title}</p>
