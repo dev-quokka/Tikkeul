@@ -31,7 +31,7 @@ public class AdminMapperTests {
     public void adminDeleteUserTest(){
 //        adminMapper.adminDeleteUser(12L);
     }
-
+//
     @Test
     public void adminSelectAllinquiry(){
 //        Pagination pagination = new Pagination();

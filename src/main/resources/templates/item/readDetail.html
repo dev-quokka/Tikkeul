@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="MainWrapper_content__GZkTa">
-            <section th:object="${item}">
+            <section>
                 <div class="MainContainer_root__3gfdh">
                     <div class="DetailHeader_container__3PGje">
                         <div class="DetailHeader_detailImageArea__kVGJW">
@@ -148,7 +148,7 @@
                                         <div class="ProjectSearchTags_container__7YZNA"><a
                                                 href="/web/wcampaign/search?category=288,sc002"
                                                 class="ProjectSearchTags_category__3ofgG ProjectSearchTags_gaElement__1mZHZ"
-                                        ><span aria-label="카테고리" th:text="*{category}"></span>
+                                        ><span aria-label="카테고리" th:text="${item.category}"></span>
                                             <svg viewBox="0 0 40 40" focusable="false" role="presentation"
                                                  class="withIcon_icon__3VTbq" aria-hidden="true"
                                                  style="width: 18px; height: 18px;">
@@ -162,18 +162,18 @@
 
                                     </div>
                                     <div class="DetailInfoHeader_titleInfo__2nx8Q"><h3
-                                            class="DetailInfoHeader_title__i0kaY" th:text="*{name}"></h3></div>
+                                            class="DetailInfoHeader_title__i0kaY" th:text="${item.name}"></h3></div>
                                     <div class="DetailInfoHeader_participationInfo__1FHhm">
                                         <div><a class="DetailInfoHeader_rating__1xQMT"
                                                 href="/web/store/detail/236/satisfaction">
                                             <div class="RatingScore_container__AeQ_I RatingScore_smTitle__1OhOH DetailInfoHeader_score__3mi3k">
                                                 <div class="RatingScore_icon__rIS_k"></div>
-                                                <span class="RatingScore_score__2a-SN">4.9</span></div>
-                                            <span class="DetailInfoHeader_count__O-2RE">(16)</span></a></div>
+                                                <span class="RatingScore_score__2a-SN" th:text="${calcReview.avgScore}"></span></div>
+                                            <span class="DetailInfoHeader_count__O-2RE" th:text="'(' + ${calcReview.countOfReviews} + ')'"></span></a></div>
 
                                     </div>
                                     <div class="DetailInfoHeader_buyInfo__160ZZ"><em
-                                            class="DetailInfoHeader_price__2PVzf"><span th:text="*{price}"></span><span
+                                            class="DetailInfoHeader_price__2PVzf"><span th:text="${item.price}"></span><span
                                             class="DetailInfoHeader_unit__2s2Vz">원</span></em></div>
                                     <div class="DetailInfoHeader_productInfo__2Sqwq">
                                         <dl>
@@ -231,7 +231,7 @@
                                             <path d="M22.16 4h-.007a8.142 8.142 0 0 0-6.145 2.79A8.198 8.198 0 0 0 9.76 3.998a7.36 7.36 0 0 0-7.359 7.446c0 5.116 4.64 9.276 11.6 15.596l2 1.76 2-1.76c6.96-6.32 11.6-10.48 11.6-15.6v-.08A7.36 7.36 0 0 0 22.241 4h-.085zm-5.28 21.84l-.88.8-.88-.8h-.08C8.4 19.76 4 15.84 4 11.44l-.001-.082A5.76 5.76 0 0 1 9.928 5.6a6.542 6.542 0 0 1 4.865 2.232l.486.567h1.52l.48-.56a6.548 6.548 0 0 1 4.877-2.24l.084-.001a5.76 5.76 0 0 1 5.76 5.76l-.001.085c0 4.396-4.4 8.316-11.12 14.396z"></path>
                                             </svg>
 
-                                            <span class="ProductFloatButton_count__1a-7B" th:text="*{countOfLikes}"></span>
+                                            <span class="ProductFloatButton_count__1a-7B" th:text="${item.countOfLikes}"></span>
                                         </div>
 
 
@@ -263,9 +263,9 @@
                             </a>
                         </li>
                         <li class="">
-                            <a href="shugi.html">
+                            <a th:href="@{/item/itemdetailshugi(id=${item.id})}">
                                 <span>제품 후기
-                                    <span class="DetailTab_badge__2oSI4" th:text="*{countOfreviews}"></span>
+                                    <span class="DetailTab_badge__2oSI4" th:text="${calcReview.countOfReviews}"></span>
                                 </span>
                             </a>
                         </li>
@@ -448,157 +448,25 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="RecommendationRelated_listContainer__3cyin">
-                                                    <div class="RecommendationCardWrap_container__3mZZO RecommendationCardWrap_visible__2Uxzo">
-                                                        <a href="/web/store/detail/260"
-                                                           class="RecommendationCardDesktop_container__3nt92"
-                                                           data-ec-list="스토어(상세)_AI추천_스토어" data-ec-id="260"
-                                                           data-ec-name="[평생보증/천연다이아] 전세계가 사랑하는 스타일 &quot;샤이닝 다이아몬드&quot;"
-                                                           data-ec-category="패션·잡화" data-ec-brand="가치온"
-                                                           data-ec-position="0" data-ec-price="65000"
-                                                           data-ec-contenttype="STORE"
-                                                           data-gtm-vis-first-on-screen-11319722_2115="23103"
-                                                           data-gtm-vis-first-on-screen-11319722_2073="23103">
-                                                            <div class="RecommendationCardDesktop_thumbnailContainer__1xvUR">
-                                                                <div class="RecommendationCardDesktop_thumbnailPlaceholder__2m3YN">
-                                                                    <div aria-hidden="true"
-                                                                         class="CardThumbnail_thumbnail__3bDBJ CardThumbnail_visible__343f4"
-                                                                         style="background-image: url(&quot;https://cdn2.wadiz.kr/2021/09/01/b64c8062-2c89-4447-b804-83215413ace6.jpg/wadiz/resize/400/format/jpg/quality/85/&quot;); border-radius: 8px;"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="RecommendationCardDesktop_contentContainer__ad5nP">
-                                                                <div class="RecommendationCardDesktop_top__1Iass">
-                                                                    <p class="RecommendationCardDesktop_title__3ATTu">
-                                                                        [평생보증/천연다이아] 전세계가 사랑하는 스타일 "샤이닝
-                                                                        다이아몬드"</p>
-                                                                    <p class="RecommendationCardDesktop_makerName__3WX_x">
-                                                                        가치온</p></div>
-                                                                <div class="RecommendationCardDesktop_bottom__1YL1h">
-                                                                    <div class="RecommendationCardDesktop_storeDetail__24l0b">
-                                                                        <span class="RecommendationCardDesktop_price__3L8gd">65,000원</span>
-                                                                        <div class="RecommendationCardDesktop_info__Fylbp">
-                                                                            <div class="RatingScore_container__AeQ_I RatingScore_smCard02__3cJAW">
-                                                                                <div class="RatingScore_icon__rIS_k"></div>
-                                                                                <span class="RatingScore_score__2a-SN">5.0</span>
-                                                                            </div>
-                                                                            <div class="DeliveryBadge_container__3XB44">
-                                                                                <div class="DeliveryBadge_badge__14MYK">
-                                                                                    무료배송
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </a></div>
-                                                    <div class="RecommendationCardWrap_container__3mZZO RecommendationCardWrap_visible__2Uxzo">
-                                                        <a href="/web/store/detail/262"
-                                                           class="RecommendationCardDesktop_container__3nt92"
-                                                           data-ec-list="스토어(상세)_AI추천_스토어" data-ec-id="262"
-                                                           data-ec-name="[평생보증/시뮬럿다이아] &quot;브라이트 캐럿&quot;이 선사하는 압도적인 광채"
-                                                           data-ec-category="패션·잡화" data-ec-brand="가치온"
-                                                           data-ec-position="1" data-ec-price="337000"
-                                                           data-ec-contenttype="STORE"
-                                                           data-gtm-vis-first-on-screen-11319722_2115="23103"
-                                                           data-gtm-vis-first-on-screen-11319722_2073="23104">
-                                                            <div class="RecommendationCardDesktop_thumbnailContainer__1xvUR">
-                                                                <div class="RecommendationCardDesktop_thumbnailPlaceholder__2m3YN">
-                                                                    <div aria-hidden="true"
-                                                                         class="CardThumbnail_thumbnail__3bDBJ CardThumbnail_visible__343f4"
-                                                                         style="background-image: url(&quot;https://cdn2.wadiz.kr/2021/09/01/dbcca8b2-59e7-4b3b-b2ff-0a7b25050603.jpg/wadiz/resize/400/format/jpg/quality/85/&quot;); border-radius: 8px;"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="RecommendationCardDesktop_contentContainer__ad5nP">
-                                                                <div class="RecommendationCardDesktop_top__1Iass">
-                                                                    <p class="RecommendationCardDesktop_title__3ATTu">
-                                                                        [평생보증/시뮬럿다이아] "브라이트 캐럿"이 선사하는 압도적인
-                                                                        광채</p>
-                                                                    <p class="RecommendationCardDesktop_makerName__3WX_x">
-                                                                        가치온</p></div>
-                                                                <div class="RecommendationCardDesktop_bottom__1YL1h">
-                                                                    <div class="RecommendationCardDesktop_storeDetail__24l0b">
-                                                                        <span class="RecommendationCardDesktop_price__3L8gd">337,000원</span>
-                                                                        <div class="RecommendationCardDesktop_info__Fylbp">
-                                                                            <div class="RatingScore_container__AeQ_I RatingScore_smCard02__3cJAW">
-                                                                                <div class="RatingScore_icon__rIS_k"></div>
-                                                                                <span class="RatingScore_score__2a-SN">5.0</span>
-                                                                            </div>
-                                                                            <div class="DeliveryBadge_container__3XB44">
-                                                                                <div class="DeliveryBadge_badge__14MYK">
-                                                                                    무료배송
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </a></div>
-                                                    <div class="RecommendationCardWrap_container__3mZZO RecommendationCardWrap_visible__2Uxzo">
-                                                        <a href="/web/wcomingsoon/rwd/206335"
-                                                           class="RecommendationCardDesktop_container__3nt92"
-                                                           data-ec-list="스토어(상세)_AI추천_오픈예정"
-                                                           data-ec-id="206335"
-                                                           data-ec-name="[누적15억/앵콜] &quot;크라운 캐럿&quot; 처럼 넌 항상 반짝이고 빛이나"
-                                                           data-ec-category="패션·잡화" data-ec-brand="가치온"
-                                                           data-ec-position="2"
-                                                           data-ec-contenttype="COMING_SOON"
-                                                           data-gtm-vis-first-on-screen-11319722_2115="23103"
-                                                           data-gtm-vis-first-on-screen-11319722_2073="23104">
-                                                            <div class="RecommendationCardDesktop_thumbnailContainer__1xvUR">
-                                                                <div class="RecommendationCardDesktop_thumbnailPlaceholder__2m3YN">
-                                                                    <div aria-hidden="true"
-                                                                         class="CardThumbnail_thumbnail__3bDBJ CardThumbnail_visible__343f4"
-                                                                         style="background-image: url(&quot;https://cdn.wadiz.kr/wwwwadiz/green001/2023/0413/20230413121953483_206335.jpg/wadiz/resize/400/format/jpg/quality/85/&quot;); border-radius: 8px;"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="RecommendationCardDesktop_contentContainer__ad5nP">
-                                                                <div class="RecommendationCardDesktop_top__1Iass">
-                                                                    <p class="RecommendationCardDesktop_title__3ATTu">
-                                                                        [누적15억/앵콜] "크라운 캐럿" 처럼 넌 항상 반짝이고
-                                                                        빛이나</p>
-                                                                    <p class="RecommendationCardDesktop_makerName__3WX_x">
-                                                                        가치온</p></div>
-                                                                <div class="RecommendationCardDesktop_bottom__1YL1h">
-                                                                    <div class="RecommendationCardDesktop_comingSoonDetail__1sZ_p">
-                                                                        <p class="RecommendationCardDesktop_openDate__3ughr">
-                                                                            5/24(수) 오픈예정</p></div>
-                                                                </div>
-                                                            </div>
-                                                        </a></div>
-                                                    <div class="RecommendationCardWrap_container__3mZZO RecommendationCardWrap_visible__2Uxzo">
-                                                        <a href="/web/campaign/detail/190901"
-                                                           class="RecommendationCardDesktop_container__3nt92"
-                                                           data-ec-list="스토어(상세)_AI추천_펀딩"
-                                                           data-ec-id="190901"
-                                                           data-ec-name="[누적14억] &quot;브라이트 캐럿&quot;이 선사하는 압도적인 광채 ver.2"
-                                                           data-ec-category="패션·잡화" data-ec-brand="가치온"
-                                                           data-ec-position="3" data-ec-contenttype="REWARD"
-                                                           data-gtm-vis-first-on-screen-11319722_2115="23103"
-                                                           data-gtm-vis-first-on-screen-11319722_2073="23104">
-                                                            <div class="RecommendationCardDesktop_thumbnailContainer__1xvUR">
-                                                                <div class="RecommendationCardDesktop_thumbnailPlaceholder__2m3YN">
-                                                                    <div aria-hidden="true"
-                                                                         class="CardThumbnail_thumbnail__3bDBJ CardThumbnail_visible__343f4"
-                                                                         style="background-image: url(&quot;https://cdn.wadiz.kr/wwwwadiz/green001/2023/0307/20230307103608213_190901.jpg/wadiz/resize/400/format/jpg/quality/85/&quot;); border-radius: 8px;"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="RecommendationCardDesktop_contentContainer__ad5nP">
-                                                                <div class="RecommendationCardDesktop_top__1Iass">
-                                                                    <p class="RecommendationCardDesktop_title__3ATTu">
-                                                                        [누적14억] "브라이트 캐럿"이 선사하는 압도적인 광채
-                                                                        ver.2</p>
-                                                                    <p class="RecommendationCardDesktop_makerName__3WX_x">
-                                                                        가치온</p></div>
-                                                                <div class="RecommendationCardDesktop_bottom__1YL1h">
-                                                                    <div class="RecommendationCardDesktop_rewardDetail__2nMDR">
-                                                                        <div class="RecommendationCardDesktop_desc__Tbvgf">
-                                                                            <p class="RecommendationCardDesktop_archive__2D30D">
-                                                                                2938% 달성</p></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </a></div>
-                                                </div>
+
+
+
+
+
+
+
+
+                                                <div id="otheritems" class="RecommendationRelated_listContainer__3cyin"></div>
+
+
+
+
+
+
+
+
+
+
                                             </div>
                                         </div>
                                         <div class="RecommendationBest_container__1qxa-">
@@ -2637,9 +2505,53 @@
 
 </script>
 <script th:inline="javascript">
-    <!--김보령 작업공간-->
-        let item = [[${item}]];
+    const $div = $("#otheritems");
 
-        console.log(item)
+    let text = "";
+    items.forEach(item => {
+        text += `
+        <div class="RecommendationCardWrap_container__3mZZO RecommendationCardWrap_visible__2Uxzo">
+            <a href="/web/store/detail/260"
+                class="RecommendationCardDesktop_container__3nt92"
+                data-ec-list="스토어(상세)_AI추천_스토어" data-ec-id="260"
+                data-ec-name="[평생보증/천연다이아] 전세계가 사랑하는 스타일 &quot;샤이닝 다이아몬드&quot;"
+                data-ec-category="패션·잡화" data-ec-brand="가치온"
+                data-ec-position="0" data-ec-price="65000"
+                data-ec-contenttype="STORE"
+                data-gtm-vis-first-on-screen-11319722_2115="23103"
+                data-gtm-vis-first-on-screen-11319722_2073="23103">
+                    <div class="RecommendationCardDesktop_thumbnailContainer__1xvUR">
+                        <div class="RecommendationCardDesktop_thumbnailPlaceholder__2m3YN">
+                            <div aria-hidden="true"
+                                class="CardThumbnail_thumbnail__3bDBJ CardThumbnail_visible__343f4"
+                                style="background-image: url(&quot;https://cdn2.wadiz.kr/2021/09/01/b64c8062-2c89-4447-b804-83215413ace6.jpg/wadiz/resize/400/format/jpg/quality/85/&quot;); border-radius: 8px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="RecommendationCardDesktop_contentContainer__ad5nP">
+                        <div class="RecommendationCardDesktop_top__1Iass">
+                            <p class="RecommendationCardDesktop_title__3ATTu">${item.name}</p>
+                            <p class="RecommendationCardDesktop_makerName__3WX_x">${item.brand}</p>
+                        </div>
+                        <div class="RecommendationCardDesktop_bottom__1YL1h">
+                            <div class="RecommendationCardDesktop_storeDetail__24l0b">
+                                <span class="RecommendationCardDesktop_price__3L8gd">${item.price}원</span>
+                                <div class="RecommendationCardDesktop_info__Fylbp">
+                                    <div class="RatingScore_container__AeQ_I RatingScore_smCard02__3cJAW">
+                                        <div class="RatingScore_icon__rIS_k"></div>
+                                        <span class="RatingScore_score__2a-SN">5.0</span>
+                                    </div>
+                                    <div class="DeliveryBadge_container__3XB44">
+                                        <div class="DeliveryBadge_badge__14MYK">무료배송</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </a>
+        </div>
+        `
+            })
+            $div.html(text);
 </script>
 </html>

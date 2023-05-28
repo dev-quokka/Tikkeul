@@ -25,14 +25,14 @@ public interface ProgramService {
         return savingLevelDTO;
     }
 
-    default SavingLevelFileDTO toDTO(FileVO fileVO){
-        SavingLevelFileDTO savingLevelFileDTO = new SavingLevelFileDTO();
-        savingLevelFileDTO.setId(fileVO.getId());
-        savingLevelFileDTO.setOriginName(fileVO.getOriginName());
-        savingLevelFileDTO.setPath(fileVO.getPath());
-        savingLevelFileDTO.setUuid(fileVO.getUuid());
-        savingLevelFileDTO.setSize(fileVO.getSize());
-        return savingLevelFileDTO;
-    }
+//    default SavingLevelFileDTO toDTO(FileVO fileVO){
+//        SavingLevelFileDTO savingLevelFileDTO = new SavingLevelFileDTO();
+//        savingLevelFileDTO.setId(fileVO.getId());
+//        savingLevelFileDTO.setOriginName(fileVO.getOriginName());
+//        savingLevelFileDTO.setPath(fileVO.getPath());
+//        savingLevelFileDTO.setUuid(fileVO.getUuid());
+//        savingLevelFileDTO.setSize(fileVO.getSize());
+//        return savingLevelFileDTO;
+//    }
 
 }

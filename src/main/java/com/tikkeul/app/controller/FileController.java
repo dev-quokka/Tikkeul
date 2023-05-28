@@ -1,5 +1,6 @@
 package com.tikkeul.app.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.io.File;
 import java.io.IOException;
 
+@Slf4j
 @Controller
 @RequestMapping("/files/*")
 public class FileController {
@@ -15,6 +17,7 @@ public class FileController {
     @GetMapping("display")
     @ResponseBody
     public byte[] display(String originName) throws IOException{
+        log.info(originName);
         return FileCopyUtils.copyToByteArray(new File("C:/upload/", originName));
     }
 

@@ -5,12 +5,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-public class FileDTO {
+public class ItemFileDTO {
     private Long id;
-    private Long size;
+    private Long itemId;
+    private Long fileSize;
     private String originName;
     private String uuid;
-    private String path;
+    private String filePath;
     private String fileType;
-    private Long itemId;
+
+
 }

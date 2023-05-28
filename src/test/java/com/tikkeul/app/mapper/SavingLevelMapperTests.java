@@ -1,5 +1,7 @@
 package com.tikkeul.app.mapper;
 
+import com.tikkeul.app.dao.SavingLevelDAO;
+import com.tikkeul.app.domain.dto.SavingLevelDTO;
 import com.tikkeul.app.domain.vo.SavingLevelVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -16,10 +18,11 @@ public class SavingLevelMapperTests {
     @Test
     public void insertSavingLevelTest(){
         SavingLevelVO savingLevelVO = new SavingLevelVO();
+        SavingLevelDTO savingLevelDTO = new SavingLevelDTO();
         savingLevelVO.setName("씨앗");
         savingLevelVO.setGoalMoney(100000);
         savingLevelVO.setDailyMoney(1000);
-        savingLevelMapper.insertSavingLevel(savingLevelVO);
+        savingLevelMapper.insertSavingLevel(savingLevelDTO);
     }
 
     @Test
