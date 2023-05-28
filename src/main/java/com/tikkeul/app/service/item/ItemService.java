@@ -4,9 +4,7 @@ import com.tikkeul.app.domain.dto.ItemDTO;
 import com.tikkeul.app.domain.dto.ItemFileDTO;
 import com.tikkeul.app.domain.dto.OrderDTO;
 import com.tikkeul.app.domain.type.CategoryType;
-import com.tikkeul.app.domain.dto.SavingLevelFileDTO;
 import com.tikkeul.app.domain.vo.FileVO;
-import com.tikkeul.app.domain.vo.ItemVO;
 
 import java.util.List;
 import java.util.Optional;
