@@ -22,16 +22,6 @@ public interface ItemService {
 
     public void writeItem(ItemDTO itemDTO);
 
-    default ItemFileDTO toDTO(FileVO fileVO){
-        ItemFileDTO itemFileDTO = new ItemFileDTO();
-        itemFileDTO.setItemId(fileVO.getId());
-        itemFileDTO.setOriginName(fileVO.getOriginName());
-        itemFileDTO.setFilePath(fileVO.getFilePath());
-        itemFileDTO.setUuid(fileVO.getUuid());
-        itemFileDTO.setFileSize(fileVO.getFileSize());
-        return itemFileDTO;
-    }
-
 
     public List<ItemDTO> getOptionItemList(Long savingLevelId);
 
