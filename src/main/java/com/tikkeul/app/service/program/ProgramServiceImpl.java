@@ -82,11 +82,11 @@ public class ProgramServiceImpl implements ProgramService{
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void removeSavingLevel(Long id) {
-            SavingLevelDTO savingLevelDTO = savingLevelDAO.findSavingLevel(id).get();
-            fileDAO.savingLevelFindAll(id).forEach(savingLevelFileDTO ->
-                    fileDAO.savingLevelDelete(savingLevelFileDTO.getId()));
-                savingLevelDAO.deleteSavingLevel(id);
-                savingLevelFileDAO.delete(id);
+        SavingLevelDTO savingLevelDTO = savingLevelDAO.findSavingLevel(id).get();
+        fileDAO.savingLevelFindAll(id).forEach(savingLevelFileDTO ->
+                fileDAO.savingLevelDelete(savingLevelFileDTO.getId()));
+        savingLevelDAO.deleteSavingLevel(id);
+        savingLevelFileDAO.delete(id);
 
 //            fileDAO.savingLevelDelete(id);
     }
