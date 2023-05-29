@@ -33,7 +33,7 @@
                                             style="background-image: url(&quot;https://cdn.wadiz.kr/ft/images/green001/2023/0417/20230417175616726_7081.jpg/wadiz/resize/3600/format/jpg/quality/85/&quot;);">
                                         <div class="VisualSlide_wrap__32Lj4">
                                             <div class="VisualSlide_text__2SIqN"><p class="VisualSlide_title__3USGy">
-                                                     감각적인 브랜드를 엄선한<br>부티크 샵 메종드와</p>
+                                                감각적인 브랜드를 엄선한<br>부티크 샵 메종드와</p>
                                                 <p class="VisualSlide_badge__3nqfs">전 세계의 진정성 있는 밸류를 엄선해 선보입니다.</p>
                                             </div>
                                         </div>
@@ -230,31 +230,21 @@
                                     <path d="M16 22.4L5.6 12l1.12-1.12L16 20.16l9.28-9.28L26.4 12 16 22.4z"></path>
                                 </svg>
                             </div>
-                            <select class="OrderSelect_selectBox__2hBjk">
-                                <option value="">전체</option>
-                                <option value="N">진행중</option>
-                                <option value="Y">종료된</option>
+                            <select name="level" class="OrderSelect_selectBox__2hBjk">
+                                <option value="A">전체</option>
+                                <option value="S">씨앗</option>
+                                <option value="L">새싹</option>
+                                <option value="T">나무</option>
                             </select></div>
                         <ul class="OrderSelectDesktop_sortContainer__1YLsr">
-                            <li class="OrderSelectDesktop_sortItem__12TKi OrderSelectDesktop_active__YTP2K"
-                                data-ga-category="프리오더(홈)_정렬" data-ga-action="클릭" data-ga-label="추천순">추천순
+                            <li class="OrderSelectDesktop_sortItem__12TKi OrderSelectDesktop_active__YTP2K">최신순
                             </li>
                             <li class="OrderSelectDesktop_sortItem__12TKi">인기순
-                            </li>
-                            <li class="OrderSelectDesktop_sortItem__12TKi">전체
-                            </li>
-                            <li class="OrderSelectDesktop_sortItem__12TKi">씨앗
-                            </li>
-                            <li class="OrderSelectDesktop_sortItem__12TKi">새싹
-                            </li>
-                            <li class="OrderSelectDesktop_sortItem__12TKi">나무
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="TableLayout_container__1_Ap4 Main_table__UHAm-"
-                     style="grid-template-columns: repeat(3, calc(33.3333% - 16px)); gap: 24px;">
 
 
 
@@ -263,33 +253,33 @@
 
 
 
-                    <a id="itemlist-wrap" class="PreorderMainCard_item__2FrO0"
-                       href="https://www.wadiz.kr/web/campaign/detail/204952?_refer_section_st=PREORDER_0"
-                       data-ec-list="프리오더홈_프로젝트카드_프리오더" data-ec-id="204952"
-                       data-ec-name="[3000%앵콜]돈버는얼룩제거제?티셔츠 1장 가격으로 150벌 지키는비법" data-ec-category="홈·리빙"
-                       data-ec-brand="유아마이(URmy)" data-ec-position="0" data-ec-contenttype="PREORDER"
-                       data-gtm-vis-first-on-screen-11319722_2073="14957"
-                       data-gtm-vis-first-on-screen-11319722_2115="14958"
-                       data-gtm-vis-recent-on-screen-11319722_2115="361776"
-                       data-gtm-vis-total-visible-time-11319722_2115="2000"
-                       data-gtm-vis-recent-on-screen-11319722_2073="361776"
-                       data-gtm-vis-total-visible-time-11319722_2073="2000"
-                       data-gtm-vis-has-fired-11319722_2115="1" data-gtm-vis-has-fired-11319722_2073="1"></a>
+
+
+
+
+                <div id="itemlist-wrap" class="TableLayout_container__1_Ap4 Main_table__UHAm-"
+                     style="grid-template-columns: repeat(3, calc(33.3333% - 16px)); gap: 24px;"></div>
 
 
 
 
 
-        </div>
-        <div class="FloatingButtons_container__2E5Fl">
-            <button type="button" class="FloatingTopButton_pageTop__2gqm9 FloatingTopButton_visible__2sh_N"
-                    title="위로 이동">
-                <svg viewBox="0 0 40 40" focusable="false" role="presentation" class="withIcon_icon__3VTbq"
-                     aria-hidden="true">
-                    <path d="M33 30l-1.4 1.4L20 19.8 8.4 31.4 7 30l13-13zm1-21H6v2h28z"></path>
-                </svg>
-            </button>
-        </div>
+
+
+
+
+
+
+
+                <div class="FloatingButtons_container__2E5Fl">
+                    <button type="button" class="FloatingTopButton_pageTop__2gqm9 FloatingTopButton_visible__2sh_N"
+                            title="위로 이동">
+                        <svg viewBox="0 0 40 40" focusable="false" role="presentation" class="withIcon_icon__3VTbq"
+                             aria-hidden="true">
+                            <path d="M33 30l-1.4 1.4L20 19.8 8.4 31.4 7 30l13-13zm1-21H6v2h28z"></path>
+                        </svg>
+                    </button>
+                </div>
     </main>
 </div>
 </body>
@@ -300,65 +290,121 @@
 <script src="/js/header/header.js"></script>
 <script th:inline="javascript">
     let items = [[${items}]];
-    console.log(items);
+</script>
+<script>
+    let count = 1;
+    readList();
 
-    $(document).ready(function(){
-       const $div = $("#itemlist-wrap");
 
-       let text = "";
-       items.forEach(item => {
-           text += `
 
-                            <div class="PreorderMainCard_root__1-vcs" style="height: 100%; position: relative;">
-                                <div class="PreorderMainCard_thumbnailWrap__NRDb4">
-                                    <div aria-hidden="true" class="CardThumbnail_thumbnail__3bDBJ CardThumbnail_visible__343f4"
-                                         style="background-image: url(&quot;https://cdn.wadiz.kr/wwwwadiz/green001/2023/0408/20230408183554580_204952.png/wadiz/resize/800/format/jpg/quality/85/&quot;); border-radius: 8px;">
-                                    </div>
-                                </div>
-                                <div class="PreorderMainCard_contentContainer__1OmhF">
-                                    <div class="PreorderMainCard_header__R39X1">
-                                        <div class="PreorderMainCard_headerLeft__2nwa1">
-                                            <p class="PreorderMainCard_participants__JDp58">${item.countOfUser}</p>
-                                            <p class="PreorderMainCard_amount__3UOXm">${item.price}</p>
+    //카테고리
+    $(".ImageTab_tab__3siCY button").each((i,btn)=>{
+        $(btn).on("click",e=>{
+            $(".ImageTab_tab__3siCY button").each((idx,all)=>{
+                $(all).removeClass("ImageTab_active__BGdXu");
+            })
+            $(btn).addClass("ImageTab_active__BGdXu");
+            count=1;
+            $(".PreorderMainCard_item__2FrO0").html("");
+            readList();
+        })
+    })
+
+
+    //레벨
+    $("select[name=level]").change(function(){
+        console.log($("select[name=level] option:selected").text());
+        count=1;
+        $(".PreorderMainCard_item__2FrO0").html("");
+        readList();
+    })
+
+
+    //정렬
+    $(".OrderSelectDesktop_sortItem__12TKi button").each((i,btn)=>{
+        $(btn).on("click",e=>{
+            $(".OrderSelectDesktop_sortItem__12TKi button").each((idx,all)=>{
+                $(all).removeClass("OrderSelectDesktop_active__YTP2K");
+            })
+            $(btn).addClass("OrderSelectDesktop_active__YTP2K");
+            count=1;
+            $(".PreorderMainCard_item__2FrO0").html("");
+            readList();
+        })
+    })
+
+
+
+
+
+
+
+
+    function readList() {
+        let sort = $(".OrderSelectDesktop_active__YTP2K").html()
+        let level = $("select[name=level] option:selected").text()
+        let category = $(".ImageTab_active__BGdXu").html()
+        $.ajax({
+            url:"/item/list",
+            data : {"sort":sort, "level":level, "category":category, "count":count},
+            async :false,
+            success : function (items) {
+                const $a = $("#itemlist-wrap");
+
+                let text = "";
+                items.forEach(item => {
+                    text += `
+                         <a class="PreorderMainCard_item__2FrO0" th:href="@/item/readDetail">
+                                <div class="PreorderMainCard_root__1-vcs" style="height: 100%; position: relative;">
+                                    <div class="PreorderMainCard_thumbnailWrap__NRDb4">
+                                        <div aria-hidden="true" class="CardThumbnail_thumbnail__3bDBJ CardThumbnail_visible__343f4"
+                                             style="background-image: url(&quot;https://cdn.wadiz.kr/wwwwadiz/green001/2023/0408/20230408183554580_204952.png/wadiz/resize/800/format/jpg/quality/85/&quot;); border-radius: 8px;">
                                         </div>
-                                        <div class="PreorderMainCard_headerRight__3rRNi">
-                                        <span class="Badge_container__9G9PS Badge_visible__3LNXv">
-                                            <span class="Badge_badge__ovUKI Badge_label__2Rft2 Badge_sm__1OBNp Badge_primary__tTdjx Badge_tertiary__3uYKh">${item.savingLevelName}</span>
-                                        </span>
+                                    </div>
+                                    <div class="PreorderMainCard_contentContainer__1OmhF">
+                                        <div class="PreorderMainCard_header__R39X1">
+                                            <div class="PreorderMainCard_headerLeft__2nwa1">
+                                                <p class="PreorderMainCard_participants__JDp58">${item.countOfUser}명 참여</p>
+                                                <p class="PreorderMainCard_amount__3UOXm">${item.price}원</p>
+                                            </div>
+                                            <div class="PreorderMainCard_headerRight__3rRNi">
+                                            <span class="Badge_container__9G9PS Badge_visible__3LNXv">
+                                                <span class="Badge_badge__ovUKI Badge_label__2Rft2 Badge_sm__1OBNp Badge_primary__tTdjx Badge_tertiary__3uYKh">${item.savingLevelName}</span>
+                                            </span>
+                                            </div>
+                                        </div>
+                                        <div class="PreorderMainCard_title__XlTJk">${item.name}</div>
+                                        <div class="PreorderMainCard_subText__1LB5l">
+                                            <span class="PreorderMainCard_makerName__2Ufj1">${item.brand}</span>
                                         </div>
                                     </div>
-                                    <div class="PreorderMainCard_title__XlTJk">${item.name}</div>
-                                    <div class="PreorderMainCard_subText__1LB5l">
-                                        <span class="PreorderMainCard_makerName__2Ufj1"}>${item.brand}</span>
+                                    <div class="CardSpinner_container__1cKRs">
+                                        <div class="CardSpinner_loader__2-LrZ" style="width: 32px; height: 32px;">
+                                            <svg viewBox="25 25 50 50" aria-label="Loading">
+                                                <g class="Loader_circular__2dy3E">
+                                                    <circle class="Loader_path__2uhmv" cx="50" cy="50" r="20" fill="none"
+                                                            stroke-width="4" stroke-miterlimit="10"></circle>
+                                                </g>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="CardSpinner_container__1cKRs">
-                                    <div class="CardSpinner_loader__2-LrZ" style="width: 32px; height: 32px;">
-                                        <svg viewBox="25 25 50 50" aria-label="Loading">
-                                            <g class="Loader_circular__2dy3E">
-                                                <circle class="Loader_path__2uhmv" cx="50" cy="50" r="20" fill="none"
-                                                        stroke-width="4" stroke-miterlimit="10"></circle>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                </div>
+
+                            <div class="PreorderMainCard_wish__15rgO">
+                                <button type="button"
+                                        class="WishButton_button__1ZqbG WishButton_smallArea__sDV77 WishButton_interaction__2FCel"
+                                        aria-label="찜하기 버튼" aria-pressed="false" data-ga-category="공통_상품카드_프리오더"
+                                        data-ga-action="찜하기_추가" data-ga-label="">
+                                    <svg viewBox="0 0 32 32" focusable="false" role="presentation"
+                                         class="withIcon_icon__3VTbq" aria-hidden="true">
+                                        <path d="M22.16 4h-.007a8.142 8.142 0 0 0-6.145 2.79A8.198 8.198 0 0 0 9.76 3.998a7.36 7.36 0 0 0-7.359 7.446c0 5.116 4.64 9.276 11.6 15.596l2 1.76 2-1.76c6.96-6.32 11.6-10.48 11.6-15.6v-.08A7.36 7.36 0 0 0 22.241 4h-.085z"></path>
+                                    </svg>
+                                </button>
                             </div>
+                         </a>
+                       `
+                });
 
-                        <div class="PreorderMainCard_wish__15rgO">
-                            <button type="button"
-                                    class="WishButton_button__1ZqbG WishButton_smallArea__sDV77 WishButton_interaction__2FCel"
-                                    aria-label="찜하기 버튼" aria-pressed="false" data-ga-category="공통_상품카드_프리오더"
-                                    data-ga-action="찜하기_추가" data-ga-label="">
-                                <svg viewBox="0 0 32 32" focusable="false" role="presentation"
-                                     class="withIcon_icon__3VTbq" aria-hidden="true">
-                                    <path d="M22.16 4h-.007a8.142 8.142 0 0 0-6.145 2.79A8.198 8.198 0 0 0 9.76 3.998a7.36 7.36 0 0 0-7.359 7.446c0 5.116 4.64 9.276 11.6 15.596l2 1.76 2-1.76c6.96-6.32 11.6-10.48 11.6-15.6v-.08A7.36 7.36 0 0 0 22.241 4h-.085z"></path>
-                                </svg>
-                            </button>
-                        </div>
-           `
-       });
-
-       $div.html(text);
-    });
+                $a.html(text);
 </script>
 </html>

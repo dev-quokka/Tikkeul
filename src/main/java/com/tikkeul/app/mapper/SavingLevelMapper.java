@@ -1,6 +1,7 @@
 package com.tikkeul.app.mapper;
 
 import com.tikkeul.app.domain.dto.SavingLevelDTO;
+import com.tikkeul.app.domain.dto.SavingLevelFileDTO;
 import com.tikkeul.app.domain.vo.SavingLevelVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -11,5 +12,7 @@ public interface SavingLevelMapper {
     public void insertSavingLevel(SavingLevelDTO savingLevelDTO);
 
     public List<SavingLevelVO> admminSelectSavingLevelAll();
+
+    public List<SavingLevelFileDTO> savingLevelFileAll();
 
 }
