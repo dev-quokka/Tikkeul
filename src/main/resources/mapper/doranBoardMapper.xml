@@ -24,7 +24,7 @@
         </if>
     </sql>
 
-    <!--게시글 목록-->
+
     <select id="selectAll" resultType="DoranBoardDTO">
         SELECT D.ID, D.TITLE, D.CONTENT, D.VIEWCOUNT, D.REGISTERDATE, D.UPDATEDATE, D.USER_ID, D.NAME
         FROM (
@@ -41,15 +41,8 @@
         ]]>
     </select>
 
-
-
-    <!--게시글/ 추가 숫자 아이디 강제 입력-->
-<!--    <insert id="insert">
-        INSERT INTO DORANBOARD(ID, TITLE, CONTENT, VIEWCOUNT,USER_ID, ITEM_ID )
-        VALUES(SEQ_POST.NEXTVAL, #{title}, #{content}, 2,2,2)
-    </insert>-->
-
-        <insert id="insert">
+    <!--게시글 추가 -->
+    <insert id="insert">
             INSERT INTO DORANBOARD(ID, TITLE, CONTENT, VIEWCOUNT,USER_ID )
             VALUES(SEQ_DORANBOARD.NEXTVAL, #{title}, #{content}, 0,#{userId})
         </insert>
