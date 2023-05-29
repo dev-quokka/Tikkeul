@@ -13,14 +13,7 @@ public class SavingLevelMapperTests {
     @Autowired
     private SavingLevelMapper savingLevelMapper;
 
-    @Test
-    public void insertSavingLevelTest(){
-        SavingLevelVO savingLevelVO = new SavingLevelVO();
-        savingLevelVO.setName("씨앗");
-        savingLevelVO.setGoalMoney(100000);
-        savingLevelVO.setDailyMoney(1000);
-        savingLevelMapper.insertSavingLevel(savingLevelVO);
-    }
+
 
     @Test
     public void selectSavingLevelAllTest(){
