@@ -43,9 +43,9 @@
 
     <!--게시글 추가 -->
     <insert id="insert">
-            INSERT INTO DORANBOARD(ID, TITLE, CONTENT, VIEWCOUNT,USER_ID )
-            VALUES(SEQ_DORANBOARD.NEXTVAL, #{title}, #{content}, 0,#{userId})
-        </insert>
+        INSERT INTO DORANBOARD(ID, TITLE, CONTENT, VIEWCOUNT,USER_ID )
+        VALUES(SEQ_DORANBOARD.NEXTVAL, #{title}, #{content}, 0,#{userId})
+    </insert>
 
     <!--게시글 조회-->
     <select id="select" resultType="DoranBoardDTO">
