@@ -4,17 +4,12 @@ import com.tikkeul.app.dao.FileDAO;
 import com.tikkeul.app.dao.ItemDAO;
 import com.tikkeul.app.dao.ItemFileDAO;
 import com.tikkeul.app.domain.dto.ItemDTO;
-import com.tikkeul.app.domain.dto.ItemFileDTO;
 import com.tikkeul.app.domain.dto.OrderDTO;
-import com.tikkeul.app.domain.type.FileType;
-import com.tikkeul.app.domain.vo.ItemFileVO;
-import com.tikkeul.app.domain.vo.ItemVO;
-import com.tikkeul.app.domain.vo.SavingLevelFileVO;
+import com.tikkeul.app.domain.type.CategoryType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,37 +22,37 @@ public class ItemServiceImpl implements ItemService {
     private final ItemFileDAO itemFileDAO;
     private final FileDAO fileDAO;
 //    김보령 작업공간
-//    열매샵 제품 목록 가져오기 : list.html
+    //    열매샵 제품 목록 가져오기 : list.html
     @Override
-    public List<ItemDTO> getList() {
-        return itemDAO.findAll();
+    public List<ItemDTO> getList(CategoryType categoryType) {
+        return itemDAO.findAll(categoryType);
     }
-//    열매샵 제품 상세 보기 : readDetail.html
+
+    //    열매샵 제품 상세 보기 : readDetail.html
     @Override
     public Optional<ItemDTO> readDetail(Long id) {
-        return itemDAO.findById(id);
+        return itemDAO.readDetail(id);
     }
 
-//    제품 후기 후, 별점
+    //    후기 수 별점
     @Override
-    public Optional<OrderDTO> readReviw(Long id) {
-        return itemDAO.findReview(id);
+    public Optional<OrderDTO> readScoreAndCountOfReview(Long id) {
+        return itemDAO.readScoreAndCountOfReview(id);
+    }
+
+
+
+//    홍윤기 작업공간
+    @Override
+    public List<ItemDTO> getitemList() {
+    return itemDAO.findAllItem();
     }
 
     @Override
-    @Transactional(rollbackFor = Exception.class)
-    public void writeItem(ItemDTO itemDTO) {
-        itemDAO.saveItem(itemDTO);
-        for(int i=0; i<itemDTO.getFiles().size(); i++){
-            itemDTO.getFiles().get(i).setItemId(itemDTO.getId());
-            itemDTO.getFiles().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
-            fileDAO.saveItem(itemDTO.getFiles().get(i));
-        }
-        itemDTO.getFiles().forEach(itemFileDTO ->
-        { ItemFileVO itemFileVO = new ItemFileVO();
-            itemFileVO.setId(itemFileDTO.getId());
-            itemFileVO.setItemId(itemFileDTO.getItemId());
-            itemFileDAO.saveItem(itemFileVO);
-        });
+    public List<ItemDTO> getOptionItemList(Long savingLevelId) {
+        return itemDAO.findAllOptionItem(savingLevelId);
     }
+
+
+
 }

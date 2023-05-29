@@ -12,7 +12,7 @@ import java.util.Optional;
 
 
 public interface AdminService {
-            /* 회원 */
+    /* 회원 */
     //    관리자페이지에서 회원 목록 조회
     public List<UserVO> adminGetListUserAll(Pagination pagination, Search search);
 
@@ -28,7 +28,7 @@ public interface AdminService {
 
 
 
-         /*문의 내역*/
+    /*문의 내역*/
     //    관리자 페이지에서 문의 내역 전체 조회
     public List<InquiryBoardDTO> adminGetListInquiryAll(Pagination pagination, Search search);
 
@@ -48,7 +48,7 @@ public interface AdminService {
     public void adminRemoveInquiry(Long id);
 
 
-        /*도란 게시판*/
+    /*도란 게시판*/
     //    관리자 페이지에서 도란보드 목록 조회
     public List<DoranBoardDTO> adminGetListDoranBoardAll(Pagination pagination, Search search);
 

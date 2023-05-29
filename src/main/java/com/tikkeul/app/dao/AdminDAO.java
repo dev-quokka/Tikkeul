@@ -35,7 +35,7 @@ public class AdminDAO {
 
     // 관리자페이지에서 회원 삭제
     public void adminChangeUser(Long id){
-         adminMapper.adminChangeUser(id);
+        adminMapper.adminChangeUser(id);
     }
 
     // 관리자페이지에서 회원 수정
@@ -62,7 +62,7 @@ public class AdminDAO {
 
     //    관리자 페이지에서 문의 답변
     public void adminSaveAnswer(AnswerVO answerVO){
-            adminMapper.adminInsertAnswer(answerVO);
+        adminMapper.adminInsertAnswer(answerVO);
     }
 
     //  관리자 페이지에서 문의 답변 여부
@@ -103,7 +103,7 @@ public class AdminDAO {
     public List<ItemDTO> adminFindItemAll(Pagination pagination, Search search){
         return adminMapper.adminSelectItemAll(pagination, search);
     }
-//  관리자 페이지에서 상품 총 개수
+    //  관리자 페이지에서 상품 총 개수
     public int findCountOfItem(Search search){
         return adminMapper.selectCountOfItem(search);
     }

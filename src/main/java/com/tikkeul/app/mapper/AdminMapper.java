@@ -19,7 +19,7 @@ public interface AdminMapper {
     public int adminCountOfUser(@Param("search") Search search);
 
     //  관리자페이지에서 회원 수정
-     public void adminUpdateUser(Long id);
+    public void adminUpdateUser(Long id);
 
     // 관리자페이지에서 회원 전환
     public void adminChangeUser(Long id);

@@ -10,6 +10,7 @@ $(document).ready(function() {
                             </td>
                             <td>${item.id}</td>
                             <td>${item.originStock}</td>
+                            <td>${item.savingLevelId}</td>
                             <td>${item.name}</td>
                             <td>${item.price}</td>
                         </tr>

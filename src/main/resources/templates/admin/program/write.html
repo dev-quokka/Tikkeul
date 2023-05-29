@@ -18,32 +18,32 @@
             <ul class="side-menu">
                 <li class="site-shortcut">
                     <input type="button" class="side-menu-button" value="사이트 바로가기"
-                           onclick="location.href='/join/mainpage'">
+                           onclick="location.href='../mypage/main.html'">
                 </li>
                 <div class="management-title">사이트 관리</div>
                 <li class="management-menu-list">
                     <input type="button" class="side-menu-button" value="메인페이지"
-                           onclick="location.href='/admin/main'">
+                           onclick="location.href='admin-main.html'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="회원 목록"
-                           onclick="location.href='/admin/user/list'">
+                    <input type="button" class="side-menu-button" value="회원목록"
+                           onclick="location.href='admin-member.html'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="프로그램 목록"
-                           onclick="location.href='/admin/program/list'">
+                    <input type="button" class="side-menu-button" value="프로그램목록"
+                           onclick="location.href='admin-program.html'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="상품 목록"
-                           onclick="location.href='/admin/item/list'">
+                    <input type="button" class="side-menu-button" value="상품관리"
+                           onclick="location.href='admin-product.html'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="도란게시판 목록"
-                           onclick="location.href='/admin/doranBoard/list'">
+                    <input type="button" class="side-menu-button" value="신고내역"
+                           onclick="location.href='admin-report.html'">
                 </li>
                 <li class="management-menu-list">
-                    <input type="button" class="side-menu-button" value="문의게시판 목록"
-                           onclick="location.href='/admin/inquiry/list'">
+                    <input type="button" class="side-menu-button" value="문의게시판목록"
+                           onclick="location.href='admin-QnA.html'">
                 </li>
             </ul>
         </nav>
@@ -90,8 +90,7 @@
                                 </label>
                             </td>
                         </tr>
-                        <tr>
-                            <td>내용 이미지</td>
+                            <td>상세 이미지</td>
                             <td>
                                 <label for="upload2" class="attach">
                                     <img src="" class="thumbnail">
@@ -109,7 +108,7 @@
                     <div class="button-box">
                         <input type="button" name="report-list" value="프로그램목록"
                                onClick="location.href='admin-program.html'"/>
-                        <input type="button"  class="ok-button" value="등록완료"/>
+                        <input type="button" onclick="check()" class="ok-button" value="등록완료"/>
                     </div>
                 </div>
             </form>
@@ -118,6 +117,4 @@
 
 </main>
 </body>
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="/js/admin/write.js"></script>
 </html>

@@ -45,26 +45,26 @@ public class ProgramServiceImpl implements ProgramService{
 
     }
 
-    @Override
-    public List<SavingLevelVO> getSavingLevelAll() {
-        return savingLevelDAO.findSavingLevelAll();
-    }
+//    @Override
+//    public List<SavingLevelVO> getSavingLevelAll() {
+//        return savingLevelDAO.findSavingLevelAll();
+//    }
 
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    public SavingLevelDTO getSavingLevel(Long id) {
-        final Optional<SavingLevelDTO> foundSavingLevel = savingLevelDAO.findSavingLevel(id);
-        if(foundSavingLevel.isPresent()){
-            foundSavingLevel.get().setFiles(fileDAO.savingLevelFindAll(id));
-            log.info(foundSavingLevel.get().toString());
-        }
-        return foundSavingLevel.get();
-    }
+//    @Override
+//    @Transactional(rollbackFor = Exception.class)
+//    public SavingLevelDTO getSavingLevel(Long id) {
+//        final Optional<SavingLevelDTO> foundSavingLevel = savingLevelDAO.findSavingLevel(id);
+//        if(foundSavingLevel.isPresent()){
+//            foundSavingLevel.get().setFiles(fileDAO.savingLevelFindAll(id));
+//            log.info(foundSavingLevel.get().toString());
+//        }
+//        return foundSavingLevel.get();
+//    }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void modify(SavingLevelDTO savingLevelDTO) {
-        savingLevelDAO.setSavingLevelDTO(savingLevelDTO);
+//        savingLevelDAO.setSavingLevelDTO(savingLevelDTO);
 
         for(int i=0; i<savingLevelDTO.getFiles().size(); i++){
             savingLevelDTO.getFiles().get(i).setSavinglevelId(savingLevelDTO.getId());
@@ -78,17 +78,17 @@ public class ProgramServiceImpl implements ProgramService{
             savingLevelFileDAO.save(savingLevelFileVO);
         });
 
-        savingLevelDTO.getFileIdsForDelete().forEach(fileDAO::savingLevelDelete);
+//        savingLevelDTO.getFileIdsForDelete().forEach(fileDAO::savingLevelDelete);
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void removeSavingLevel(Long id) {
-            SavingLevelDTO savingLevelDTO = savingLevelDAO.findSavingLevel(id).get();
-            fileDAO.savingLevelFindAll(id).forEach(savingLevelFileDTO ->
-                    fileDAO.savingLevelDelete(savingLevelFileDTO.getId()));
-                savingLevelDAO.deleteSavingLevel(id);
-                savingLevelFileDAO.delete(id);
+//        SavingLevelDTO savingLevelDTO = savingLevelDAO.findSavingLevel(id).get();
+//        fileDAO.savingLevelFindAll(id).forEach(savingLevelFileDTO ->
+//                fileDAO.savingLevelDelete(savingLevelFileDTO.getId()));
+//        savingLevelDAO.deleteSavingLevel(id);
+//        savingLevelFileDAO.delete(id);
 
 //            fileDAO.savingLevelDelete(id);
     }

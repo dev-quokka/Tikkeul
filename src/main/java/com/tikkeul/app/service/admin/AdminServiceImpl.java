@@ -22,7 +22,7 @@ import java.util.Optional;
 @Qualifier("admin") @Primary
 public class AdminServiceImpl implements AdminService {
     private final AdminDAO adminDAO;
-//  회원
+    //  회원
     @Override
     public List<UserVO> adminGetListUserAll(Pagination pagination, Search search) {
         return adminDAO.adminFindUserAll(pagination, search);
