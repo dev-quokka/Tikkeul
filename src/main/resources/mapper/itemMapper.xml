@@ -108,10 +108,6 @@
 
 
 <!--홍윤기 작업공간-->
-     <!--메인페이지에 모든 아이템용-->
-    <select id="selectAllItem" resultType="itemDTO">
-        SELECT I.ID, I.NAME, PRICE, CURRENT_STOCK, ORIGIN_STOCK, I.STATUS, BRAND, CATEGORY, REGISTERDATE, UPDATEDATE, I.SAVINGLEVEL_ID, SL.NAME SAVINGLEVELNAME
-        FROM ITEM I JOIN SAVINGLEVEL SL ON I.SAVINGLEVEL_ID = SL.ID
 <!-- 메인페이지에 모든 아이템용-->
     <select id="selectAllItem" resultType="itemFileSavingLevelDTO">
         SELECT I.ID ITEM_ID, I.NAME ITEM_NAME, PRICE, CURRENT_STOCK, ORIGIN_STOCK, I.STATUS, BRAND, CATEGORY, REGISTERDATE, UPDATEDATE, I.SAVINGLEVEL_ID, SL.NAME SAVINGLEVELNAME,
@@ -125,53 +121,6 @@
         FROM ITEM I JOIN SAVINGLEVEL SL ON I.SAVINGLEVEL_ID = SL.ID JOIN ITEMFILE ITF ON I.ID = ITF.ITEM_ID JOIN FILES F ON ITF.ID =F.ID
         WHERE I.SAVINGLEVEL_ID = #{savingLevelId}
     </select>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

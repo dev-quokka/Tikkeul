@@ -33,23 +33,16 @@ public class ItemDAO {
         return itemMapper.selectScoreAndCountOfReview(id);
     }
 
+
+
+//    홍윤기 작업공간
     public List<ItemFileSavingLevelDTO> findAllItem() { return itemMapper.selectAllItem();
     }
 
     public List<ItemFileSavingLevelDTO> findAllOptionItem(Long savingLevelId) { return itemMapper.selectAllOptionItem(savingLevelId);
     }
-
-
-
-
-
-    public List<ItemDTO> findAllOptionItem(Long savingLevelId) { return itemMapper.selectAllOptionItem(savingLevelId);
-    }
-
     //    제품 등록 ( 관리자 )
     public void saveItem(ItemDTO itemDTO){
         itemMapper.insertItem(itemDTO);
     }
-
-
 }
