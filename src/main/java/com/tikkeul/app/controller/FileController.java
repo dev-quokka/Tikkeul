@@ -1,5 +1,6 @@
 package com.tikkeul.app.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import net.coobird.thumbnailator.Thumbnailator;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Controller
-@RequestMapping("/files/*")
+@RequestMapping("/files/*")@Slf4j
 public class FileController {
     //    파일 업로드
     @PostMapping("upload")
@@ -47,6 +48,7 @@ public class FileController {
     @GetMapping("display")
     @ResponseBody
     public byte[] display(String fileName) throws IOException{
+        log.info(fileName);
         return FileCopyUtils.copyToByteArray(new File("/Users/hi/Desktop/images/", fileName));
     }
 
