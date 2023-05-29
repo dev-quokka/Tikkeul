@@ -20,9 +20,6 @@ public class ItemMapperTests {
     public void itemtest(){
         itemMapper.selectAllItem();
     }
-    @Test
-    public void itemtests(){
-        itemMapper.selectAll();
-    }
+
 }
 
