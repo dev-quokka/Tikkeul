@@ -29,7 +29,6 @@ public interface ItemService {
 
 //    홍윤기 작업공간
     //  메인페이지 제품 목록 가져오기 : list.html
-    public List<ItemDTO> getitemList();
 //  메인페이지 제품 목록 가져오기 : list.html
     public List<ItemFileSavingLevelDTO> getitemList();
 

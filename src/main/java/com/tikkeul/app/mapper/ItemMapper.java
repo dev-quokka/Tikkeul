@@ -32,7 +32,7 @@ public interface ItemMapper {
 
 //    홍윤기 작업공간
     //  메인페이지
-    public List<ItemDTO> selectAllItem();
+    public List<ItemFileSavingLevelDTO> selectAllItem();
 
     public List<ItemFileSavingLevelDTO> selectAllOptionItem(Long savingLevelId);
 }

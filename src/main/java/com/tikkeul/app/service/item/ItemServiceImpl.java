@@ -27,10 +27,10 @@ public class ItemServiceImpl implements ItemService {
     private final FileDAO fileDAO;
 //    김보령 작업공간
     //    열매샵 제품 목록 가져오기 : list.html
-    @Override
-    public List<ItemDTO> getList() {
-        return itemDAO.findAll();
-    }
+@Override
+public List<ItemDTO> getList(CategoryType categoryType) {
+    return itemDAO.findAll(categoryType);
+}
 
     //    열매샵 제품 상세 보기 : readDetail.html
     @Override
@@ -42,6 +42,11 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public Optional<OrderDTO> readScoreAndCountOfReview(Long id) {
         return itemDAO.readScoreAndCountOfReview(id);
+    }
+
+    @Override
+    public void writeItem(ItemDTO itemDTO) {
+
     }
 
     @Override

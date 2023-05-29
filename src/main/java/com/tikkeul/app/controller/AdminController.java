@@ -28,98 +28,98 @@ import java.util.Optional;
 public class AdminController {
     private final AdminService adminService;
     private final ProgramService programService;
-
-//    회원
-    @GetMapping("user/list")
-    public void goToUserlist(Pagination pagination,Search search, Model model){
-        pagination.setTotal(adminService.getUserTotal(search));
-        pagination.progress();
-        model.addAttribute("users", adminService.adminGetListUserAll(pagination,search));
-    }
-
-    @PostMapping("user/modify")
-    @ResponseBody
-    public void modifyUser(@RequestBody List<String> userIds){
-        for (String userId : userIds) adminService.adminModifyUser(Long.valueOf(userId));
-    }
-
-    @PostMapping("user/modifyNormal")
-    @ResponseBody
-    public void modifyUserNormal(@RequestBody List<String> userIds){
-        for (String userId : userIds) adminService.adminModifyUserNormal(Long.valueOf(userId));
-    }
-
-//    문의
-    @GetMapping("inquiry/list")
-    public void goToinquirylist(Pagination pagination, Search search, Model model) {
-        pagination.setTotal(adminService.getInquiryTotal(search));
-        pagination.progress();
-        model.addAttribute("inquirys", adminService.adminGetListInquiryAll(pagination, search));
-    }
-
-    @GetMapping("inquiry/read")
-    public void readInquiry(Long id, Model model, AnswerVO answerVO){
-        Optional<InquiryBoardDTO> checkInquiryBoardDTO = adminService.adminReadInquiry(id);
-        if(checkInquiryBoardDTO.isPresent()) {
-            model.addAttribute("inquiryBoard", checkInquiryBoardDTO.get());
-        }
-    }
-
-
-    @PostMapping("inquiry/write")
-    @Transactional(rollbackFor = Exception.class)
-    public RedirectView write(AnswerVO answerVO,Long id){
-        adminService.adminWriteAnswer(answerVO);
-        adminService.adminModifyInquiry(id);
-        return new RedirectView("/admin/inquiry/list");
-    }
-
-    @PostMapping("inquiry/delete")
-    @ResponseBody
-    public void removeInquiry(@RequestBody List<String> inquiryIds){
-        for (String inquiryId : inquiryIds) adminService.adminRemoveInquiry(Long.valueOf(inquiryId));
-    }
-
-//    도란 게시판
-    @GetMapping("doranBoard/list")
-    public void goToDoranBoardList(Pagination pagination, Search search, Model model){
-        pagination.setTotal(adminService.getDoranBoardTotal(search));
-        pagination.progress();
-        model.addAttribute("doranBoards", adminService.adminGetListDoranBoardAll(pagination, search));
-    }
-
-    @GetMapping("doranBoard/read")
-    public void readDoranBoard(Long id, Model model){
-        Optional<DoranBoardDTO> checkDoranBoardDTO = adminService.adminReadDoranBoard(id);
-        if(checkDoranBoardDTO.isPresent()) {
-            model.addAttribute("doranBoard", checkDoranBoardDTO.get());
-        }
-//        checkDoranBoardDTO.ifPresent(doranBoardDTO -> model.addAttribute(doranBoardDTO));
-//        model.addAttribute("doranBoard",adminService.adminReadDoranBoard(id));
-    }
-
-    @PostMapping("doranBoard/delete")
-    @ResponseBody
-    public void removeDoranBoard(@RequestBody List<String> doranBoardIds){
-        for (String doranBoardId : doranBoardIds ) adminService.adminRemoveDoranBoard(Long.valueOf(doranBoardId));
-    }
-
-    @GetMapping("item/list")
-    public void goToItemList(Model model,Pagination pagination,Search search){
-        pagination.setTotal(adminService.getItemTotal(search));
-        pagination.progress();
-        model.addAttribute("items",adminService.adminGetListItemAll(pagination,search));
-    }
-
-    /* 프로그램*/
-    @GetMapping("program/write")
-    public void goToSavingLevelWriteForm(SavingLevelDTO savingLevelDTO){;}
-
-    @PostMapping("program/write")
-    public RedirectView writeSavingLevel(SavingLevelDTO savingLevelDTO){
-        programService.writeSavingLevel(savingLevelDTO);
-        return new RedirectView("/admin/program/list");
-    }
+//
+////    회원
+//    @GetMapping("user/list")
+//    public void goToUserlist(Pagination pagination,Search search, Model model){
+//        pagination.setTotal(adminService.getUserTotal(search));
+//        pagination.progress();
+//        model.addAttribute("users", adminService.adminGetListUserAll(pagination,search));
+//    }
+//
+//    @PostMapping("user/modify")
+//    @ResponseBody
+//    public void modifyUser(@RequestBody List<String> userIds){
+//        for (String userId : userIds) adminService.adminModifyUser(Long.valueOf(userId));
+//    }
+//
+//    @PostMapping("user/modifyNormal")
+//    @ResponseBody
+//    public void modifyUserNormal(@RequestBody List<String> userIds){
+//        for (String userId : userIds) adminService.adminModifyUserNormal(Long.valueOf(userId));
+//    }
+//
+////    문의
+//    @GetMapping("inquiry/list")
+//    public void goToinquirylist(Pagination pagination, Search search, Model model) {
+//        pagination.setTotal(adminService.getInquiryTotal(search));
+//        pagination.progress();
+//        model.addAttribute("inquirys", adminService.adminGetListInquiryAll(pagination, search));
+//    }
+//
+//    @GetMapping("inquiry/read")
+//    public void readInquiry(Long id, Model model, AnswerVO answerVO){
+//        Optional<InquiryBoardDTO> checkInquiryBoardDTO = adminService.adminReadInquiry(id);
+//        if(checkInquiryBoardDTO.isPresent()) {
+//            model.addAttribute("inquiryBoard", checkInquiryBoardDTO.get());
+//        }
+//    }
+//
+//
+//    @PostMapping("inquiry/write")
+//    @Transactional(rollbackFor = Exception.class)
+//    public RedirectView write(AnswerVO answerVO,Long id){
+//        adminService.adminWriteAnswer(answerVO);
+//        adminService.adminModifyInquiry(id);
+//        return new RedirectView("/admin/inquiry/list");
+//    }
+//
+//    @PostMapping("inquiry/delete")
+//    @ResponseBody
+//    public void removeInquiry(@RequestBody List<String> inquiryIds){
+//        for (String inquiryId : inquiryIds) adminService.adminRemoveInquiry(Long.valueOf(inquiryId));
+//    }
+//
+////    도란 게시판
+//    @GetMapping("doranBoard/list")
+//    public void goToDoranBoardList(Pagination pagination, Search search, Model model){
+//        pagination.setTotal(adminService.getDoranBoardTotal(search));
+//        pagination.progress();
+//        model.addAttribute("doranBoards", adminService.adminGetListDoranBoardAll(pagination, search));
+//    }
+//
+//    @GetMapping("doranBoard/read")
+//    public void readDoranBoard(Long id, Model model){
+//        Optional<DoranBoardDTO> checkDoranBoardDTO = adminService.adminReadDoranBoard(id);
+//        if(checkDoranBoardDTO.isPresent()) {
+//            model.addAttribute("doranBoard", checkDoranBoardDTO.get());
+//        }
+////        checkDoranBoardDTO.ifPresent(doranBoardDTO -> model.addAttribute(doranBoardDTO));
+////        model.addAttribute("doranBoard",adminService.adminReadDoranBoard(id));
+//    }
+//
+//    @PostMapping("doranBoard/delete")
+//    @ResponseBody
+//    public void removeDoranBoard(@RequestBody List<String> doranBoardIds){
+//        for (String doranBoardId : doranBoardIds ) adminService.adminRemoveDoranBoard(Long.valueOf(doranBoardId));
+//    }
+//
+//    @GetMapping("item/list")
+//    public void goToItemList(Model model,Pagination pagination,Search search){
+//        pagination.setTotal(adminService.getItemTotal(search));
+//        pagination.progress();
+//        model.addAttribute("items",adminService.adminGetListItemAll(pagination,search));
+//    }
+//
+//    /* 프로그램*/
+//    @GetMapping("program/write")
+//    public void goToSavingLevelWriteForm(SavingLevelDTO savingLevelDTO){;}
+//
+//    @PostMapping("program/write")
+//    public RedirectView writeSavingLevel(SavingLevelDTO savingLevelDTO){
+//        programService.writeSavingLevel(savingLevelDTO);
+//        return new RedirectView("/admin/program/list");
+//    }
 
 //    @GetMapping("program/list")
 //    public void goToProgramList(Model model){
@@ -131,18 +131,18 @@ public class AdminController {
 //        SavingLevelDTO savingLevelDTO = programService.getSavingLevel(id);
 //        model.addAttribute("savingLevels", savingLevelDTO);
 //    }
-
-    @PostMapping("program/modify")
-    public RedirectView modify(SavingLevelDTO savingLevelDTO, RedirectAttributes redirectAttributes){
-        programService.modify(savingLevelDTO);
-        redirectAttributes.addAttribute("id", savingLevelDTO.getId());
-        return new RedirectView("/admin/program/detail");
-    }
-
-    @PostMapping("program/delete")
-    public void removeProgram(@RequestBody List<String> programIds){
-        for (String programId : programIds) programService.removeSavingLevel(Long.valueOf(programId));
-    }
+//
+//    @PostMapping("program/modify")
+//    public RedirectView modify(SavingLevelDTO savingLevelDTO, RedirectAttributes redirectAttributes){
+//        programService.modify(savingLevelDTO);
+//        redirectAttributes.addAttribute("id", savingLevelDTO.getId());
+//        return new RedirectView("/admin/program/detail");
+//    }
+//
+//    @PostMapping("program/delete")
+//    public void removeProgram(@RequestBody List<String> programIds){
+//        for (String programId : programIds) programService.removeSavingLevel(Long.valueOf(programId));
+//    }
 
     /* 메인 페이지 */
     @GetMapping("main")
