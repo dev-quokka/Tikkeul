@@ -121,16 +121,16 @@ public class AdminController {
         return new RedirectView("/admin/program/list");
     }
 
-    @GetMapping("program/list")
-    public void goToProgramList(Model model){
-        model.addAttribute("programs",programService.getSavingLevelAll());
-    }
-
-    @GetMapping(value = {"program/detail","program/modify"})
-    public void detail(Long id, Model model){
-        SavingLevelDTO savingLevelDTO = programService.getSavingLevel(id);
-        model.addAttribute("savingLevels", savingLevelDTO);
-    }
+//    @GetMapping("program/list")
+//    public void goToProgramList(Model model){
+//        model.addAttribute("programs",programService.getSavingLevelAll());
+//    }
+//
+//    @GetMapping(value = {"program/detail","program/modify"})
+//    public void detail(Long id, Model model){
+//        SavingLevelDTO savingLevelDTO = programService.getSavingLevel(id);
+//        model.addAttribute("savingLevels", savingLevelDTO);
+//    }
 
     @PostMapping("program/modify")
     public RedirectView modify(SavingLevelDTO savingLevelDTO, RedirectAttributes redirectAttributes){
