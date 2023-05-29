@@ -24,6 +24,7 @@ public interface ItemMapper {
 //  홍윤가 적업공간
 //  메인페이지
 
+    public void insertItem(ItemDTO itemDTO);
 
 
 

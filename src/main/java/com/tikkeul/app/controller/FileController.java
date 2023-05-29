@@ -17,7 +17,8 @@ import java.util.List;
 import java.util.UUID;
 
 @Controller
-@RequestMapping("/files/*")@Slf4j
+@RequestMapping("/files/*")
+@Slf4j
 public class FileController {
     //    파일 업로드
     @PostMapping("upload")

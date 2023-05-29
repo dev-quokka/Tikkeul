@@ -9,7 +9,7 @@
         VALUES(#{id}, #{name}, #{goalMoney}, #{dailyMoney})
     </insert>
 
-    <select id="adminSelectSavingLevelAll" resultType="savingLevelVO">
+    <select id="admminSelectSavingLevelAll" resultType="savingLevelVO">
         SELECT ID, NAME, GOAL_MONEY, DAILY_MONEY
         FROM SAVINGLEVEL
     </select>
@@ -30,7 +30,7 @@
         SET NAME = #{name} , GOAL_MONEY = #{goalMoney} , DAILY_MONEY = #{dailyMoney}
         WHERE ID = #{id}
     </update>
-    
+
     <delete id="adminDeleteSavingLevel">
         DELETE FROM SAVINGLEVEL
         WHERE ID = #{id}
