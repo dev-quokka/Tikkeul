@@ -1,7 +1,6 @@
 package com.tikkeul.app.service.admin;
 
 import com.tikkeul.app.dao.AdminDAO;
-import com.tikkeul.app.dao.UserDAO;
 import com.tikkeul.app.domain.dto.DoranBoardDTO;
 import com.tikkeul.app.domain.dto.InquiryBoardDTO;
 import com.tikkeul.app.domain.dto.Pagination;
@@ -10,8 +9,6 @@ import com.tikkeul.app.domain.vo.AnswerVO;
 import com.tikkeul.app.domain.vo.ItemVO;
 import com.tikkeul.app.domain.vo.UserVO;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;

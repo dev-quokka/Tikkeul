@@ -1,6 +1,7 @@
 package com.tikkeul.app.dao;
 
 import com.tikkeul.app.domain.dto.ItemDTO;
+import com.tikkeul.app.domain.dto.ItemFileSavingLevelDTO;
 import com.tikkeul.app.domain.dto.OrderDTO;
 import com.tikkeul.app.mapper.ItemMapper;
 import lombok.RequiredArgsConstructor;
@@ -30,9 +31,9 @@ public class ItemDAO {
         return itemMapper.selectReview(id);
     }
 
-    public List<ItemDTO> findAllItem() { return itemMapper.selectAllItem();
+    public List<ItemFileSavingLevelDTO> findAllItem() { return itemMapper.selectAllItem();
     }
 
-    public List<ItemDTO> findAllOptionItem(Long savingLevelId) { return itemMapper.selectAllOptionItem(savingLevelId);
+    public List<ItemFileSavingLevelDTO> findAllOptionItem(Long savingLevelId) { return itemMapper.selectAllOptionItem(savingLevelId);
     }
 }

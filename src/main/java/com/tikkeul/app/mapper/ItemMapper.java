@@ -1,6 +1,7 @@
 package com.tikkeul.app.mapper;
 
 import com.tikkeul.app.domain.dto.ItemDTO;
+import com.tikkeul.app.domain.dto.ItemFileSavingLevelDTO;
 import com.tikkeul.app.domain.dto.OrderDTO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -22,8 +23,8 @@ public interface ItemMapper {
     public Optional<OrderDTO> selectReview(Long id);
 //  홍윤가 적업공간
 //  메인페이지
-    public List<ItemDTO> selectAllItem();
+    public List<ItemFileSavingLevelDTO> selectAllItem();
 
-    public List<ItemDTO> selectAllOptionItem(Long savingLevelId);
+    public List<ItemFileSavingLevelDTO> selectAllOptionItem(Long savingLevelId);
 }
 

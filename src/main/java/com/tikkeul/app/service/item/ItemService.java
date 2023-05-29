@@ -1,6 +1,7 @@
 package com.tikkeul.app.service.item;
 
 import com.tikkeul.app.domain.dto.ItemDTO;
+import com.tikkeul.app.domain.dto.ItemFileSavingLevelDTO;
 import com.tikkeul.app.domain.dto.OrderDTO;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public interface ItemService {
 
 
 //  메인페이지 제품 목록 가져오기 : list.html
-    public List<ItemDTO> getitemList();
+    public List<ItemFileSavingLevelDTO> getitemList();
 
-    public List<ItemDTO> getOptionItemList(Long savingLevelId);
+    public List<ItemFileSavingLevelDTO> getOptionItemList(Long savingLevelId);
 }

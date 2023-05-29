@@ -2,6 +2,7 @@ package com.tikkeul.app.service.item;
 
 import com.tikkeul.app.dao.ItemDAO;
 import com.tikkeul.app.domain.dto.ItemDTO;
+import com.tikkeul.app.domain.dto.ItemFileSavingLevelDTO;
 import com.tikkeul.app.domain.dto.OrderDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -32,12 +33,12 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public List<ItemDTO> getitemList() {
+    public List<ItemFileSavingLevelDTO> getitemList() {
         return itemDAO.findAllItem();
     }
 
     @Override
-    public List<ItemDTO> getOptionItemList(Long savingLevelId) {
+    public List<ItemFileSavingLevelDTO> getOptionItemList(Long savingLevelId) {
         return itemDAO.findAllOptionItem(savingLevelId);
     }
 
