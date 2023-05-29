@@ -24,6 +24,7 @@
         </if>
     </sql>
 
+
     <select id="selectAll" resultType="DoranBoardDTO">
         SELECT D.ID, D.TITLE, D.CONTENT, D.VIEWCOUNT, D.REGISTERDATE, D.UPDATEDATE, D.USER_ID, D.NAME
         FROM (
@@ -31,7 +32,7 @@
         FROM DORANBOARD D
         JOIN USERS U ON U.ID = D.USER_ID
         <![CDATA[
-            WHERE U.ID = D.USER_ID AND ROWNUM <= #{pagination.page} * #{pagination.rowCount}
+        WHERE U.ID = D.USER_ID AND ROWNUM <= #{pagination.page} * #{pagination.rowCount}
         ]]>
         <include refid="search"/>
         <![CDATA[
@@ -39,7 +40,6 @@
         ) D WHERE R > (#{pagination.page} - 1) * #{pagination.rowCount}
         ]]>
     </select>
-
 
     <!--게시글 추가 -->
     <insert id="insert">
