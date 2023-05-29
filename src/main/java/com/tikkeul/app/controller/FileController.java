@@ -38,7 +38,6 @@ public class FileController {
                 out.close();
             }
         }
-        log.info(uploadFiles.toString());
         return uuids;
     }
 
