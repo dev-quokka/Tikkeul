@@ -2,6 +2,7 @@ package com.tikkeul.app.dao;
 
 import com.tikkeul.app.domain.dto.ItemFileDTO;
 import com.tikkeul.app.domain.dto.SavingLevelFileDTO;
+import com.tikkeul.app.domain.vo.FileVO;
 import com.tikkeul.app.domain.vo.ItemFileVO;
 import com.tikkeul.app.mapper.FileMapper;
 import lombok.RequiredArgsConstructor;
@@ -24,16 +25,17 @@ public class FileDAO {
         fileMapper.insert(savingLevelFileDTO);
     }
 
+//
 //    public List<SavingLevelFileDTO> savingLevelFindAll(Long savinglevelId){
 //        log.info(savinglevelId.toString());
 //        return fileMapper.savingLevelSelectlAll(savinglevelId);
 //    }
-
+//
 //    public void savingLevelDelete(Long id){
 //        fileMapper.savingLevelDelete(id);
-//    }
-
-//    public void saveItem(ItemFileDTO itemFileDTO){
+////    }
+//
+//    public void saveItem(FileVO itemFileDTO){
 //        fileMapper.insertItem(itemFileDTO);
 //    }
 }
