@@ -1,13 +1,8 @@
 package com.tikkeul.app.mapper;
 
 
-import com.tikkeul.app.domain.dto.DoranBoardDTO;
-import com.tikkeul.app.domain.dto.InquiryBoardDTO;
-import com.tikkeul.app.domain.dto.Pagination;
-import com.tikkeul.app.domain.dto.Search;
-import com.tikkeul.app.domain.vo.AnswerVO;
-import com.tikkeul.app.domain.vo.ItemVO;
-import com.tikkeul.app.domain.vo.UserVO;
+import com.tikkeul.app.domain.dto.*;
+import com.tikkeul.app.domain.vo.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -24,7 +19,7 @@ public interface AdminMapper {
     public int adminCountOfUser(@Param("search") Search search);
 
     //  관리자페이지에서 회원 수정
-     public void adminUpdateUser(Long id);
+    public void adminUpdateUser(Long id);
 
     // 관리자페이지에서 회원 전환
     public void adminChangeUser(Long id);
@@ -63,10 +58,19 @@ public interface AdminMapper {
     public void adminDeleteDoranBoard(Long id);
     /*제품*/
     //    관리자페이지에서 상품 목록 조회
-    public List<ItemVO> adminSelectItemAll(@Param("pagination") Pagination pagination, @Param("search") Search search);
+    public List<ItemDTO> adminSelectItemAll(@Param("pagination") Pagination pagination, @Param("search") Search search);
 
     //    관리자페이지에서 상품 총 개수
     public int selectCountOfItem(@Param("search") Search search);
+
+    /*메인 페이지*/
+    public List<UserVO> adminMainSelectUser();
+
+    public List<SavingLevelVO> adminMainSelectSavingLevel();
+
+    public List<ItemDTO> adminMainSelectItem();
+
+    public List<InquiryBoardDTO> adminMainSelectInquiry();
 
 
 
