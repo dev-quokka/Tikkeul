@@ -9,34 +9,31 @@
 </head>
 <body>
 <!-- 취소 모달-->
-
 <form th:action="@{/mypage/drop}"  th:method="post" th:object="${userVO}">
-<div class="ReactModalPortal" style="display: none;">
-    <div class="ReactModal__Overlay ReactModal__Overlay--after-open ConfirmModal_overlay__9xcDs waffle__modal__overlay" style="background-color: rgba(0, 0, 0, 0.2)">
-        <div class="ReactModal__Content ReactModal__Content--after-open ConfirmModal_confirmModal__1x2Tw ConfirmModal_sizeLg__KHkYl" tabindex="-1" role="dialog" aria-modal="true">
-            <div class="ConfirmModal_header__gkXhb">
-                <div title="정말 떠나시겠어요 ㅠㅠ?" class="ConfirmModal_title__ubaBW">
-                    휴면계정으로 전환 하시겠어요?
+    <div class="ReactModalPortal" style="display: none;">
+        <div class="ReactModal__Overlay ReactModal__Overlay--after-open ConfirmModal_overlay__9xcDs waffle__modal__overlay" style="background-color: rgba(0, 0, 0, 0.2)">
+            <div class="ReactModal__Content ReactModal__Content--after-open ConfirmModal_confirmModal__1x2Tw ConfirmModal_sizeLg__KHkYl" tabindex="-1" role="dialog" aria-modal="true">
+                <div class="ConfirmModal_header__gkXhb">
+                    <div title="정말 떠나시겠어요 ㅠㅠ?" class="ConfirmModal_title__ubaBW">
+                        휴면계정으로 전환 하시겠어요?
+                    </div>
                 </div>
-            </div>
-            <div class="ConfirmModal_content__3KM88 ConfirmModal_hasTitle__3rvSc">
-                휴면사유 : <div class="ConfirmModal_message__Mi2Ur"></div>
-                <input style="display: none" class="qq" th:field="*{status}">
-            </div>
-            <div class="ConfirmModal_footer__gfGBl">
-                <div class="ConfirmModal_buttonGroup__3YCl5">
-                    <button class="mclose Button_button__2FuOU Button_text__2-UCU Button_md__46Ai- ConfirmModal_negativeButton__3VxAF" type="button">
-                        <span><span class="Button_children__ilFun">닫기</span></span></button>
-                    <button class="Button_button__2FuOU Button_primary__2mZni Button_text__2-UCU Button_md__46Ai- ConfirmModal_positiveButton__Fafi9" type="submit">
-                        <span><span class="Button_children__ilFun">휴면계정 전환</span></span>
-                    </button>
+                <div class="ConfirmModal_content__3KM88 ConfirmModal_hasTitle__3rvSc">
+                    휴면사유 : <div class="ConfirmModal_message__Mi2Ur"></div>
+                    <input style="display: none" class="qq" >
+                </div>
+                <div class="ConfirmModal_footer__gfGBl">
+                    <div class="ConfirmModal_buttonGroup__3YCl5">
+                        <button class="mclose Button_button__2FuOU Button_text__2-UCU Button_md__46Ai- ConfirmModal_negativeButton__3VxAF" type="button">
+                            <span><span class="Button_children__ilFun">닫기</span></span></button>
+                        <button class="Button_button__2FuOU Button_primary__2mZni Button_text__2-UCU Button_md__46Ai- ConfirmModal_positiveButton__Fafi9" type="submit">
+                            <span><span class="Button_children__ilFun">휴면계정 전환</span></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</form>
-
 <div id="page-container">
     <main class="account-drop wzui">
         <div class="wrap">
@@ -44,7 +41,7 @@
             <h2>어떤 점이 불편하셨나요?</h2>
             <p>티끌을 이용하면서 불편했던 점을 말씀해주시면, 티끌의 서비스 개선에 참고하도록 하겠습니다.</p>
             <div class="selectbox">
-                <select id="selectDropOutReason" name="reason" onchange="selectbox(this.value);">
+                <select id="selectDropOutReason" name="reason" onchange="selectbox(this.value);" th:field="*{status}">
                     <option class="btbt" value="탈퇴사유는 무엇인가요?" >탈퇴사유는 무엇인가요?</option>
                     <option class="btbt" value="재 가입을 위해">재 가입을 위해</option>
                     <option class="btbt" value="콘텐츠 품질과 서비스 정보 부족">콘텐츠 품질과 서비스 정보 부족</option>
@@ -82,7 +79,7 @@
             </dl>
             <p><label class="wz checkbox"><input type="checkbox" name="agree" value="Y" id="dropConfirm" ><span>상기 티끌 탈퇴 시 유의 사항을 확인하였습니다.</span></label>
             </p>
-
+</form>
             <div class="drop-button">
                 <input type="button" name="checkButton" value="회원 탈퇴" class="jumooncancel wz button red" disabled="disabled" id="btnDropOut">
             </div>

@@ -2,6 +2,7 @@ package com.tikkeul.app.dao;
 
 import com.tikkeul.app.domain.dto.*;
 import com.tikkeul.app.domain.vo.ReviewVO;
+import com.tikkeul.app.domain.vo.SavingVO;
 import com.tikkeul.app.domain.vo.UserVO;
 import com.tikkeul.app.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
@@ -75,7 +76,6 @@ public class UserDAO {
         userMapper.deletejjim(id,itemId);
     };
 
-
     //후기수정 동찬
     public void sethugisujung(Long id,String content){
         userMapper.updatehugisujung(id,content);
@@ -144,6 +144,16 @@ public class UserDAO {
     // 구매후기 조회
     public List<GumaehugiDTO> findhugisangse(Long id){
         return userMapper.selecthugisangse(id);
+    };
+
+    // 캘린더 조회
+    public List<SavingVO> findmytikkle(Long userId){
+        return userMapper.selectmytikkle(userId);
+    };
+
+    // 캘린더 아이디값으로 조회 동찬
+    public Optional<SavingVO> findmytikkleid(Long userId,Long id){
+        return userMapper.selectmytikkleid(userId,id);
     };
 
 

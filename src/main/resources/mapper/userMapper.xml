@@ -156,6 +156,21 @@
     WHERE U.ID = #{id} AND R.ORDER_ID = O.ID AND I.ID = O.ITEM_ID
     </select>
 
+    <!--켈린더-->
+    <select id="selectmytikkle" resultType="savingVO">
+        SELECT ID, "START", TITLE, CONTENT, "END"
+        FROM SAVING
+        WHERE USER_ID=#{userId}
+    </select>
+
+    <!-- 켈린더 아이디값으로 정보 찾기 -->
+    <select id="selectmytikkleid" resultType="savingVO">
+        SELECT TITLE, CONTENT
+        FROM SAVING
+        WHERE USER_ID=#{userId} AND ID=#{id}
+    </select>
+
+
     <update id="jumooncancel">
     UPDATE ORDERS
     SET STATUS = #{status}
@@ -181,12 +196,13 @@
     VALUES(SEQ_USER.NEXTVAL, #{content}, 0, SYSDATE , #{id})
     </insert>
 
-    <!--
-    <insert id="insert">
-        INSERT INTO USERS (ID, IDENTIFICATION, PASSWORD, NAME, REGISTERED_TYPE, SAVINGLEVEL_ID)
-        VALUES (SEQ_USER.NEXTVAL, #{identification}, #{password}, #{name}, #{registeredType}, #{levelId})
+    <!--캘린더 인서트-->
+    <insert id="inserttikkle">
+        INSERT INTO SAVING
+    (ID, "START", TITLE, STATUS, USER_ID, CONTENT, "END")
+    VALUES(SEQ_USER.NEXTVAL, #{start}, #{title}, '진행중' , #{id}, #{content} , #{start} );
+
     </insert>
--->
 
 <!--소셜 회원 업데이트-->
 

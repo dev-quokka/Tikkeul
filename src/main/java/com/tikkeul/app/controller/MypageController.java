@@ -1,6 +1,7 @@
 package com.tikkeul.app.controller;
 import com.tikkeul.app.domain.dto.*;
 import com.tikkeul.app.domain.vo.ReviewVO;
+import com.tikkeul.app.domain.vo.SavingVO;
 import com.tikkeul.app.domain.vo.UserVO;
 import com.tikkeul.app.service.mypage.MypageService;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -116,6 +119,7 @@ public class MypageController {
         mypageService.dropjjim(id,itemId);
     }
 
+
     @GetMapping("jjimregogo/{itemId}")
     @ResponseBody
     public void jjimregogo(@PathVariable Long itemId){
@@ -185,37 +189,30 @@ public class MypageController {
         model.addAttribute("kkk",mypageService.gethugisangse(id))
         ;}
 
+    @GetMapping("mytikkle")
+    public void goTomytikkle(Model model){
+        Long userId = 0L;
+        model.addAttribute("ppoos",mypageService.getmytikkle(userId));
+        log.info("들어옴");
+        ;}
+
+     @GetMapping("/mypage/check-mytikkleid/{id}")
+     @ResponseBody
+     public Optional<SavingVO> mytikklecheckid(@PathVariable Long id){
+         log.info("아이디찾기");
+         Long userId = 0L;
+         log.info(mypageService.getmytikkleid(id,userId).toString());
+         log.info(mypageService.getmytikkleid(id,userId).get().toString());
+        return mypageService.getmytikkleid(id,userId);
+     }
 
     @GetMapping("mypage-review-change")
     public void goTodjumoon522(){;}
-    @GetMapping("mytikkle")
-    public void goTodjumoon2(){;}
     @GetMapping("mypage-pay")
     public void goTodjumoon233(){;}
     @GetMapping("Updatebasicinfo")
     public void goTodjumoon233d(){;}
 
-
-
-
-// 동찬 작업중
-    /*@RequestMapping("/sendSMS1.do") //페이지 넘긴 매핑 값
-    @ResponseBody
-    public String sendSMS(String phoneNumber) {
-
-        Random rand  = new Random(); //랜덤숫자 생성
-        String numStr = "";
-        for(int i=0; i<4; i++) {
-            String ran = Integer.toString(rand.nextInt(10));
-            numStr+=ran;
-        }
-
-
-        certifiedPhoneNumber.certifiedPhoneNumber(phoneNumber, numStr); //휴대폰 api 쪽
-// // 밑에 자세한 설명나옴
-
-        return numStr;
-    }*/
 
 }
 

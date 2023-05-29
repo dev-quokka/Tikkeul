@@ -3,6 +3,7 @@ package com.tikkeul.app.service.mypage;
 import com.tikkeul.app.dao.UserDAO;
 import com.tikkeul.app.domain.dto.*;
 import com.tikkeul.app.domain.vo.ReviewVO;
+import com.tikkeul.app.domain.vo.SavingVO;
 import com.tikkeul.app.domain.vo.UserVO;
 import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.annotations.Param;
@@ -61,8 +62,8 @@ public class MypageServiceImpl implements MypageService{
     };
 
     //찜 삭제
-    public void dropjjim(Long id, Long itemId){
-        userDAO.deletejjim(id,itemId);
+    public void dropjjim(Long userId, Long itemId){
+        userDAO.deletejjim(userId,itemId);
     };
 
 
@@ -108,29 +109,16 @@ public class MypageServiceImpl implements MypageService{
         return userDAO.findmyhugisujung(id);
     };
 
-    /*public void certifiedPhoneNumber(String phoneNumber, String numStr) {
+    // 캘린더 조회
+    public List<SavingVO> getmytikkle(Long userId){
+        return userDAO.findmytikkle(userId);
+    };
 
-        String api_key = "###발급받은키";
-        String api_secret = "##발급받은키입력";
-        Message coolsms = new Message(api_key, api_secret);
+    // 캘린더 아이디값으로 조회 동찬
+    public Optional<SavingVO> getmytikkleid(Long userId,Long id){
+        return userDAO.findmytikkleid(userId,id);
+    };
 
-
-        HashMap<String, String> params = new HashMap<String, String>();
-        params.put("to", phoneNumber);
-        params.put("from", "###본인의 휴대폰번호####");
-        params.put("type", "SMS");
-        params.put("text", " + 작성할내용 "["+numStr+"]" +내용 ");
-        params.put("app_version", "test app 1.2"); // application name and version
-
-        try {
-            JSONObject obj = (JSONObject) coolsms.send(params);
-            System.out.println(obj.toString());
-        } catch (CoolsmsException e) {
-            System.out.println(e.getMessage());
-            System.out.println(e.getCode());
-        }
-
-    }*/
 
 }
 

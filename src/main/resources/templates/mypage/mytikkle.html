@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>mytikkle</title>
@@ -36,7 +36,9 @@
 
             <div class="mypage-content-wrap">
                 <!-- side-menu.html -->
-                <div id="side-menu"></div>
+                <div id="side-menu">
+                </div>
+
 
                 <div class="mypage-content-container">
                     <div class="mypage-content-box">
@@ -1449,8 +1451,6 @@
 </div>
 
 <!-- 다이어리 입력 창 -->
-<!--<form action="경로" th:object="${보낼매핑된이름}">-->
-
 <div class="diary-modal-display">
     <div class="diary-modal">
         <div class="modal-back"></div>
@@ -1473,12 +1473,8 @@
                 </div>
             </h1>
             <div>
-
-
                 <div class="box">
-                    <textarea <!--th:field="*{저장된 날짜}"--> disabled>
                     <h4 class="date"></h4>
-                    </textarea>
                     <div class="flex-box">
                         <button type="button" class="insert-button">저장</button>
                     </div>
@@ -1486,10 +1482,9 @@
                 <div class="input-box">
                     <div class="align-flex">
                         <div>
-                            <!-- <input type="text" placeholder="제목을 입력하세요." class="diary-title" /> -->
-                            <textarea <!--th:field="*{현재레벨}" disabled>-->
+                            <!--th:text="*{현재레벨}"-->
+                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="저축 금액을 입력하세요." class="diary-title"></input>
 
-                            </textarea>
                         </div>
                     </div>
                     <div class="diary-content-box">
@@ -1498,8 +1493,6 @@
                           name=""
                           placeholder="내용을 입력해주세요."
                           class="diary-content"
-                          <!--th:field="*{보낼내용}"-->
-                          disabled
                   >
                 </textarea>
                         </div>
@@ -1511,13 +1504,9 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </div>
 </div>
-<!--</form>-->
 
 <!-- 잠깐 나왓다 사라지는 알람창 -->
 <div class="alert-modal-display">
@@ -1556,7 +1545,7 @@
             </h2>
             <div class="diary-detail-title-box">
                 <h2 class="diary-main-title space-between">
-                    <div style="flex-grow: 1" class="diary-content-title">다이어리 제목</div>
+                    <div style="flex-grow: 1" class="diary-content-title">저축 금액을 입력하세요.(콤마표시없이 숫자로만 입력해주세요)</div>
                     <div class="diary-detail-modify-box">
                         <p class="modify-button">수정</p>
                         <p class="delete-button">삭제</p>
@@ -1568,26 +1557,26 @@
                 <div class="flex">
                     <div>
                         <ul class="sumnail-layout" style="padding: 0; margin-top: 30px">
-                            <li>
-                                <div style="position: relative">
-                                    <img src="/static/image/mypage/test.jpg" />
-                                </div>
-                            </li>
-                            <li>
-                                <div style="position: relative">
-                                    <img src="/static/image/mypage/test.jpg" />
-                                </div>
-                            </li>
-                            <li>
-                                <div style="position: relative">
-                                    <img src="/static/image/mypage/test.jpg" />
-                                </div>
-                            </li>
-                            <li>
-                                <div style="position: relative">
-                                    <img src="/static/image/mypage/test.jpg" />
-                                </div>
-                            </li>
+                            <!-- <li>
+                                 <div style="position: relative">
+                                     <img src="/static/image/mypage/test.jpg" />
+                                 </div>
+                             </li>
+                             <li>
+                                 <div style="position: relative">
+                                     <img src="/static/image/mypage/test.jpg" />
+                                 </div>
+                             </li>
+                             <li>
+                                 <div style="position: relative">
+                                     <img src="/static/image/mypage/test.jpg" />
+                                 </div>
+                             </li>
+                             <li>
+                                 <div style="position: relative">
+                                     <img src="/static/image/mypage/test.jpg" />
+                                 </div>
+                             </li>-->
                         </ul>
                     </div>
                 </div>
@@ -1614,11 +1603,14 @@
         $('#footer').load('../main/footer.html');
         $('#mypage-header').load('user-header.html');
         $('#side-menu').load('side-menu.html');
+        console.log(k);
+        console.log(datas);
     });
 
     const $alertModal = $('.alert-modal-display');
+
 </script>
-<script>
+<script th:inline="javascript">
     // 여기는 신경 안써도 됨
     const Calendar = tui.Calendar;
     const container = document.getElementById('calendar');
@@ -1680,23 +1672,33 @@
         ],
     };
 
+
     const calendar = new Calendar(container, options);
 
-    let datas = [
-        {
-            id: '1', // 다이어리의 번호 값 넣어주기
-            calendarId: 2,
-            title: '안녕',
-            start: '2023-04-19',
-            end: '2023-04-19',
-        },
-    ];
+
+    let k = [[${ppoos}]];
+    datas = [k.map(data => {
+        return {
+            id: data.id.toString(),
+            title: data.title.toString(),
+            start: data.start.substr(0,10),
+            end: data.start.substr(0,10),
+            content: data.content,
+        }
+    }
+    )];
+
     datas.forEach((e, i) => {
-        calendar.createEvents([e]);
+        console.log("e,[e],i")
+        console.log(e);
+        console.log([e]);
+        console.log(i);
+        calendar.createEvents(e);
     });
 
-
     // ==================================================== 캘린더 버튼
+
+
 
     const month = calendar.getDate().getMonth() + 1;
     const year = calendar.getDate().getFullYear();
@@ -1718,6 +1720,8 @@
 
         calendar.prev();
     });
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     // next button
     $('#calender-next').click(() => {
@@ -1741,19 +1745,21 @@
         calendar.today();
     });
 
+    /////////////////////////////////////////////////////////////////////////////
 
-
-
-
+    let ppoos = [[${ppoos}]];
 
     $(document).ready(() => {
+
         // 각 day박스 인덱스, 아이템
+
         $('.toastui-calendar-daygrid-cell').each((i, e) => {
-            let errorMsg = '오늘 날짜의 일기만 작성이 가능합니다.';
 
             $(e).click(() => {
                 currentDate = calendar.getDate();
+                console.log("커렌트데이트");
                 console.log(currentDate);
+                console.log(ppoos);
                 let calendarYear = currentDate.getFullYear();
 
                 let calendarMonth = currentDate.getMonth() + 1;
@@ -1764,17 +1770,17 @@
 
                 var date = calendarYear + '-' + calendarMonth + '-' + calendarDay;
 
-                $('.title').text('저축내역 작성하기');
+                $('.title').text('다이어리 작성하기');
                 $('.diary-modal-display').show();
-
-                // 날짜 들어오는곳
-
                 $('.date').text(date);
+
+                // ajax로 정보 전송
+
+
+
             });
         });
     });
-
-    //저장되면 디비 저장
 
     $('.insert-button').click((e) => {
         let alertMsg = '저장 완료';
@@ -1782,6 +1788,7 @@
         let content = $('.diary-content').val();
         let date = $('.date').text();
         let index = $(e.target).attr('id');
+        console.log(index);
         let calendarId = Math.floor(Math.random() * 4) + 1 + '';
 
         let errorMsg = '';
@@ -1797,23 +1804,51 @@
         } else if (!$('.diary-content').val()) {
             errorMsg = '내용을 입력해주세요.';
             alertModal(errorMsg);
-            4;
             return;
         }
 
-        /* AJAX로 이미지랑, 제목 내용 등 DB에 먼저 저장 후 */
-        /* ID값만 리턴 받아서  */
+
         let datas = [
             {
-                id: '1', // 다이어리의 번호 값 넣어주기
-                calendarId: calendarId,
+                // 다이어리의 번호 값 넣어주기
                 title: title,
+                content:content,
                 start: date,
                 end: date,
             },
         ];
+        let ajaxid
+
+        $.ajax({
+            url:`/mypage/insertmytikkle`,
+            type:post,
+            data: datas,
+           dataType:"json",
+            contentType: "application/json",
+            success: function(result) {
+                alert("성공");
+                $.ajax({
+                  url:`/mypage/insertmytikkle`,
+                })
+
+            },
+            error: function(errorThrown) {
+                alert(errorThrown.statusText);
+            }
+        })
+
+        /*let data = [
+            {
+                id: ajaxid, // 다이어리의 번호 값 넣어주기
+                title: title,
+                content:content,
+                start: date,
+                end: date,
+            },
+        ];*/
+
         // 데이터를 담아서 화면에 뿌려줌
-        calendar.createEvents(datas);
+        calendar.createEvents(data);
 
         diaryModal(index);
         alertModal(alertMsg);
@@ -1828,9 +1863,16 @@
 
         // 예시 내용 \n은 애초에 신경 안써도 textarea에서 작성하면 알아서 들어가는 거임 신경 ㄴㄴ
 
+        $.ajax({
+            url:`/mypage/check-mytikkleid/${id}`,
+            success:function(result){
+                let content = result.content;
+                console.log(result.content);
 
-        let content =
-            '오늘의 도전\n 너무너무 재미가 있었어서\n내 마음이 너무나도 편안해 지고\n나의 마음이 좀더 강해지고 있어서\n우울증이 점점 극복된다.';
+            }
+
+        })
+
         date = dateFomat(date);
 
         // 날짜 담아주기
@@ -1852,7 +1894,7 @@
         inputCheck();
     });
 
-    // 공개 비공개
+    /*// 공개 비공개
     const $check = $('input[type=checkbox]');
     const $checkbox = $('.private-check-box');
     const $checkText = $('.private-check-layout p');
@@ -1865,7 +1907,7 @@
             $checkbox.removeClass('check-active');
             $checkText.text('비공개');
         }
-    });
+    });*/
 
     // =========================================================================
     // function
@@ -1884,7 +1926,8 @@
         let day = date.getDate();
         day = day < 10 ? '0' + day : day;
 
-        return year + '년 ' + month + '월 ' + day + '일';
+        /*return year + '년 ' + month + '월 ' + day + '일';*/
+        return year + '-' + month + '-' + day;
     }
 
     function contentPrint(content) {
@@ -1914,6 +1957,13 @@
         setTimeout(function () {
             $alertModal.fadeOut();
         }, 2000);
+    }
+
+    function deleteImage(index) {
+        inputFiles.splice(index, 1);
+
+        var imageId = '#' + index;
+        $(imageId).remove();
     }
 
     function inputCheck() {
@@ -1952,7 +2002,7 @@
         $('.date').text($('.diary-detail-date').text());
 
         $('.diary-content').val(content());
-        $('.diary-title').val($('.diary-content-title').text());
+        $('.diary-title').val($('.diary-content-title').text());  //제목값 꽂히는곳 (현재 레벨 꽂아주면 될듯)
 
         $('.diary-modal-display').show();
         $('.diary-detail-display').hide();

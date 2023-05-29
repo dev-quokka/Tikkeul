@@ -16,5 +16,6 @@ public class MyjjimDTO {
     private Long itemId;
     private Long orderId;
     private Long likesId;
+    private Long userId;
     private Long jjimreviewCount;
 }

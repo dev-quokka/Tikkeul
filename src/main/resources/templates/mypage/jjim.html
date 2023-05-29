@@ -115,11 +115,11 @@
                                     </div>
                                 </div>
                             </a>
-                            <button style="display: none" class="begopa2">${jjim.likesId}</button>
-                            <button style="display: none"  class="begopa">${jjim.itemId}</button>
+
+                            <button style="display: none"  value="${jjim.itemId}" class="begopa"></button>
 
 
-                                <button type="button" id="${jjim.itemId}" class="WishButton_button__1ZqbG WishButton_interaction__2FCel"
+                                <button type="button" class="WishButton_button__1ZqbG WishButton_interaction__2FCel"
                                         aria-label="찜하기 버튼" aria-pressed="true" data-ga-category="공통_상품카드_스토어"
                                         data-ga-action="찜하기_취소" data-ga-label="" >
                                     <svg viewBox="0 0 32 32" focusable="false" role="presentation"
@@ -134,13 +134,13 @@
 </script>
 
 <script>
+
     let heartsbtn=document.querySelectorAll(".WishButton_button__1ZqbG");
 
     heartsbtn.forEach(item=>item.addEventListener('click',function () {
-
-        let itemId = $('.begopa2').text();
-
-        console.log(itemId);
+        console.log($('.begopa').val());
+        console.log($(this).index(this));
+        let itemId = $('.begopa').val();
 
         if(item.getAttribute('aria-pressed')==='true'){
             item.classList.add('wishButton_active__3CKVe');

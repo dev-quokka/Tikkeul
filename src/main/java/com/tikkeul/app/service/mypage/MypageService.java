@@ -2,6 +2,7 @@ package com.tikkeul.app.service.mypage;
 
 import com.tikkeul.app.domain.dto.*;
 import com.tikkeul.app.domain.vo.ReviewVO;
+import com.tikkeul.app.domain.vo.SavingVO;
 import com.tikkeul.app.domain.vo.UserVO;
 import org.apache.ibatis.annotations.Param;
 
@@ -59,5 +60,13 @@ public interface MypageService {
 
     // 동찬 구매후기 리뷰 찾고수정
     public Optional<HugisujungDTO> getmyhugisujung(Long id);
+
+    // 캘린더 조회
+    public List<SavingVO> getmytikkle(Long userId);
+
+    // 캘린더 아이디값으로 조회 동찬
+    public Optional<SavingVO> getmytikkleid(Long userId,Long id);
+
+
 
 }
