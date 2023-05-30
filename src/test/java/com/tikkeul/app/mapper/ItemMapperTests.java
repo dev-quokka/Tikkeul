@@ -13,6 +13,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Slf4j
 public class ItemMapperTests {
     //    상품페이지
+    @Autowired
+     private ItemMapper itemMapper;
+
+    @Test
+    public void itemtest(){
+        itemMapper.selectAllItem();
+    }
 
 }
 

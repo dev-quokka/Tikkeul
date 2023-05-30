@@ -13,6 +13,9 @@
         WHERE IDENTIFICATION = #{identification}
 
     </select>
+    <select id="selectpassword" resultType="String">
+        SELECT PASSWORD FROM USERS WHERE IDENTIFICATION= #{identification}
+    </select>
 
     <!--회원가입-->
     <insert id="insert">
@@ -206,8 +209,8 @@
 
     </insert>
 
-<!--소셜 회원 업데이트-->
 
+    <!--소셜 회원 업데이트-->
     <update id="updatekakao">
         UPDATE  USERS
         SET IDENTIFICATION=#{identification}, PASSWORD = #{password}, NAME = #{name}
@@ -219,7 +222,6 @@
         SET TITLE=#{title}
         WHERE ID = #{id}
     </update>
-
     <update id="updateNaver">
         UPDATE  USERS
         SET IDENTIFICATION=#{identification}, PASSWORD = #{password}, NAME = #{name}

@@ -27,7 +27,6 @@ $upload.on("change", function(e){
         contentType: false,
         processData: false,
         success: function(uuids){
-            console.log("들어왔나")
             $("label.attach").eq(i).find("h6").hide();
             $("div.x").eq(i).show();
             $("img.thumbnail").eq(i).show();
@@ -36,7 +35,7 @@ $upload.on("change", function(e){
             let year = now.getFullYear();
             let month = now.getMonth() + 1;
             let date = now.getDate();
-
+            console.log("hi")
             month = month < 10 ? "0" + month : month;
             date = date < 10 ? "0" + date : date;
 
@@ -63,19 +62,18 @@ $("input.ok-button").on("click", function(){
     imgs.each((i, img) => {
         let fullPath = $(img).attr("src");
         let datas = fullPath.split("_");
-        let path = datas[0].split("=")[1].replace("/t", "");
+        let filePath = datas[0].split("=")[1].replace("/t", "");
         let uuid = datas[1];
         let originName = datas[2];
-        let size = sizes[i];
+        let fileSize = sizes[i];
 
         text += `
-            <input type="hidden" name="files[${i}].path" value="${path}">
+            <input type="hidden" name="files[${i}].filePath" value="${filePath}">
             <input type="hidden" name="files[${i}].uuid" value="${uuid}">
             <input type="hidden" name="files[${i}].originName" value="${originName}">
-            <input type="hidden" name="files[${i}].size" value="${size}">
+            <input type="hidden" name="files[${i}].fileSize" value="${fileSize}">
         `
     });
     $(writeForm).append(text);
-    console.log($(writeForm))
     $(writeForm).submit();
 });

@@ -1,11 +1,9 @@
 package com.tikkeul.app.dao;
 
-import com.tikkeul.app.domain.dto.DoranBoardDTO;
-import com.tikkeul.app.domain.dto.InquiryBoardDTO;
-import com.tikkeul.app.domain.dto.Pagination;
-import com.tikkeul.app.domain.dto.Search;
+import com.tikkeul.app.domain.dto.*;
 import com.tikkeul.app.domain.vo.AnswerVO;
 import com.tikkeul.app.domain.vo.ItemVO;
+import com.tikkeul.app.domain.vo.SavingLevelVO;
 import com.tikkeul.app.domain.vo.UserVO;
 import com.tikkeul.app.mapper.AdminMapper;
 import lombok.RequiredArgsConstructor;
@@ -37,7 +35,7 @@ public class AdminDAO {
 
     // 관리자페이지에서 회원 삭제
     public void adminChangeUser(Long id){
-         adminMapper.adminChangeUser(id);
+        adminMapper.adminChangeUser(id);
     }
 
     // 관리자페이지에서 회원 수정
@@ -64,7 +62,7 @@ public class AdminDAO {
 
     //    관리자 페이지에서 문의 답변
     public void adminSaveAnswer(AnswerVO answerVO){
-            adminMapper.adminInsertAnswer(answerVO);
+        adminMapper.adminInsertAnswer(answerVO);
     }
 
     //  관리자 페이지에서 문의 답변 여부
@@ -102,12 +100,29 @@ public class AdminDAO {
     /*----------------------------------------------------------------------------------*/
     /*상품*/
     //    관리자 페이지에서 상품 목록 조회
-    public List<ItemVO> adminFindItemAll(Pagination pagination, Search search){
+    public List<ItemDTO> adminFindItemAll(Pagination pagination, Search search){
         return adminMapper.adminSelectItemAll(pagination, search);
     }
-//  관리자 페이지에서 상품 총 개수
+    //  관리자 페이지에서 상품 총 개수
     public int findCountOfItem(Search search){
         return adminMapper.selectCountOfItem(search);
+    }
+
+    /*메인 페이지*/
+    public List<UserVO> adminMainFindUser(){
+        return adminMapper.adminMainSelectUser();
+    }
+
+    public List<SavingLevelVO> adminMainFindSavingLevel(){
+        return adminMapper.adminMainSelectSavingLevel();
+    }
+
+    public List<ItemDTO> adminMainFindItem(){
+        return adminMapper.adminMainSelectItem();
+    }
+
+    public List<InquiryBoardDTO> adminMainFindInquiry(){
+        return adminMapper.adminMainSelectInquiry();
     }
 
 }

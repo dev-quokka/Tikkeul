@@ -20,12 +20,7 @@ public class UserDAO {
 
     private final UserMapper userMapper;
 
-//    홍윤기의 작업공간
-    //    아이디 중복검사
-    //public Optional<UserVO> selectByUserId(String identification){
-     //   return userMapper.selectByUserId(identification);
-    //}
-
+//홍윤기 작업공간
 
 //  아이디 중복검사
     public Optional<UserVO> findById(String identification){
@@ -45,9 +40,10 @@ public class UserDAO {
     }
 
     //    로그인
-    public Optional<Long> findByUserIdAndUserPassword( String identification, String password){
+    public Optional<UserVO> findByUserIdAndUserPassword( String identification, String password){
         return userMapper.selectByUserIdAndUserPassword(identification,password);
     };
+
 
     // 동찬 마이페이지
 
@@ -166,9 +162,17 @@ public class UserDAO {
         userMapper.inserttikkle(savingVO);
     };
 
+//    네이버 회원 업데이트
     public void updateNaver(UserVO userVO) {
         userMapper.updateNaver(userVO);
     }
-
+//  비밀번호 업데이트
+    public void updatepassword(String identification, String password) {
+        userMapper.updatepassword(identification, password);
+    }
+//    비밀번호 조회
+    public String selectpassword(String identification, String password) {
+       return userMapper.selectpassword(identification,password);
+    }
 }
 
