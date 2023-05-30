@@ -28,14 +28,19 @@
                 <div class="storeTabContentsWrapper">
                     <div class="storeTabContents">
                         <div class="DetailSatisfaction_container__t8Ax_">
-                            <div class="CommentTitle_container__1Zdwo"><span class="CommentTitle_title__2RXrf">후기상세보기</span></div>
+                            <div class="CommentTitle_container__1Zdwo"><span
+                                    class="CommentTitle_title__2RXrf">만족도</span></div>
 
 
+
+
+
+
+                            <div class="DetailSatisfaction_tabsWrap__1YI1J">
+
+                            </div>
                             <div>
-                                <div class="main-comment">
-                                    <textarea placeholder="" id="commentCnt" name="contents" style="overflow-y: hidden; height: 28px;     width: 840px; resize: none;"></textarea>
 
-                                </div>
                                 <div class="StoreSatisfactionList_container__9dez2 DetailSatisfaction_satisfactionList__3XBBJ">
 
                                     <div>
@@ -48,13 +53,16 @@
                                                 </div>
                                                 <div class="StoreSatisfactionCard_rightPanel__XCjpV">
                                                     <div class="StoreSatisfactionCard_titleArea__1S3zk">
-                                                        <span class="StoreSatisfactionCard_nickName__16JEX">훈이</span>
+                                                        <span class="StoreSatisfactionCard_nickName__16JEX">${data.name}</span>
                                                         <div class="StoreSatisfactionCard_sideArea__jGJma">
                                                             <div class="StoreSatisfactionCard_dateArea__2nNep">
-                                                                <span class="StoreSatisfactionCard_updatedDate__1PmK7">2022.11.26</span>
+                                                                <span class="StoreSatisfactionCard_updatedDate__1PmK7">${data.registerDate}</span>
                                                             </div>
                                                             <div class="StoreSatisfactionCard_moreWrap__3zYcp">
-                                                                <svg viewBox="0 0 40 40" focusable="false" role="presentation" class="withIcon_icon__3VTbq" aria-hidden="true">
+                                                                <svg viewBox="0 0 40 40" focusable="false"
+                                                                     role="presentation"
+                                                                     class="withIcon_icon__3VTbq"
+                                                                     aria-hidden="true">
                                                                     <path d="M24.52 5A4.52 4.52 0 1 0 20 9.57 4.53 4.53 0 0 0 24.52 5zm0 30A4.52 4.52 0 1 0 20 39.48 4.53 4.53 0 0 0 24.52 35zm0-15A4.52 4.52 0 1 0 20 24.52 4.53 4.53 0 0 0 24.52 20z"></path>
                                                                 </svg>
                                                             </div>
@@ -63,7 +71,7 @@
                                                     <div class="StoreSatisfactionCard_ratingArea__2RBSe">
                                                         <div class="RatingScore_container__AeQ_I RatingScore_smTitle__1OhOH">
                                                             <div class="RatingScore_icon__rIS_k"></div>
-                                                            <span class="RatingScore_score__2a-SN">4.5</span>
+                                                            <span class="RatingScore_score__2a-SN" >${data.score}</span>
                                                         </div>
                                                         <div class="StoreSatisfactionCard_badges__2Q8Zp">
                                                             <span class="StoreSatisfactionCard_badge__35nf6">1회 구매</span>
@@ -72,20 +80,13 @@
                                                 </div>
                                             </div>
                                             <div class="StoreSatisfactionCard_content__2izM4">
-                                                <div class="StoreSatisfactionCard_comment__2d9RM">간이 책상도 겸하게
-                                                    폭이 조금 더 넓은 사이즈도 만들어 주셨으면 합니다.
-                                                    아이패드 프로도 폭이 모프 Z 보다 넓어요.
-                                                    무엇보다 나는 앉아서 글을 많이 쓰는데, 가벼운, portable, 간이 좌식 책상으로 아주
-                                                    유용하겠습니다.
+                                                <div class="StoreSatisfactionCard_comment__2d9RM">${data.content}
                                                 </div>
-                                                <div class="StoreSatisfactionCard_options__P2kzd"><span class="StoreSatisfactionCard_option__2pjHI">MOFT Z / 그레이</span>
+                                                <div class="StoreSatisfactionCard_options__P2kzd"><span
+                                                        class="StoreSatisfactionCard_option__2pjHI">${data.brand}</span>
                                                 </div>
                                             </div>
                                         </div>
-
-
-
-
 
                                     </div>
                                     <div></div>
@@ -94,6 +95,10 @@
 
                         </div>
                     </div>
+
+
+
+
                 </div>
             </div>
     `)
