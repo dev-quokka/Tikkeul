@@ -1,19 +1,18 @@
 package com.tikkeul.app.service.admin;
 
-import com.tikkeul.app.domain.dto.DoranBoardDTO;
-import com.tikkeul.app.domain.dto.InquiryBoardDTO;
-import com.tikkeul.app.domain.dto.Pagination;
-import com.tikkeul.app.domain.dto.Search;
+import com.tikkeul.app.domain.dto.*;
 import com.tikkeul.app.domain.vo.AnswerVO;
 import com.tikkeul.app.domain.vo.ItemVO;
+import com.tikkeul.app.domain.vo.SavingLevelVO;
 import com.tikkeul.app.domain.vo.UserVO;
+import org.apache.catalina.User;
 
 import java.util.List;
 import java.util.Optional;
 
 
 public interface AdminService {
-            /* 회원 */
+    /* 회원 */
     //    관리자페이지에서 회원 목록 조회
     public List<UserVO> adminGetListUserAll(Pagination pagination, Search search);
 
@@ -29,7 +28,7 @@ public interface AdminService {
 
 
 
-         /*문의 내역*/
+    /*문의 내역*/
     //    관리자 페이지에서 문의 내역 전체 조회
     public List<InquiryBoardDTO> adminGetListInquiryAll(Pagination pagination, Search search);
 
@@ -49,7 +48,7 @@ public interface AdminService {
     public void adminRemoveInquiry(Long id);
 
 
-        /*도란 게시판*/
+    /*도란 게시판*/
     //    관리자 페이지에서 도란보드 목록 조회
     public List<DoranBoardDTO> adminGetListDoranBoardAll(Pagination pagination, Search search);
 
@@ -66,12 +65,19 @@ public interface AdminService {
 
     /*상품*/
     //    관리자 페이지에서 상품 목록 조회
-    public List<ItemVO> adminGetListItemAll(Pagination pagination, Search search);
+    public List<ItemDTO> adminGetListItemAll(Pagination pagination, Search search);
 
     // 관리자 페이지에서 상품 총 개수
     public int getItemTotal(Search search);
 
 
+    /*메인*/
+    public List<UserVO> adminMainGetUser();
 
+    public List<SavingLevelVO> adminMainGetSavingLevel();
+
+    public List<ItemDTO> adminMainGetItem();
+
+    public List<InquiryBoardDTO> adminMainGetInquiry();
 
 }
