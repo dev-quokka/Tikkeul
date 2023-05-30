@@ -65,8 +65,12 @@ public interface MypageService {
     public List<SavingVO> getmytikkle(Long userId);
 
     // 캘린더 아이디값으로 조회 동찬
-    public Optional<SavingVO> getmytikkleid(Long userId,Long id);
+    public Long getmytikkleid(Long userId,String date);
 
+    //캘린더 인서트
+    public void settikkle(SavingVO savingVO);
 
+    //캘린더 수정
+    public void modifymytikkle(Long id);
 
 }

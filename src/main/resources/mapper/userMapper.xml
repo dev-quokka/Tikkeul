@@ -73,16 +73,18 @@
 
 
     <select id="selectallmyjumoon" resultType="myjumoonDTO">
-        SELECT I.NAME, I.BRAND, O.STATUS, O.DELIVERY_START_DATE, O.ID, O.USER_ID,O.ITEM_ID
-        FROM ITEM I JOIN ORDERS O
-        ON O.USER_ID = #{id} AND I.ID = O.ITEM_ID
+        SELECT I.NAME, I.BRAND, O.STATUS, O.DELIVERY_START_DATE, O.ID, O.USER_ID,O.ITEM_ID,
+        F.ORIGIN_NAME FILE_ORIGIN_NAME ,F.UUID FILE_UUID,F.FILE_PATH
+        FROM ITEM I , ORDERS O ,ITEMFILE ITF, FILES F
+        WHERE O.USER_ID = #{id} AND I.ID = O.ITEM_ID
     </select>
 
     <select id="selectmyjumoonstatus" resultType="myjumoonDTO">
         SELECT I.NAME, I.BRAND, O.STATUS, O.DELIVERY_START_DATE, O.ID, O.USER_ID,O.ITEM_ID
-        FROM ITEM I JOIN ORDERS O
-        ON O.USER_ID = #{id} AND O.STATUS = #{status} AND I.ID = O.ITEM_ID
+        FROM ITEM I, ORDERS O,ITEMFILE ITF, FILES F
+        WHERE O.USER_ID = #{id} AND O.STATUS = #{status} AND I.ID = O.ITEM_ID
     </select>
+
 
     <!--후기뿌려줌-->
     <select id="selectmyhugi" resultType="myhugiDTO">
@@ -158,16 +160,16 @@
 
     <!--켈린더-->
     <select id="selectmytikkle" resultType="savingVO">
-        SELECT ID, "START", TITLE, CONTENT, "END"
+        SELECT ID, "START", TITLE, "END"
         FROM SAVING
         WHERE USER_ID=#{userId}
     </select>
 
     <!-- 켈린더 아이디값으로 정보 찾기 -->
-    <select id="selectmytikkleid" resultType="savingVO">
-        SELECT TITLE, CONTENT
+    <select id="selectmytikkleid" resultType="long">
+        SELECT ID
         FROM SAVING
-        WHERE USER_ID=#{userId} AND ID=#{id}
+        WHERE USER_ID=#{userId} AND "START"=#{date}
     </select>
 
 
@@ -199,8 +201,8 @@
     <!--캘린더 인서트-->
     <insert id="inserttikkle">
         INSERT INTO SAVING
-    (ID, "START", TITLE, STATUS, USER_ID, CONTENT, "END")
-    VALUES(SEQ_USER.NEXTVAL, #{start}, #{title}, '진행중' , #{id}, #{content} , #{start} );
+    (ID, "START", TITLE, STATUS, USER_ID, "END")
+    VALUES(SEQ_USER.NEXTVAL, #{start}, #{title}, '진행중' , #{userId}, #{start} )
 
     </insert>
 
@@ -210,6 +212,12 @@
         UPDATE  USERS
         SET IDENTIFICATION=#{identification}, PASSWORD = #{password}, NAME = #{name}
         WHERE IDENTIFICATION = #{identification}
+    </update>
+
+    <update id="updatemytikkle">
+        UPDATE  SAVING
+        SET TITLE=#{title}
+        WHERE ID = #{id}
     </update>
 
     <update id="updateNaver">

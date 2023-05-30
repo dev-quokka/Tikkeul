@@ -152,10 +152,19 @@ public class UserDAO {
     };
 
     // 캘린더 아이디값으로 조회 동찬
-    public Optional<SavingVO> findmytikkleid(Long userId,Long id){
-        return userMapper.selectmytikkleid(userId,id);
+    public Long findmytikkleid(Long userId,String date){
+        return userMapper.selectmytikkleid(userId,date);
     };
 
+    //캘린더 수정
+    public void updatemytikkle(Long id){
+        userMapper.updatemytikkle(id);
+    };
+
+    //캘린더 인서트
+    public void updatetikkle(SavingVO savingVO){
+        userMapper.inserttikkle(savingVO);
+    };
 
     public void updateNaver(UserVO userVO) {
         userMapper.updateNaver(userVO);

@@ -162,7 +162,7 @@
                 class="RecentView_container__1boAT" aria-label="최근본" style="display: none;">
             <div aria-hidden="true"
                  class="RecentView_thumbnail__1lnV0 CardThumbnail_thumbnail__3bDBJ CardThumbnail_visible__343f4 CardThumbnail_noanimation__23cSf"
-                 style="background-image: url(&quot;https://cdn2.wadiz.kr/2022/06/20/fe284587-b283-4edb-8bcc-2c437ceb54e0.png/wadiz/resize/200/format/jpg/quality/85/&quot;);"></div>
+                 ></div>
         </button>
     </div>
     </main>
@@ -220,7 +220,10 @@
                                 <div class="PurchaseSummaryCard_thumbnailPlaceholder__3O0tl">
                                     <div aria-hidden="true"
                                          class="CardThumbnail_thumbnail__3bDBJ CardThumbnail_visible__343f4"
-                                         style="background-image: url(&quot;https://cdn2.wadiz.kr/2023/04/27/7444dc06-e59c-496a-bd15-774b39bbadea.jpg/wadiz/resize/200/format/jpg/quality/85/&quot;);"></div>
+                                         style="background-image: url(&quot;https://cdn2.wadiz.kr/2023/04/27/7444dc06-e59c-496a-bd15-774b39bbadea.jpg/wadiz/resize/200/format/jpg/quality/85/&quot;);">
+
+                                         <img src="/files/display?fileName=${data.filePath}/t_${data.fileUuid}_${data.fileOriginName}" class="preview" style="width: 170px" alt="${data.fileOriginName}">
+</div>
                                 </div>
                             </div>
                             <dl class="PurchaseSummaryCard_titleArea__3qDl4">
@@ -261,10 +264,9 @@
 
     let datas = [[${datas}]];
     console.log(datas);
-    datas.forEach(data =>{
-        console.log(data);
-        console.log($('.CardList_container__39oS4'));
 
+
+    datas.forEach(data =>{
         $('.CardList_container__39oS4').append(`
                 <li class="CardList_itemContainer__2c_vS"
                     style="width: calc((100% - 0px) - 0.01px); margin-left: 0px; margin-right: 0px; margin-bottom: 20px;">
@@ -281,7 +283,10 @@
                                 <div class="PurchaseSummaryCard_thumbnailPlaceholder__3O0tl">
                                     <div aria-hidden="true"
                                          class="CardThumbnail_thumbnail__3bDBJ CardThumbnail_visible__343f4"
-                                         style="background-image: url(&quot;https://cdn2.wadiz.kr/2023/04/27/7444dc06-e59c-496a-bd15-774b39bbadea.jpg/wadiz/resize/200/format/jpg/quality/85/&quot;);"></div>
+                                       >
+
+                                         <img src="/files/display?fileName=${data.filePath}/t_${data.fileUuid}_${data.fileOriginName}" class="preview" style="width: 170px" alt="${data.fileOriginName}">
+</div>
                                 </div>
                             </div>
                             <dl class="PurchaseSummaryCard_titleArea__3qDl4">

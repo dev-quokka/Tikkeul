@@ -115,9 +115,20 @@ public class MypageServiceImpl implements MypageService{
     };
 
     // 캘린더 아이디값으로 조회 동찬
-    public Optional<SavingVO> getmytikkleid(Long userId,Long id){
-        return userDAO.findmytikkleid(userId,id);
+    public Long getmytikkleid(Long userId,String date){
+        return userDAO.findmytikkleid(userId,date);
     };
+
+    //캘린더 인서트
+    public void settikkle(SavingVO savingVO){
+       userDAO.updatetikkle(savingVO);
+    };
+
+    //캘린더 수정
+    public void modifymytikkle(Long id){
+        userDAO.updatemytikkle(id);
+    };
+
 
 
 }

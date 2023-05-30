@@ -16,4 +16,10 @@ public class MyjumoonDTO {
     private String deliveryStartDate;
     private Long itemId;
     private Long userId;
+
+
+    private String fileOriginName;
+    private String fileUuid;
+    private String filePath;
+
 }

@@ -10,7 +10,6 @@ public class SavingVO {
     private Long id;
     private int title;
     private String status;
-    private String content;
     private String start;
     private String end;
     private Long userId;

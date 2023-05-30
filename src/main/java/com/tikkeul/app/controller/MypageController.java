@@ -16,6 +16,8 @@ import java.util.Optional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 
 @Controller
 @Slf4j
@@ -24,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MypageController {
 
     private final MypageService mypageService;
+    private final HttpSession session;
 
     @GetMapping("mypage")
     public void read(Model model)
@@ -51,7 +54,9 @@ public class MypageController {
     }
 
     @GetMapping("chagepassword")
-    public void goTochagepass(UserVO userVO){;}
+    public void goTochagepass(UserVO userVO, HttpSession httpSession){
+
+        ;}
 
 
    @PostMapping("passchangee")
@@ -89,12 +94,6 @@ public class MypageController {
         return new RedirectView("/mypage/mypage");
     }
 
-
-    /*@PostMapping("gumaehugi")
-        public RedirectView gumehugiset(){
-            mypageService.inserthugi(0L);
-        return new RedirectView("/mypage/mypage") ;
-        }*/
 
 
     @GetMapping("jumoonneyuk")
@@ -146,6 +145,7 @@ public class MypageController {
             else {
                 return mypageService.getallmyjumoonstatus(status, id);
             }
+
     }
 
     @GetMapping("jumoonsangse")
@@ -193,23 +193,46 @@ public class MypageController {
     public void goTomytikkle(Model model){
         Long userId = 0L;
         model.addAttribute("ppoos",mypageService.getmytikkle(userId));
-        log.info("들어옴");
+
         ;}
 
-     @GetMapping("/mypage/check-mytikkleid/{id}")
+    @ResponseBody
+    @PostMapping("/mypage/insertmytikkle")
+    public boolean mytikklePOST(@RequestBody SavingVO savingVO) throws Exception {
+
+        mypageService.settikkle(savingVO);
+        return true;
+    }
+
+
+     @GetMapping("/selectmytikkle/{date}")
      @ResponseBody
-     public Optional<SavingVO> mytikklecheckid(@PathVariable Long id){
-         log.info("아이디찾기");
+     public Long mytikklecheckid(@PathVariable String date){
+
          Long userId = 0L;
-         log.info(mypageService.getmytikkleid(id,userId).toString());
-         log.info(mypageService.getmytikkleid(id,userId).get().toString());
-        return mypageService.getmytikkleid(id,userId);
+        return mypageService.getmytikkleid(userId,date);
      }
 
-    @GetMapping("mypage-review-change")
-    public void goTodjumoon522(){;}
-    @GetMapping("mypage-pay")
-    public void goTodjumoon233(){;}
+
+
+    @ResponseBody
+    @PostMapping("/mypage/mytikklesujung/{k}")
+    public boolean mytikklePOSTsujung(@RequestBody Long k) throws Exception {
+        mypageService.modifymytikkle(k);
+        log.info("1");
+        return true;
+    }
+
+
+    @GetMapping("/mytikklesujung/{date}")
+    @ResponseBody
+    public Long mytikklecheckidsujung(@PathVariable String date){
+        Long userId = 0L;
+        log.info("2");
+        return mypageService.getmytikkleid(userId,date);
+    }
+
+
     @GetMapping("Updatebasicinfo")
     public void goTodjumoon233d(){;}
 

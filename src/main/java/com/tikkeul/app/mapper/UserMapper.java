@@ -94,10 +94,13 @@ public interface UserMapper {
     public List<SavingVO> selectmytikkle(Long userId);
 
     // 캘린더 아이디값으로 조회 동찬
-    public Optional<SavingVO> selectmytikkleid(Long userId,Long id);
+    public Long selectmytikkleid(@Param("userId") Long userId, @Param("date") String date);
 
-    /*//캘린더 인서트
-    public void inserttikkle(Long userId,Long id);*/
+    //캘린더 인서트
+    public void inserttikkle(SavingVO savingVO);
+
+    //캘린더 수정
+    public void updatemytikkle(Long id);
 
 
 //        로그인
