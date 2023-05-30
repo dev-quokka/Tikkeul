@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <title>나의 도란방 게시글 목록</title>
     <link rel="stylesheet" href="/css/mypage/mypage-doranbang.css">
+    <link rel="stylesheet" href="/css/header/headerking.css">
+    <link rel="stylesheet" href="/css/header/headerking.css">
 </head>
 <body style="">
+<div class="web-header" th:replace="~{/header/header::.web-header}" >
+</div>
 <div id="root">
 
     <div class="MuiBox-root css-0">
@@ -49,6 +53,9 @@
         </div>
     </div>
 </div>
+<div >
+    <footer id="footer" th:replace="~{/footer/footer::footer}"></footer>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script th:inline="javascript">
@@ -78,5 +85,5 @@
     });
 
 </script>
-
+<script src="/js/header/header.js"></script>
 </html>

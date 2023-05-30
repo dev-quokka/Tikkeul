@@ -8,9 +8,11 @@
     <title>주문 상세보기</title>
     <link rel="stylesheet" href="/css/mypage/jumoon.css">
     <link rel="stylesheet" href="/css/mypage/cancelmodal.css">
+    <link rel="stylesheet" href="/css/header/headerking.css">
 </head>
 <body class="vsc-initialized" style="overflow: auto">
-
+<div class="web-header" th:replace="~{/header/header::.web-header}" >
+</div>
 
 <!-- 취소 모달-->
 <form th:action="@{/mypage/cancel}" method="post">
@@ -112,7 +114,7 @@
                                         <dl class="LabelValueList_strong__2qLag">
                                             <dt class="undefined"><span>최종 결제 금액</span></dt>
                                             <dd class="LabelValueList_alignRight__37Uj6">
-                                                <span th:text="*{finalPayCount}"></span>
+                                                <span th:text="*{price+3000}"></span>
                                             </dd>
                                         </dl>
                                         <dl class="">
@@ -274,7 +276,9 @@
 <div id="wadiz-app-banner"></div>
 
 <input type="hidden" id="gaUserId" value="4536674"/>
-
+<div >
+    <footer id="footer" th:replace="~{/footer/footer::footer}"></footer>
+</div>
 </body>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
@@ -296,4 +300,5 @@
 
 
 </script>
+<script src="/js/header/header.js"></script>
 </html>

@@ -7,8 +7,11 @@
 
     <title>주문내역</title>
     <link rel="stylesheet" href="/css/mypage/gumae.css">
+    <link rel="stylesheet" href="/css/header/headerking.css">
 </head>
 <body class="vsc-initialized" style="overflow: auto;">
+<div class="web-header" th:replace="~{/header/header::.web-header}" >
+</div>
 <div id="page-container">
 <input>
     <div class="MainWrapper_content__GZkTa">
@@ -170,7 +173,9 @@
 </div>
 <div id="wadiz-app-banner"></div>
 <input type="hidden" id="gaUserId" value="4536674">
-
+<div >
+    <footer id="footer" th:replace="~{/footer/footer::footer}"></footer>
+</div>
 </body>
 <script src="/js/mypage/jumoonneyuk.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -315,4 +320,6 @@
     `)
     });
 </script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/js/header/header.js"></script>
 </html>

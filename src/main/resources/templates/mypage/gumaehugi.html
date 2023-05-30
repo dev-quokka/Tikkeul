@@ -8,10 +8,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/mypage/jumoon.css">
     <link rel="stylesheet" href="/css/mypage/cancelmodal.css">
+    <link rel="stylesheet" href="/css/header/headerking.css">
 </head>
 
 <body class="vsc-initialized" style="overflow: auto">
-
+<div class="web-header" th:replace="~{/header/header::.web-header}" >
+</div>
 
 <div id="page-container" th:object="${hugi}">
     <main id="main-app">
@@ -189,6 +191,9 @@
     </button>
 </div>
 </main>
+    <div >
+        <footer id="footer" th:replace="~{/footer/footer::footer}"></footer>
+    </div>
 
 </div>
 <div id="wadiz-app-banner"></div>
@@ -216,4 +221,5 @@
 
 
 </script>
+<script src="/js/header/header.js"></script>
 </html>

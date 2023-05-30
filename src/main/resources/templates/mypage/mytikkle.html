@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css">
     <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css">
     <link rel="stylesheet" href="https://uicdn.toast.com/tui-grid/latest/tui-grid.css">
+    <link rel="stylesheet" href="/css/header/headerking.css">
 </head>
 <body>
+<div class="web-header" th:replace="~{/header/header::.web-header}" >
+</div>
 <div class="MuiBox-root css-ldo4d5" data-gtm-vis-recent-on-screen-97083289_157="17887"
      data-gtm-vis-first-on-screen-97083289_157="17887" data-gtm-vis-total-visible-time-97083289_157="2000"
      data-gtm-vis-has-fired-97083289_157="1">
@@ -1547,7 +1550,9 @@
         </div>
     </div>
 </div>
-
+<div >
+    <footer id="footer" th:replace="~{/footer/footer::footer}"></footer>
+</div>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.js"></script>
 <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script>
@@ -1970,5 +1975,6 @@
 </script>
 <script src="../../static/js/mypage/mytikkle.js"></script>
 <script src="../../static/js/mypage/mytikkle2.js"></script>
+<script src="/js/header/header.js"></script>
 </body>
 </html>

@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <title>내가 찜한 열매</title>
     <link rel="stylesheet" href="/css/mypage/jjim.css">
+    <link rel="stylesheet" href="/css/header/headerking.css">
 </head>
 <body>
+
+<div class="web-header" th:replace="~{/header/header::.web-header}" >
+</div>
+
 <div id="page-container">
     <div class="MainWrapper_content__GZkTa">
         <section>
@@ -23,6 +28,9 @@
         </section>
     </div>
     </main>
+</div>
+<div >
+    <footer id="footer" th:replace="~{/footer/footer::footer}"></footer>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -171,4 +179,5 @@ return;
     }));
 
 </script>
+<script src="/js/header/header.js"></script>
 </html>

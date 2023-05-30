@@ -6,14 +6,20 @@
     <link rel="stylesheet" href="/css/mypage/mypage-review-details.css">
     <link rel="stylesheet" href="/css/footer/footer.css">
     <link rel="stylesheet" href="/css/header/headerking.css">
+    <link rel="stylesheet" href="/css/header/headerking.css">
 </head>
 <body style="overflow: auto;" class="">
+<div class="web-header" th:replace="~{/header/header::.web-header}" >
+</div>
 <div id="page-container">
     <main id="main-app">
         <div class="qwqwqw">
 
         </div>
     </main>
+</div>
+<div >
+    <footer id="footer" th:replace="~{/footer/footer::footer}"></footer>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -30,6 +36,27 @@
                         <div class="DetailSatisfaction_container__t8Ax_">
                             <div class="CommentTitle_container__1Zdwo"><span
                                     class="CommentTitle_title__2RXrf">만족도</span></div>
+
+
+<div class="DetailSatisfaction_summaryWrap__1ieLY">
+                                <div class="SatisfactionSummary_container__3szWc"><h4
+                                        class="SatisfactionSummary_title__27vSu">내 평점</h4>
+                                    <div class="RatingScore_container__AeQ_I RatingScore_lgFull__2tY1J SatisfactionSummary_summary__18JyH">
+                                        <div class="RatingScore_icon__rIS_k"></div>
+                                        <span class="RatingScore_score__2a-SN">${data.score}</span><span
+                                            class="RatingScore_maxScore__2hkAT">/5.0</span></div>
+
+                                </div>
+                                <div class="DetailSatisfaction_summarySplitter__2oiTx"></div>
+                                <div class="SatisfactionSummary_container__3szWc"><h4
+                                        class="SatisfactionSummary_title__27vSu">평균평점</h4>
+                                    <div class="RatingScore_container__AeQ_I RatingScore_lgFull__2tY1J SatisfactionSummary_summary__18JyH">
+                                        <div class="RatingScore_icon__rIS_k"></div>
+                                        <span class="RatingScore_score__2a-SN">4.3</span><span
+                                            class="RatingScore_maxScore__2hkAT">/5.0</span></div>
+
+                                </div>
+                            </div>
 
 
 
@@ -53,7 +80,7 @@
                                                 </div>
                                                 <div class="StoreSatisfactionCard_rightPanel__XCjpV">
                                                     <div class="StoreSatisfactionCard_titleArea__1S3zk">
-                                                        <span class="StoreSatisfactionCard_nickName__16JEX">${data.name}</span>
+                                                        <span class="StoreSatisfactionCard_nickName__16JEX">${data.username}</span>
                                                         <div class="StoreSatisfactionCard_sideArea__jGJma">
                                                             <div class="StoreSatisfactionCard_dateArea__2nNep">
                                                                 <span class="StoreSatisfactionCard_updatedDate__1PmK7">${data.registerDate}</span>
@@ -105,4 +132,5 @@
     });
 
 </script>
+<script src="/js/header/header.js"></script>
 </html>

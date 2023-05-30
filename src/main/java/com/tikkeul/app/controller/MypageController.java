@@ -31,7 +31,7 @@ public class MypageController {
     @GetMapping("mypage")
     public void read(Model model)
     {
-        model.addAttribute("k",mypageService.getMypage(0L).get());
+        model.addAttribute("k",mypageService.getMypage((Long)session.getAttribute("id")).get());
     }
 
     @GetMapping("DropOutUser")
@@ -41,7 +41,7 @@ public class MypageController {
     @PostMapping("drop")
     public RedirectView modify(UserVO userVO){
         log.info(userVO.getStatus());
-        mypageService.modifyUserVO(userVO.getStatus(),0L);
+        mypageService.modifyUserVO(userVO.getStatus(),(Long)session.getAttribute("id"));
         return new RedirectView("/mypage/mypage");
     }
 
@@ -50,32 +50,31 @@ public class MypageController {
     @GetMapping("check-password/{password}")
     @ResponseBody
     public boolean checkId(@PathVariable String password){
-        return mypageService.modifycheckpassword(0L,password).isPresent();
+        return mypageService.modifycheckpassword((Long)session.getAttribute("id"),password).isPresent();
     }
 
     @GetMapping("chagepassword")
-    public void goTochagepass(UserVO userVO, HttpSession httpSession){
+    public void goTochagepass(UserVO userVO){
 
         ;}
 
 
    @PostMapping("passchangee")
     public RedirectView modifypassword(UserVO userVO){
-        mypageService.modifypassword(userVO.getPassword(),0L);
+        mypageService.modifypassword(userVO.getPassword(),(Long)session.getAttribute("id"));
         log.info(userVO.getPassword());
         return new RedirectView("/mypage/mypage") ;
     }
 
     @GetMapping("gumaehugi")
     public void hugilist(Model model,ReviewVO reviewVO){
-        Long id = 0L;
-        model.addAttribute("hugi",mypageService.getmyhugi(id).get());
+        model.addAttribute("hugi",mypageService.getmyhugi((Long)session.getAttribute("id")).get());
     }
 
     @PostMapping("huhu")
     public RedirectView hugiwrite(ReviewVO reviewVO){
         Long id=0L;
-        mypageService.inserthugi(0L,reviewVO.getContent());
+        mypageService.inserthugi((Long)session.getAttribute("id"),reviewVO.getContent());
         return new RedirectView("/mypage/mypage");
     }
 
@@ -83,14 +82,14 @@ public class MypageController {
     @GetMapping("gumaehugisujung")
     public void hugilistchange(Model model){
         Long id = 0L;
-        model.addAttribute("hugi",mypageService.getmyhugi(id).get());
-        model.addAttribute("hugisujung",mypageService.getmyhugisujung(id).get());
+        model.addAttribute("hugi",mypageService.getmyhugi((Long)session.getAttribute("id")).get());
+        model.addAttribute("hugisujung",mypageService.getmyhugisujung((Long)session.getAttribute("id")).get());
     }
 
     @PostMapping("huhuchange")
     public RedirectView hugiwritechange(HugisujungDTO hugisujungDTO){
         Long id=0L;
-        mypageService.modifyhugisujung(id,hugisujungDTO.getContent());
+        mypageService.modifyhugisujung((Long)session.getAttribute("id"),hugisujungDTO.getContent());
         return new RedirectView("/mypage/mypage");
     }
 
@@ -98,15 +97,13 @@ public class MypageController {
 
     @GetMapping("jumoonneyuk")
     public void myjumoonlist(Model model){
-        Long id = 0L;
-        model.addAttribute("datas",mypageService.getmyjumoon(id));
+        model.addAttribute("datas",mypageService.getmyjumoon((Long)session.getAttribute("id")));
     }
 
 
     @GetMapping("jjim")
     public void myjjim(Model model) {
-        Long id = 0L;
-        model.addAttribute("jjims", mypageService.getallmyjjim(id));
+        model.addAttribute("jjims", mypageService.getallmyjjim((Long)session.getAttribute("id")));
     }
 
 
@@ -114,17 +111,15 @@ public class MypageController {
     @ResponseBody
     public void nojjim(@PathVariable Long itemId){
         log.info("찜삭제");
-        Long id = 0L;
-        mypageService.dropjjim(id,itemId);
+        mypageService.dropjjim((Long)session.getAttribute("id"),itemId);
     }
 
 
     @GetMapping("jjimregogo/{itemId}")
     @ResponseBody
     public void jjimregogo(@PathVariable Long itemId){
-        Long id = 0L;
         log.info("찜삽입");
-        mypageService.setrejjim(id,itemId);
+        mypageService.setrejjim((Long)session.getAttribute("id"),itemId);
     }
 
 
@@ -134,65 +129,57 @@ public class MypageController {
     @ResponseBody
     public List<MyjumoonDTO> myjumoonstatus(@PathVariable String status){
 
-        Long id = 0L;
         log.info(status);
         log.info("전체");
 
             if(status.equals("전체")){
-                return mypageService.getmyjumoon(id);
+                return mypageService.getmyjumoon((Long)session.getAttribute("id"));
             }
 
             else {
-                return mypageService.getallmyjumoonstatus(status, id);
+                return mypageService.getallmyjumoonstatus(status, (Long)session.getAttribute("id"));
             }
 
     }
 
     @GetMapping("jumoonsangse")
     public void jumoonsangse(Model model){
-        Long id =0L;
-        model.addAttribute("k",mypageService.getjumoonsangse(id).get())
+        model.addAttribute("k",mypageService.getjumoonsangse((Long)session.getAttribute("id")).get())
         ;}
 
     @PostMapping("cancel")
     public RedirectView jumoonsangsecancel(){
-        Long id =1L;
         String status = "주문취소";
-        mypageService.insertcancel(id,status);
+        mypageService.insertcancel((Long)session.getAttribute("id"),status);
        return new RedirectView("/mypage/jumoonneyuk");
         }
 
     @GetMapping("jumooncancel")
     public void jumooncancel(Model model){
-        Long id =0L;
         MyjumooncancelDTO op = new MyjumooncancelDTO();
-        model.addAttribute("k2",mypageService.getjumoonsangse(id).get())
+        model.addAttribute("k2",mypageService.getjumoonsangse((Long)session.getAttribute("id")).get())
         ;}
 
     @GetMapping("mypage-doranbang")
     public void dorangbang(Model model){
-        Long id =0L;
-        model.addAttribute("datass",mypageService.getdoranbang(id))
+        model.addAttribute("datass",mypageService.getdoranbang((Long)session.getAttribute("id")))
         ;}
 
 
     @GetMapping("mypage-review")
     public void gumaehugimukruk(Model model){
-        Long id = 0L;
-        model.addAttribute("datass",mypageService.getgumaehugi(id))
+        model.addAttribute("datass",mypageService.getgumaehugi((Long)session.getAttribute("id")))
         ;}
 
 
     @GetMapping("mypage-review-details")
     public void hugisangse(Model model){
-        Long id = 0L;
-        model.addAttribute("kkk",mypageService.gethugisangse(id))
+        model.addAttribute("kkk",mypageService.gethugisangse((Long)session.getAttribute("id")))
         ;}
 
     @GetMapping("mytikkle")
     public void goTomytikkle(Model model){
-        Long userId = 0L;
-        model.addAttribute("ppoos",mypageService.getmytikkle(userId));
+        model.addAttribute("ppoos",mypageService.getmytikkle((Long)session.getAttribute("id")));
 
         ;}
 
@@ -208,9 +195,7 @@ public class MypageController {
      @GetMapping("/selectmytikkle/{date}")
      @ResponseBody
      public Long mytikklecheckid(@PathVariable String date){
-
-         Long userId = 0L;
-        return mypageService.getmytikkleid(userId,date);
+        return mypageService.getmytikkleid((Long)session.getAttribute("id"),date);
      }
 
 
@@ -219,7 +204,6 @@ public class MypageController {
     @PostMapping("/mypage/mytikklesujung/{k}")
     public boolean mytikklePOSTsujung(@RequestBody Long k) throws Exception {
         mypageService.modifymytikkle(k);
-        log.info("1");
         return true;
     }
 
@@ -227,9 +211,8 @@ public class MypageController {
     @GetMapping("/mytikklesujung/{date}")
     @ResponseBody
     public Long mytikklecheckidsujung(@PathVariable String date){
-        Long userId = 0L;
         log.info("2");
-        return mypageService.getmytikkleid(userId,date);
+        return mypageService.getmytikkleid((Long)session.getAttribute("id"),date);
     }
 
 

@@ -7,8 +7,11 @@
 
     <title>주문내역</title>
     <link rel="stylesheet" href="/css/mypage/gumae.css">
+    <link rel="stylesheet" href="/css/header/headerking.css">
 </head>
 <body class="vsc-initialized" style="overflow: auto;">
+<div class="web-header" th:replace="~{/header/header::.web-header}" >
+</div>
 <div id="page-container">
     <div class="HeadupBanner_container__33EOJ">
         <p class="HeadupBanner_text__1R31D"><a
@@ -972,4 +975,5 @@
     });
 
 </script>
+<script src="/js/header/header.js"></script>
 </html>
